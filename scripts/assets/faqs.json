@@ -1,0 +1,38 @@
+[
+    {
+        "question": "¿Qué es la HackEPS?",
+        "answer": "La segunda edición de la Hackathon en la Universidad de Lleida, con el objetivo de motivar a la programación como afición."
+    },
+    {
+        "question": "¿Cuándo es la HackEPS?",
+        "answer": "El fin de semana del 17 al 18 de noviembre, empieza el sábado y acaba el domingo. TODO"
+    },
+    {
+        "question": "¿Cual es el precio del evento?",
+        "answer": "Los participantes solamente se tienen que encargar de traer muchas ganas de diseñar, programar y aprender (y traer portátil y cargador), que de la comida, el internet y el lugar nos encargamos nosotros."
+    },
+    {
+        "question": "¿24 horas sin dormir?",
+        "answer": "Sí pero no. Quien quiera (y pueda aguantar) puede estarlo y aprovechar al máximo las horas de dedicación al proyecto, pero habilitaremos zonas oscuras y silenciosas donde podréis descansar. Recomendamos traer esterilla y saco de dormir."
+    },
+    {
+        "question": "¿Se participa en equipos?",
+        "answer": "Sí, equipos de máximo 4 personas. Nuestra experiencia dice que 3 o 4 personas es lo mejor."
+    },
+    {
+        "question": "¿Y si no tengo equipo?",
+        "answer": "¡No te preocupes! Las posibilidades son infinitas. Puedes buscar un equipo una vez llegues al recinto, junto con otra gente que no tiene equipo, o bien juntarte a un equipo con algún vacante libre, o... ¡participar por libre!"
+    },
+    {
+        "question": "¿Dónde será la HackEPS?",
+        "answer": "En la Escuela Politécnica Superior de la Universitat de Lleida (campus de Cappont). C/ de Jaume II, 69, 25001 Lleida."
+    },
+    {
+        "question": "¿Quién puede presentarse? ¿Y cuánta gente en total?",
+        "answer": "Cualquier persona mayor de 18 años con ganas de programar, diseñar, aprender y, sobre todo ¡pasar un buen rato programando! Abriremos inscripciones con un máximo de 100 plazas y, una vez estén llenas, se cierran inscripciones."
+    },
+    {
+        "question": "¿Quieres colaborar con nosotros?",
+        "answer": "Estamos abiertos a cualquier tipo de colaboración ya sea como un organizador más, como sponsor o como mentor. Contacta con nosotros."
+    }
+]

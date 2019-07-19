@@ -1,0 +1,9 @@
+# Python
+*.pyc
+__pycache__/
+
+# Virtualenv
+venv/
+
+# Firebase credentials
+credentials.json

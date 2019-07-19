@@ -10,6 +10,9 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
+// MDBBootstrap
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
 import { environment } from '../environments/environment';
 
 @NgModule({
@@ -20,6 +23,10 @@ import { environment } from '../environments/environment';
     BrowserModule,
     AppRoutingModule,
     
+    // Bootstrap
+    MDBBootstrapModule.forRoot(),
+
+    // Firebase
     AngularFireModule.initializeApp(environment.firebase),
  	  AngularFirestoreModule,
   ],

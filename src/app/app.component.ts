@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FirebaseService } from './services/firebae.service';
+import { FaqsService } from './services/faqs.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import { FirebaseService } from './services/firebae.service';
 export class AppComponent {
   title = 'hackeps2019';
 
-  constructor(private fs: FirebaseService) {
-    fs.all().subscribe(r => r.forEach(d => console.log(d.data())));
+  constructor(private faqService: FaqsService) {
+    faqService.all().subscribe(console.log);
   }
 }
