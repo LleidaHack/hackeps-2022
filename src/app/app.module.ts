@@ -14,21 +14,25 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { environment } from '../environments/environment';
+import { BannerComponent } from './home/banner/banner.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BannerComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    
+
     // Bootstrap
     MDBBootstrapModule.forRoot(),
 
     // Firebase
     AngularFireModule.initializeApp(environment.firebase),
- 	  AngularFirestoreModule,
+    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
