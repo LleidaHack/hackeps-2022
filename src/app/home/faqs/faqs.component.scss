@@ -1,0 +1,16 @@
+h4 {
+  font-family: 'Montserrat', sans-serif;
+  color: #6431a1;
+}
+
+.row > div[class*='col-'] {
+  display: flex;
+  flex: 1 0 auto;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

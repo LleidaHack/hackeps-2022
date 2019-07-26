@@ -16,12 +16,14 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { environment } from '../environments/environment';
 import { BannerComponent } from './home/banner/banner.component';
 import { HomeComponent } from './home/home.component';
+import { FaqsComponent } from './home/faqs/faqs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BannerComponent,
-    HomeComponent
+    HomeComponent,
+    FaqsComponent
   ],
   imports: [
     BrowserModule,
