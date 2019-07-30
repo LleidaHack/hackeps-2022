@@ -17,13 +17,17 @@ import { environment } from '../environments/environment';
 import { BannerComponent } from './home/banner/banner.component';
 import { HomeComponent } from './home/home.component';
 import { FaqsComponent } from './home/faqs/faqs.component';
+import { SponsorsComponent } from './home/sponsors/sponsors.component';
+import { CalendarComponent } from './home/calendar/calendar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BannerComponent,
     HomeComponent,
-    FaqsComponent
+    FaqsComponent,
+    SponsorsComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
