@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 // Firebase
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 // MDBBootstrap
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -16,12 +17,14 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { environment } from '../environments/environment';
 import { BannerComponent } from './home/banner/banner.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './home/banner/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BannerComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import { HomeComponent } from './home/home.component';
     // Firebase
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

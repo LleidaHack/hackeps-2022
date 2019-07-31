@@ -9,7 +9,8 @@ import { FaqsService } from './services/faqs.service';
 export class AppComponent {
   title = 'hackeps2019';
 
-  constructor(private faqService: FaqsService) {
+  constructor(
+    private faqService: FaqsService) {
     faqService.all().subscribe(console.log);
   }
 }
