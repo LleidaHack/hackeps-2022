@@ -17,14 +17,14 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { environment } from '../environments/environment';
 import { BannerComponent } from './home/banner/banner.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './home/banner/login/login.component';
+// import { LoginComponent } from './home/banner/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BannerComponent,
     HomeComponent,
-    LoginComponent
+    // LoginComponent
   ],
   imports: [
     BrowserModule,
