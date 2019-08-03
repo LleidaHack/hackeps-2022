@@ -21,32 +21,23 @@ export class BannerComponent implements OnInit {
             'value_area': 800
           }
         },
-        'color': {
-          'value': '#ffffff'
+        color: {
+          value: '#e1bee7'
         },
-        'shape': {
+        shape: {
           'type': 'circle',
           'stroke': {
             'width': 0,
-            'color': '#000000'
           },
           'polygon': {
             'nb_sides': 5
           },
-          'image': {
-            'src': 'img/github.svg',
-            'width': 100,
-            'height': 100
-          }
         },
         'opacity': {
           'value': 0.5,
           'random': false,
           'anim': {
             'enable': false,
-            'speed': 1,
-            'opacity_min': 0.1,
-            'sync': false
           }
         },
         'size': {
@@ -54,15 +45,12 @@ export class BannerComponent implements OnInit {
           'random': true,
           'anim': {
             'enable': false,
-            'speed': 40,
-            'size_min': 0.1,
-            'sync': false
           }
         },
         'line_linked': {
           'enable': true,
           'distance': 150,
-          'color': '#ffffff',
+          'color': '#f3e5f5',
           'opacity': 0.4,
           'width': 1
         },
@@ -89,7 +77,7 @@ export class BannerComponent implements OnInit {
             'mode': 'bubble'
           },
           'onclick': {
-            'enable': true,
+            'enable': false,
             'mode': 'push'
           },
           'resize': true
