@@ -29,6 +29,25 @@ export class AuthenticationService {
       })
     );
   }
+
+  public isLoggedIn(): boolean {
+    return this.afAuth.auth.currentUser != null;
+  }
+
+  public redirectToLogin() {
+    const provider = new auth.GoogleAuthProvider();
+    this.afAuth.auth.signInWithRedirect(provider);
+  }
+
+  public async loginAfterRedirect() {
+    this.afAuth.auth.getRedirectResult()
+      .then(creds => {
+        if (creds.user) {
+          this.updateUserData(creds.user);
+        }
+      });
+  }
+
   async googleSignIn() {
    const provider = new auth.GoogleAuthProvider();
    const credential = await this.afAuth.auth.signInWithPopup(provider);

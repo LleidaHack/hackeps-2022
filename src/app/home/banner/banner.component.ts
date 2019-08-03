@@ -1,4 +1,6 @@
+import { AuthenticationService } from './../../services/authentication.service';
 import { Component, OnInit } from '@angular/core';
+import { UserModel } from 'src/app/shared/models/user.model';
 
 declare var particlesJS: any;
 
@@ -9,7 +11,9 @@ declare var particlesJS: any;
 })
 export class BannerComponent implements OnInit {
 
-  constructor() { }
+  private user: UserModel;
+
+  constructor(private auth: AuthenticationService) { }
 
   ngOnInit() {
     particlesJS('particles-js', {
@@ -110,6 +114,10 @@ export class BannerComponent implements OnInit {
       },
       'retina_detect': true
     });
+  }
+
+  public login() {
+    this.auth.redirectToLogin();
   }
 
 }

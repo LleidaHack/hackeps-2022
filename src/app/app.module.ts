@@ -21,6 +21,7 @@ import { HomeComponent } from './home/home.component';
 import { FaqsComponent } from './home/faqs/faqs.component';
 import { SponsorsComponent } from './home/sponsors/sponsors.component';
 import { CalendarComponent } from './home/calendar/calendar.component';
+import { LoadingOverlayComponent } from './loading-overlay/loading-overlay.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CalendarComponent } from './home/calendar/calendar.component';
     // LoginComponent
     FaqsComponent,
     SponsorsComponent,
-    CalendarComponent
+    CalendarComponent,
+    LoadingOverlayComponent
   ],
   imports: [
     BrowserModule,
