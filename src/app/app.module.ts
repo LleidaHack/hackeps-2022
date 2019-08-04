@@ -22,6 +22,7 @@ import { FaqsComponent } from './home/faqs/faqs.component';
 import { SponsorsComponent } from './home/sponsors/sponsors.component';
 import { CalendarComponent } from './home/calendar/calendar.component';
 import { LoadingOverlayComponent } from './loading-overlay/loading-overlay.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { LoadingOverlayComponent } from './loading-overlay/loading-overlay.compo
     FaqsComponent,
     SponsorsComponent,
     CalendarComponent,
-    LoadingOverlayComponent
+    LoadingOverlayComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

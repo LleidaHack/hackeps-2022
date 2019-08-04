@@ -5,18 +5,13 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
   templateUrl: './loading-overlay.component.html',
   styleUrls: ['./loading-overlay.component.scss']
 })
-export class LoadingOverlayComponent implements OnInit, OnChanges {
+export class LoadingOverlayComponent implements OnInit {
 
   @Input() public show = true;
 
   constructor() { }
 
   ngOnInit() {
-
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
 
   }
 

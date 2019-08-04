@@ -21,8 +21,9 @@ export class HomeComponent implements OnInit {
 
     this.auth.user$.subscribe(user => {
       this.loading = false;
-      console.log(user);
-      // TODO: redirect to user profile
+      if (user) {
+        this.router.navigateByUrl('/user');
+      }
     });
   }
 
