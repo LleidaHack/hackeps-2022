@@ -21,8 +21,9 @@ import { HomeComponent } from './home/home.component';
 import { FaqsComponent } from './home/faqs/faqs.component';
 import { SponsorsComponent } from './home/sponsors/sponsors.component';
 import { CalendarComponent } from './home/calendar/calendar.component';
-import { LoadingOverlayComponent } from './loading-overlay/loading-overlay.component';
+import { LoadingOverlayComponent } from './shared/loading-overlay/loading-overlay.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     SponsorsComponent,
     CalendarComponent,
     LoadingOverlayComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    SignUpFormComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, QuerySnapshot } from '@angular/fire/firestore';
-import { FAQ } from './../shared/models/faq';
+import { FAQ } from '../models/faq';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -11,8 +11,8 @@ export class FaqsService {
 
   private faqsCollection: AngularFirestoreCollection<FAQ>;
 
-  constructor(private afs: AngularFirestore) { 
-    this.faqsCollection = afs.collection('faqs');  
+  constructor(private afs: AngularFirestore) {
+    this.faqsCollection = afs.collection('faqs');
   }
 
   public all(): Observable<FAQ[]> {

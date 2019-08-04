@@ -12,11 +12,6 @@
   z-index: -1;
 }
 
-.controls {
-  z-index: 99;
-  padding-top: 15vh;
-}
-
 .skyline {
   position: absolute;
   bottom: 0;
@@ -25,22 +20,6 @@
   z-index: 0;
 }
 
-.user-img {
-  margin: 1em;
-  margin-top: 3em;
+.container {
+  margin-top: 10em;
 }
-
-.user-dashboard {
-  padding-top: 10em;
-}
-
-li {
-  border: none;
-
-  img {
-    width: 10em;
-    height: 10em;
-  }
-}
-
-

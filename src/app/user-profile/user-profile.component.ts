@@ -1,4 +1,4 @@
-import { AuthenticationService } from './../services/authentication.service';
+import { AuthenticationService } from '../shared/services/authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { UserModel } from '../shared/models/user.model';
 

@@ -1,6 +1,7 @@
-import { AuthenticationService } from './../services/authentication.service';
+import { AuthenticationService } from '../shared/services/authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserModel } from '../shared/models/user.model';
 
 @Component({
   selector: 'app-home',
@@ -16,15 +17,21 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.loading = true;
-
-    this.auth.loginAfterRedirect();
-
-    this.auth.user$.subscribe(user => {
-      this.loading = false;
-      if (user) {
-        this.router.navigateByUrl('/user');
-      }
+    this.auth.loginAfterRedirect().then(creds => {
+      this.checkAndRedirect(creds.user);
     });
   }
 
+  private async checkAndRedirect(user: UserModel) {
+    if (!user) {
+      this.loading = false;
+      return;
+    }
+
+    if (await this.auth.isRegistered(user)) {
+      this.router.navigateByUrl('/user');
+    } else {
+      this.router.navigateByUrl('/user/signup');
+    }
+  }
 }

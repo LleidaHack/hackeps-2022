@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import {Observable, of} from 'rxjs';
-import { switchMap } from 'rxjs/operators';
-import { UserModel } from '../shared/models/user.model';
+import { switchMap, map } from 'rxjs/operators';
+import { UserModel } from '../models/user.model';
 import {auth, User} from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import {
@@ -20,14 +20,19 @@ export class AuthenticationService {
     private router: Router
   ) {
     this.user$ = this.afAuth.authState.pipe(
-      switchMap(user => {
-        if (user) {
-          return this.afStore.doc<UserModel>(`users/${user.uid}`).valueChanges();
-        } else {
-          return of(null);
-        }
+      map(({ uid, email, displayName, photoURL }: User) => {
+        return { uid, email, displayName, photoURL };
       })
     );
+    // .pipe(
+    //   switchMap(user => {
+    //     if (user) {
+    //       return this.afStore.doc<UserModel>(`users/${user.uid}`).valueChanges();
+    //     } else {
+    //       return of(null);
+    //     }
+    //   })
+    // );
   }
 
   public isLoggedIn(): boolean {
@@ -40,12 +45,7 @@ export class AuthenticationService {
   }
 
   public async loginAfterRedirect() {
-    this.afAuth.auth.getRedirectResult()
-      .then(creds => {
-        if (creds.user) {
-          this.updateUserData(creds.user);
-        }
-      });
+    return await this.afAuth.auth.getRedirectResult();
   }
 
   async googleSignIn() {
@@ -54,12 +54,12 @@ export class AuthenticationService {
    return this.updateUserData(credential.user);
   }
 
-  async signOut() {
+  public async signOut() {
     await this.afAuth.auth.signOut();
     return this.router.navigate(['/']);
   }
 
-  private updateUserData({ uid, email, displayName, photoURL }: User) {
+  public updateUserData({ uid, email, displayName, photoURL }: User) {
     const userRef: AngularFirestoreDocument<User> = this.afStore.doc(`users/${uid}`);
 
     const data = {
@@ -72,4 +72,10 @@ export class AuthenticationService {
     return userRef.set(data as User, { merge: true });
   }
 
+  public async isRegistered(user: UserModel) {
+    const userRef = this.afStore.doc(`users/${user.uid}`);
+    const snapshot = await userRef.get().toPromise();
+    console.log(snapshot.data);
+    return snapshot.exists;
+  }
 }

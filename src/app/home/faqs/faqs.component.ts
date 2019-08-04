@@ -1,4 +1,4 @@
-import { FaqsService } from './../../services/faqs.service';
+import { FaqsService } from '../../shared/services/faqs.service';
 import { FAQ } from './../../shared/models/faq';
 import { Component, OnInit } from '@angular/core';
 
