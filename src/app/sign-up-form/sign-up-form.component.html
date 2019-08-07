@@ -36,10 +36,10 @@
             </div>
 
             <!-- TODO: Add link to legal terms -->
-            <mdb-checkbox [(ngModel)]="terms"  [default]="true">He leido y acepto los terminos y condiciones</mdb-checkbox>
+            <mdb-checkbox formControlName="terms" [default]="true">He leido y acepto los terminos y condiciones</mdb-checkbox>
 
             <div class="w-100 text-right">
-              <button mdbBtn [disabled]="!terms" type="submit" gradient="purple" rounded="true" mdbWavesEffect>Unete ahora</button>
+              <button mdbBtn [disabled]="!signUpForm.valid" type="submit" gradient="purple" rounded="true" mdbWavesEffect>Unete ahora</button>
             </div>
 
           </form>

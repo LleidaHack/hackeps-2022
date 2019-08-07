@@ -11,7 +11,7 @@ import { UrlValidator } from '../shared/validators/url.validator';
 })
 export class SignUpFormComponent implements OnInit {
   public signUpForm: FormGroup;
-  public terms = false;
+  // public terms = false;
 
   constructor(
     private fb: FormBuilder,
@@ -23,12 +23,12 @@ export class SignUpFormComponent implements OnInit {
                                              Validators.minLength(2)])],
       email:        ['', Validators.compose([Validators.required,
                                              Validators.email])],
-      birthDate:    ['', Validators.compose([Validators.required,
-                                             DateValidator.ptDate])],
+      birthDate:    ['', Validators.required],
       githubUrl:    ['', Validators.compose([Validators.required,
                                              UrlValidator.url])],
       linkedinUrl:  ['', Validators.compose([Validators.required,
-                                             UrlValidator.url])]
+                                             UrlValidator.url])],
+      terms: ['', Validators.requiredTrue]
     });
   }
 
@@ -46,6 +46,5 @@ export class SignUpFormComponent implements OnInit {
   }
 
   public onSubmit() {
-
   }
 }
