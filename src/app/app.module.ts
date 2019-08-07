@@ -14,10 +14,12 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { environment } from '../environments/environment';
+import { CalendarComponent } from './calendar/calendar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
