@@ -1,5 +1,4 @@
 import { AuthenticationService } from './../shared/services/authentication.service';
-import { DateValidator } from './../shared/validators/date.validator';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { UrlValidator } from '../shared/validators/url.validator';
