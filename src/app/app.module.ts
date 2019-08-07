@@ -2,6 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 // Components
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { environment } from '../environments/environment';
+
 import { BannerComponent } from './home/banner/banner.component';
 import { HomeComponent } from './home/home.component';
 // import { LoginComponent } from './home/banner/login/login.component';
@@ -41,6 +43,8 @@ import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
 
     // Bootstrap
     MDBBootstrapModule.forRoot(),
