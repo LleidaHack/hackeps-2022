@@ -1,0 +1,50 @@
+<div class="wrapper">
+  <div class="top-grad">
+    <img class="skyline" src="/assets/skyline.svg">
+  </div>
+  <div class="container p-4">
+    <mdb-card>
+      <mdb-card-body class="p-4">
+        <mdb-card-title class="mb-4">
+          <h4 class="montserrat">Formulario de registro</h4>
+        </mdb-card-title>
+        <mdb-card-text>
+          <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+            <label for="full-name">Nombre completo</label>
+            <input formControlName="fullName" type="text" id="full-name" id="full-name" class="form-control mb-4" placeholder="Jhon Doe">
+
+            <label>Nickname</label>
+            <input formControlName="nickname" type="text" id="nickname" name="nickname" class="form-control mb-4" placeholder="JhonDoe6969">
+
+            <label>Correo electrónico</label>
+            <input formControlName="email" type="email" id="email" name="email" class="form-control mb-4" placeholder="jhon.doe@mail.com">
+
+            <label for="birth-date">Fecha de nacimiento</label>
+            <input formControlName="birthDate" type="date" id="birth-date" name="birth-date" class="form-control" mdbInput>
+
+            <div class="form-row mb-4 mt-4">
+              <div class="col">
+                <label for="github-url"><i class="fa fa-github-alt"></i> Github Profile</label>
+                <input formControlName="githubUrl" type="text" id="github-url" name="github-url" class="form-control"
+                  placeholder="https://github.com/JhonDoe">
+              </div>
+              <div class="col">
+                <label for="linkedin-url"><i class="fa fa-linkedin"></i> LinkedIn Profile</label>
+                <input formControlName="linkedinUrl" type="text" id="linkedin-url" name="linkedin-url" class="form-control"
+                  placeholder="https://linkedin...">
+              </div>
+            </div>
+
+            <!-- TODO: Add link to legal terms -->
+            <mdb-checkbox formControlName="terms" [default]="true">He leido y acepto los terminos y condiciones</mdb-checkbox>
+
+            <div class="w-100 text-right">
+              <button mdbBtn [disabled]="!signUpForm.valid" type="submit" gradient="purple" rounded="true" mdbWavesEffect>Unete ahora</button>
+            </div>
+
+          </form>
+        </mdb-card-text>
+      </mdb-card-body>
+    </mdb-card>
+  </div>
+</div>

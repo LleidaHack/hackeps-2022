@@ -1,0 +1,46 @@
+.top-grad {
+  background: #b993d6;
+  background: -webkit-linear-gradient(to bottom, #b993d6, #8ca6db);
+  background: linear-gradient(to bottom, #b993d6, #8ca6db);
+
+  height: 35vh;
+  width: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.controls {
+  z-index: 99;
+  padding-top: 15vh;
+}
+
+.skyline {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  opacity: 0.9;
+  z-index: 0;
+}
+
+.user-img {
+  margin: 1em;
+  margin-top: 3em;
+}
+
+.user-dashboard {
+  padding-top: 10em;
+}
+
+li {
+  border: none;
+
+  img {
+    width: 10em;
+    height: 10em;
+  }
+}
+
+

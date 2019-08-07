@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FaqsService } from './services/faqs.service';
+import { FaqsService } from './shared/services/faqs.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,6 @@ import { FaqsService } from './services/faqs.service';
 export class AppComponent {
   title = 'hackeps2019';
 
-  constructor(private faqService: FaqsService) {
-    faqService.all().subscribe(console.log);
+  constructor() {
   }
 }
