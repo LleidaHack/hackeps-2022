@@ -1,5 +1,5 @@
 import { AuthenticationService } from '../../shared/services/authentication.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { UserModel } from 'src/app/shared/models/user.model';
 
 declare var particlesJS: any;
@@ -12,6 +12,7 @@ declare var particlesJS: any;
 export class BannerComponent implements OnInit {
 
   private user: UserModel;
+  @Output() public afterLogin = new EventEmitter();
 
   constructor(private auth: AuthenticationService) { }
 
@@ -116,8 +117,24 @@ export class BannerComponent implements OnInit {
     });
   }
 
+  private isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent);
+  }
+
   public login() {
-    this.auth.redirectToLogin();
+    // if (this.isMobile()) {
+    //   try {
+        this.auth.googleSignIn().then(creds => {
+          alert(JSON.stringify(creds));
+          this.afterLogin.emit(creds &&  creds.user);
+        });
+
+      // } catch (e) {
+      //   alert(JSON.stringify(e));
+      // }
+    // } else {
+    //   this.auth.redirectToLogin();
+    // }
   }
 
 }

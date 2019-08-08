@@ -22,12 +22,12 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  private async checkAndRedirect(user: UserModel) {
+  public async checkAndRedirect(user: UserModel) {
     if (!user) {
       this.loading = false;
       return;
     }
-
+    alert(user);
     if (await this.auth.isRegistered(user)) {
       this.router.navigateByUrl('/user');
     } else {

@@ -48,10 +48,16 @@ export class AuthenticationService {
     return await this.afAuth.auth.getRedirectResult();
   }
 
-  async googleSignIn() {
-   const provider = new auth.GoogleAuthProvider();
-   const credential = await this.afAuth.auth.signInWithPopup(provider);
-   return this.updateUserData(credential.user);
+  public async googleSignIn(): Promise<auth.UserCredential> {
+    try {
+      const provider = new auth.GoogleAuthProvider();
+      provider.addScope('profile');
+      provider.addScope('email');
+      const creds = await this.afAuth.auth.signInWithPopup(provider);
+      return creds;
+    } catch (e) {
+      alert(JSON.stringify(e));
+    }
   }
 
   public async signOut() {
