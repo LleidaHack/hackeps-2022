@@ -117,24 +117,7 @@ export class BannerComponent implements OnInit {
     });
   }
 
-  private isMobile() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent);
-  }
-
   public login() {
-    // if (this.isMobile()) {
-    //   try {
-        this.auth.googleSignIn().then(creds => {
-          alert(JSON.stringify(creds));
-          this.afterLogin.emit(creds &&  creds.user);
-        });
-
-      // } catch (e) {
-      //   alert(JSON.stringify(e));
-      // }
-    // } else {
-    //   this.auth.redirectToLogin();
-    // }
+    this.auth.redirectToLogin();
   }
-
 }

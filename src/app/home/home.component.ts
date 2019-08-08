@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
     this.loading = true;
     this.auth.loginAfterRedirect().then(creds => {
       this.checkAndRedirect(creds.user);
-    });
+    }).catch(e => alert(JSON.stringify(e)));
   }
 
   public async checkAndRedirect(user: UserModel) {
@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
       this.loading = false;
       return;
     }
-    alert(user);
+
     if (await this.auth.isRegistered(user)) {
       this.router.navigateByUrl('/user');
     } else {
