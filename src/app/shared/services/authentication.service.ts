@@ -24,15 +24,6 @@ export class AuthenticationService {
         return { uid, email, displayName, photoURL };
       })
     );
-    // .pipe(
-    //   switchMap(user => {
-    //     if (user) {
-    //       return this.afStore.doc<UserModel>(`users/${user.uid}`).valueChanges();
-    //     } else {
-    //       return of(null);
-    //     }
-    //   })
-    // );
   }
 
   public isLoggedIn(): boolean {
@@ -41,17 +32,23 @@ export class AuthenticationService {
 
   public redirectToLogin() {
     const provider = new auth.GoogleAuthProvider();
-    this.afAuth.auth.signInWithRedirect(provider);
+    return this.afAuth.auth.signInWithRedirect(provider);
   }
 
   public async loginAfterRedirect() {
     return await this.afAuth.auth.getRedirectResult();
   }
 
-  async googleSignIn() {
-   const provider = new auth.GoogleAuthProvider();
-   const credential = await this.afAuth.auth.signInWithPopup(provider);
-   return this.updateUserData(credential.user);
+  public async googleSignIn(): Promise<auth.UserCredential> {
+    try {
+      const provider = new auth.GoogleAuthProvider();
+      provider.addScope('profile');
+      provider.addScope('email');
+      const creds = await this.afAuth.auth.signInWithPopup(provider);
+      return creds;
+    } catch (e) {
+      alert(JSON.stringify(e));
+    }
   }
 
   public async signOut() {
@@ -75,7 +72,6 @@ export class AuthenticationService {
   public async isRegistered(user: UserModel) {
     const userRef = this.afStore.doc(`users/${user.uid}`);
     const snapshot = await userRef.get().toPromise();
-    console.log(snapshot.data);
     return snapshot.exists;
   }
 }

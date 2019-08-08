@@ -23,3 +23,9 @@
 .container {
   margin-top: 10em;
 }
+
+@media (max-width: 576px) {
+  .container {
+    margin-top: 1em;
+  }
+}
