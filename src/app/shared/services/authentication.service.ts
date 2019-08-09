@@ -56,17 +56,11 @@ export class AuthenticationService {
     return this.router.navigate(['/']);
   }
 
-  public updateUserData({ uid, email, displayName, photoURL }: User) {
-    const userRef: AngularFirestoreDocument<User> = this.afStore.doc(`users/${uid}`);
+  public updateUserData(user: UserModel) {
+    const userRef: AngularFirestoreDocument<UserModel> =
+      this.afStore.doc(`users/${user.uid}`);
 
-    const data = {
-      uid,
-      email,
-      displayName,
-      photoURL
-    };
-
-    return userRef.set(data as User, { merge: true });
+    return userRef.set(user, { merge: true });
   }
 
   public async isRegistered(user: UserModel) {

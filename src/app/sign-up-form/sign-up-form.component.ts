@@ -2,6 +2,8 @@ import { AuthenticationService } from './../shared/services/authentication.servi
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { UrlValidator } from '../shared/validators/url.validator';
+import { UserModel } from '../shared/models/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up-form',
@@ -9,12 +11,14 @@ import { UrlValidator } from '../shared/validators/url.validator';
   styleUrls: ['./sign-up-form.component.scss']
 })
 export class SignUpFormComponent implements OnInit {
+  public loading = true;
   public signUpForm: FormGroup;
-  // public terms = false;
+  private user: UserModel;
 
   constructor(
     private fb: FormBuilder,
-    private auth: AuthenticationService) {
+    private auth: AuthenticationService,
+    private router: Router) {
     this.signUpForm = this.fb.group({
       fullName:     ['', Validators.compose([Validators.required,
                                              Validators.minLength(10)])],
@@ -34,6 +38,7 @@ export class SignUpFormComponent implements OnInit {
   ngOnInit() {
     this.auth.user$.subscribe(user => {
       if (user) {
+        this.user = user;
         this.signUpForm.get('email')
           .setValue(user.email);
         this.signUpForm.get('nickname')
@@ -45,5 +50,18 @@ export class SignUpFormComponent implements OnInit {
   }
 
   public onSubmit() {
+    this.loading = true;
+    const formData = this.signUpForm.value;
+    formData.uid = this.user.uid;
+    formData.photoURL = this.user.photoURL;
+    formData.displayName = this.user.displayName;
+    this.auth.updateUserData(formData as UserModel)
+      .then(() => {
+        this.loading = false;
+        this.router.navigateByUrl('/user');
+      })
+      .catch(e => {
+        alert(JSON.stringify(e));
+      });
   }
 }

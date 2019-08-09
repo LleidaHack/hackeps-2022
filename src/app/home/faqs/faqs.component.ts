@@ -16,7 +16,7 @@ export class FaqsComponent implements OnInit {
   ngOnInit() {
     this.faqService.all()
       .subscribe(faqs => {
-        this.faqs = faqs.sort((a, b) => a.answer.length - b.answer.length);
+        this.faqs = faqs;
       });
   }
 

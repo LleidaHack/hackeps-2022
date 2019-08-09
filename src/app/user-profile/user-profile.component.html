@@ -4,12 +4,14 @@
   </div>
 
   <div class="row mt-4">
-    <div class="col-lg-3 col-xl-3 col-md-3 col-sm-12">
+    <div class="col-lg-3 col-md-3 col-sm-12">
       <div class="user-img p-4">
         <img src="{{ user?.photoURL }}" class="img-fluid z-depth-3 rounded-circle" alt="{{ user?.displayName }}-avatar">
       </div>
     </div>
-    <div class="user-dashboard col-9 pr-4 pl-4 pb-4">
+    <div class="user-dashboard col-lg-9 col-md-9 col-sm-12 pr-4 pl-4 pb-4">
+      <div class="d-none d-sm-none d-lg-block d-md-block separator"></div>
+
       <mdb-card class="mb-3">
         <mdb-card-body>
           <mdb-card-title>

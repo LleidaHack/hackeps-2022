@@ -31,7 +31,11 @@
 }
 
 .user-dashboard {
-  padding-top: 10em;
+
+}
+
+.separator {
+  margin-top: 9em;
 }
 
 li {
@@ -44,3 +48,14 @@ li {
 }
 
 
+@media (max-width: 576px) {
+  .user-img {
+    margin-right: 5em;
+    margin-left: 5em;
+    margin-top: .0em;
+  }
+
+  .top-grad {
+    height: 20vh;
+  }
+}
