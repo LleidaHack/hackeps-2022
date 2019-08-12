@@ -26,6 +26,7 @@ import { CalendarComponent } from './home/calendar/calendar.component';
 import { LoadingOverlayComponent } from './shared/loading-overlay/loading-overlay.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
+import { ProfileUpdaterFormComponent } from './user-profile/profile-updater-form/profile-updater-form.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
     CalendarComponent,
     LoadingOverlayComponent,
     UserProfileComponent,
-    SignUpFormComponent
+    SignUpFormComponent,
+    ProfileUpdaterFormComponent
   ],
   imports: [
     BrowserModule,

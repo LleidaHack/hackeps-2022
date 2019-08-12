@@ -14,8 +14,10 @@ export class UserProfileComponent implements OnInit {
   constructor(private auth: AuthenticationService) { }
 
   ngOnInit() {
-    this.auth.user$
-      .subscribe(u => this.user = u);
+    this.auth.user$.subscribe(user => {
+      this.auth.fetchUserData(user.uid)
+        .subscribe(u => this.user = u);
+    });
   }
 
 }

@@ -38,8 +38,12 @@
   margin-top: 9em;
 }
 
-li {
+.team-member {
   border: none;
+
+  width: 10em;
+  height: 10em;
+  margin: auto;
 
   img {
     width: 10em;
@@ -47,8 +51,27 @@ li {
   }
 }
 
+@media (min-width: 576px) {
+  .user-img {
+    img {
+      height: 10em;
+      display: block;
+      margin: auto;
+    }
+  }
+}
 
-@media (max-width: 576px) {
+@media (min-width: 980px) {
+  .user-img {
+    img {
+      height: 100%;
+      display: block;
+      margin: auto;
+    }
+  }
+}
+
+@media (max-width: 980px) {
   .user-img {
     margin-right: 5em;
     margin-left: 5em;

@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./sign-up-form.component.scss']
 })
 export class SignUpFormComponent implements OnInit {
-  public loading = true;
+  public loading = false;
   public signUpForm: FormGroup;
   private user: UserModel;
 

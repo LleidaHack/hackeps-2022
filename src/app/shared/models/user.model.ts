@@ -4,8 +4,8 @@ export interface UserModel {
   photoURL?: string;
   displayName?: string;
   fullName?: string;
-  nickName?: string;
+  nickname?: string;
   birthDate?: Date;
   githubUrl?: string;
-  linkedInUrl?: string;
+  linkedinUrl?: string;
 }

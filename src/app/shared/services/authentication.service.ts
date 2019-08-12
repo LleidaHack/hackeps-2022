@@ -7,7 +7,8 @@ import {auth, User} from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import {
   AngularFirestore,
-  AngularFirestoreDocument
+  AngularFirestoreDocument,
+  DocumentSnapshot
 } from '@angular/fire/firestore';
 
 @Injectable({ providedIn: 'root' })
@@ -28,6 +29,16 @@ export class AuthenticationService {
 
   public isLoggedIn(): boolean {
     return this.afAuth.auth.currentUser != null;
+  }
+
+  public fetchUserData(uid): Observable<UserModel> {
+    const userRef: AngularFirestoreDocument<UserModel> =
+      this.afStore.doc(`users/${uid}`);
+    return userRef.get().pipe(
+      map((snapshot: DocumentSnapshot<UserModel>) => {
+        return snapshot.data();
+      })
+    );
   }
 
   public redirectToLogin() {
