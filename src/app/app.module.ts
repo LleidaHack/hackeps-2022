@@ -27,6 +27,7 @@ import { LoadingOverlayComponent } from './shared/loading-overlay/loading-overla
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 import { ProfileUpdaterFormComponent } from './user-profile/profile-updater-form/profile-updater-form.component';
+import { TeamBuildComponent } from './user-profile/team-build/team-build.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ProfileUpdaterFormComponent } from './user-profile/profile-updater-form
     LoadingOverlayComponent,
     UserProfileComponent,
     SignUpFormComponent,
-    ProfileUpdaterFormComponent
+    ProfileUpdaterFormComponent,
+    TeamBuildComponent
   ],
   imports: [
     BrowserModule,

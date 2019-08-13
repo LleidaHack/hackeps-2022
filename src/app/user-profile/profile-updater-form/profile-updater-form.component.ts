@@ -1,5 +1,5 @@
 import { AuthenticationService } from './../../shared/services/authentication.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UrlValidator } from 'src/app/shared/validators/url.validator';
 import { UserModel } from 'src/app/shared/models/user.model';
@@ -9,8 +9,10 @@ import { UserModel } from 'src/app/shared/models/user.model';
   templateUrl: './profile-updater-form.component.html',
   styleUrls: ['./profile-updater-form.component.scss']
 })
-export class ProfileUpdaterFormComponent implements OnInit {
+export class ProfileUpdaterFormComponent implements OnInit, OnChanges {
+
   @Input() public user: UserModel;
+  @Output() public loading = new EventEmitter<boolean>();
   public profileUpdaterForm: FormGroup;
 
   constructor(
@@ -31,8 +33,11 @@ export class ProfileUpdaterFormComponent implements OnInit {
     });
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    // this.user = changes.user.currentValue;
+  }
+
   ngOnInit() {
-    console.log(this.user);
 
     this.profileUpdaterForm.get('nickname')
       .setValue(this.user.nickname);
@@ -49,12 +54,14 @@ export class ProfileUpdaterFormComponent implements OnInit {
   }
 
   public onSubmit() {
+    this.loading.emit(true);
     const formData = this.profileUpdaterForm.value;
     formData.uid = this.user.uid;
     formData.photoURL = this.user.photoURL;
     formData.displayName = this.user.displayName;
     this.auth.updateUserData(formData as UserModel)
       .then(() => {
+        this.loading.emit(false);
       })
       .catch(e => {
         alert(JSON.stringify(e));
