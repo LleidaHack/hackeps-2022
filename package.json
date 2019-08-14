@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --base-href ./",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -22,6 +22,7 @@
     "@angular/router": "~8.1.1",
     "@fortawesome/fontawesome-free": "^5.2.0",
     "angular-bootstrap-md": "^8.0.0",
+    "angular-cli-ghpages": "^0.6.0-rc.2",
     "chart.js": "^2.5.0",
     "firebase": "^6.3.0",
     "font-awesome": "^4.7.0",

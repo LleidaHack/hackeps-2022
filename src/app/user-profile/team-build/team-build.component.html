@@ -8,7 +8,7 @@
       <div *ngIf="team" class="row justify-content-center">
         <div *ngFor="let m of [team?.creator].concat(team?.members); let i = index" class="col-4 ">
           <div class="team-member view overlay">
-            <img src="{{ m?.photoURL || '/assets/no-user.png' }}" class="img-fluid rounded-circle"
+            <img src="{{ m?.photoURL || 'assets/no-user.png' }}" class="img-fluid rounded-circle"
               alt="team-member-{{ i }}">
             <div *ngIf="user" class="mask flex-center waves-effect waves-light rgba-purple-light rounded-circle">
               <p class="white-text display-4 text-center">{{ m?.nickname }}</p>

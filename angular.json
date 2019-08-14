@@ -123,8 +123,13 @@
               "devServerTarget": "hackeps2019:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "hackeps2019"
 }
