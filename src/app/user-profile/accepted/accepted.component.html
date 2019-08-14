@@ -1,0 +1,32 @@
+<mdb-card>
+  <mdb-card-body>
+    <mdb-card-title>
+      <h5 class="montserrat"><i class="fa fa-flag" aria-hidden="true"></i> ADMISIÓN</h5>
+      <h6 class="text-muted mb-2"> Comprueba aquí si has sido aceptado como participante de la HackEPS 2019</h6>
+    </mdb-card-title>
+    <mdb-card-text>
+      <div class="admission-wrapper text-center p-4">
+        <div *ngIf="user?.accepted === 'PENDENT'">
+          <h3 class="montserrat display-4 pendent">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            Todavía tenemos que valorar tu petición
+          </h3>
+        </div>
+
+        <div *ngIf="user?.accepted === 'YES'">
+          <h3 class="montserrat display-4 yes">
+            <i class="fa-check-circle-o" aria-hidden="true"></i>
+            Felicidades! Has sido admitido como participante a la Hackeps 2019
+          </h3>
+        </div>
+
+        <div *ngIf="user?.accepted === 'NO'">
+          <h3 class="montserrat display-4 no">
+            <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+            Lo sentimos... No has sido admitido a la HackEPS 2019
+          </h3>
+        </div>
+      </div>
+    </mdb-card-text>
+  </mdb-card-body>
+</mdb-card>

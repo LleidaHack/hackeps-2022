@@ -8,4 +8,5 @@ export interface UserModel {
   birthDate?: Date;
   githubUrl?: string;
   linkedinUrl?: string;
+  accepted?: string;
 }

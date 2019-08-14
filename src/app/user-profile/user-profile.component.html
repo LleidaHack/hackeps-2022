@@ -4,7 +4,7 @@
     <img class="skyline" src="/assets/skyline.svg">
   </div>
 
-  <div class="row mt-4 justify-content-center">
+  <div class="row mt-4 pr-3 justify-content-center">
     <div class="col-lg-3 col-md-12 col-sm-12">
       <div class="user-img pr-4 pl-4 pt-4">
         <img src="{{ user?.photoURL }}" class="img-fluid z-depth-3 rounded-circle" alt="{{ user?.displayName }}-avatar">
@@ -22,6 +22,10 @@
         <app-team-build [user]="user"></app-team-build>
       </div>
 
+      <div *ngIf="user" class="mb-4">
+        <app-accepted [user]="user"></app-accepted>
+      </div>
+
       <mdb-card class="mb-4">
         <mdb-card-body>
           <mdb-card-title>
@@ -29,7 +33,7 @@
             <h6 class="text-muted mb-2">Sube aquí los retos resueltos del calendario</h6>
           </mdb-card-title>
           <mdb-card-text>
-
+            <h3 class="montserrat display-4 text-center">Coming soon...</h3>
           </mdb-card-text>
         </mdb-card-body>
       </mdb-card>

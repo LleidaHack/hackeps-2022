@@ -28,6 +28,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 import { ProfileUpdaterFormComponent } from './user-profile/profile-updater-form/profile-updater-form.component';
 import { TeamBuildComponent } from './user-profile/team-build/team-build.component';
+import { AcceptedComponent } from './user-profile/accepted/accepted.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { TeamBuildComponent } from './user-profile/team-build/team-build.compone
     UserProfileComponent,
     SignUpFormComponent,
     ProfileUpdaterFormComponent,
-    TeamBuildComponent
+    TeamBuildComponent,
+    AcceptedComponent
   ],
   imports: [
     BrowserModule,

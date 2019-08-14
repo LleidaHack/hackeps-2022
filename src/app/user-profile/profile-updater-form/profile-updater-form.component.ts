@@ -59,6 +59,8 @@ export class ProfileUpdaterFormComponent implements OnInit, OnChanges {
     formData.uid = this.user.uid;
     formData.photoURL = this.user.photoURL;
     formData.displayName = this.user.displayName;
+    formData.accepted = this.user.accepted || 'PENDENT';
+
     this.auth.updateUserData(formData as UserModel)
       .then(() => {
         this.loading.emit(false);

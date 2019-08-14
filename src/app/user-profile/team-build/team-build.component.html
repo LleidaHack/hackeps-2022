@@ -5,25 +5,41 @@
       <h6 class="text-muted mb-2">Crea el mejor equipo posible</h6>
     </mdb-card-title>
     <mdb-card-text>
-      <ul class="list-group list-group-horizontal">
-        <div *ngFor="let i of [1, 2, 3]" class="col-4 p-lg-4">
+      <div *ngIf="team" class="row justify-content-center">
+        <div *ngFor="let m of [team?.creator].concat(team?.members); let i = index" class="col-4 ">
           <div class="team-member view overlay">
-            <img src="{{ user?.photoURL }}" class="img-fluid rounded-circle" alt="team-member-{{ i }}">
-            <div class="mask flex-center waves-effect waves-light rgba-purple-light rounded-circle">
-              <p class="white-text">{{ user?.nickname }}</p>
+            <img src="{{ m?.photoURL || '/assets/no-user.png' }}" class="img-fluid rounded-circle"
+              alt="team-member-{{ i }}">
+            <div *ngIf="user" class="mask flex-center waves-effect waves-light rgba-purple-light rounded-circle">
+              <p class="white-text display-4 text-center">{{ m?.nickname }}</p>
             </div>
           </div>
         </div>
-      </ul>
+      </div>
+      <div *ngIf="!team" class="no-team text-center p-4">
+        <h3 class="montserrat grey-text display-4">
+          ¿Todavía no tienes equipo?
+        </h3>
+        <p class="text-muted">Crea uno o unete a tus amigos</p>
+      </div>
     </mdb-card-text>
-    <a href="#!" class="card-link"><i class="fa fa-sign-in" aria-hidden="true"></i> Unete a un equipo</a>
-    <a (click)="teamBuildModal.show()" class="card-link"><i class="fa fa-plus" aria-hidden="true"></i>
-      Crea un equipo</a>
+    <div *ngIf="!team">
+      <a (click)="!loadingTeam && joinTeamMoal.show()" class="card-link"><i class="fa fa-sign-in"
+          aria-hidden="true"></i>
+        Unete a un equipo</a>
+      <a (click)="!loadingTeam && teamBuildModal.show()" class="card-link"><i class="fa fa-plus" aria-hidden="true"></i>
+        Crea un equipo</a>
+    </div>
+    <div *ngIf="team" class="text-center">
+      <h3 class="display-4 team-name"><i class="fa fa-shield" aria-hidden="true"></i> {{ team.name }}</h3>
+      <small class="text-muted">Miembros: {{ this.team.members.length + 1 }}/4 </small><br>
+      <small class="text-muted">Comparte este código con tus amigos: {{ team.uid }}</small>
+    </div>
   </mdb-card-body>
 </mdb-card>
 
 
-<div mdbModal #teamBuildModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myteamBuildModalLabel"
+<div mdbModal #teamBuildModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="teamBuildModal"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -31,15 +47,49 @@
         <button type="button" class="close pull-right" aria-label="Close" (click)="teamBuildModal.hide()">
           <span aria-hidden="true">×</span>
         </button>
-        <h4 class="modal-title w-100" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title w-100" id="myModalLabel">Introduce el nombre de tu equipo</h4>
       </div>
       <div class="modal-body">
+        <p class="text-muted">
+          Introduce un nombre de equipo original. El nombre del equipo no podrá cambiarse.
+        </p>
         <input [(ngModel)]="teamName" class="form-control" placeholder="My dream team" required>
+        <small class="red-text">{{ error }}</small>
       </div>
       <div class="modal-footer">
-        <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close"
-          (click)="teamBuildModal.hide()" size="sm" mdbWavesEffect>Close</button>
-        <button type="button" size="sm" mdbBtn color="primary" class="relative waves-light" [disabled]="!this.teamName" (click)="createTeam()" mdbWavesEffect>Crear equipo</button>
+        <button type="button" mdbBtn color="danger" class="waves-light" aria-label="Close"
+          (click)="teamBuildModal.hide()" size="sm" mdbWavesEffect>Cancelar</button>
+        <button type="button" size="sm" mdbBtn color="secondary" class="relative waves-light"
+          [disabled]="!this.teamName" (click)="createTeam(teamBuildModal)" mdbWavesEffect>Crear equipo</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div mdbModal #joinTeamMoal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="joinTeamMoal"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="joinTeamMoal.hide()">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title w-100" id="myModalLabel"> <i class="fa fa-barcode" aria-hidden="true"></i>
+          Introduce el código de tu equipo</h4>
+      </div>
+      <div class="modal-body">
+        <p class="text-muted">
+          Si no sabes que código introducir aquí, pideselo al compañero que ha creado tu equipo.
+        </p>
+        <input [(ngModel)]="teamCode" class="form-control" placeholder="Code of my dream team" required>
+        <small class="red-text">{{ error }}</small>
+      </div>
+      <div class="modal-footer">
+        <button type="button" mdbBtn color="danger" class="waves-light" aria-label="Close" (click)="joinTeamMoal.hide()"
+          size="sm" mdbWavesEffect>Cancelar</button>
+        <button type="button" size="sm" mdbBtn color="secondary" class="relative waves-light"
+          [disabled]="!this.teamCode" (click)="joinTeam(joinTeamMoal)" mdbWavesEffect>Unirse al equipo</button>
       </div>
     </div>
   </div>

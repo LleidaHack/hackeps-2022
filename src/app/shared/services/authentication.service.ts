@@ -36,6 +36,10 @@ export class AuthenticationService {
       this.afStore.doc(`users/${uid}`);
     return userRef.get().pipe(
       map((snapshot: DocumentSnapshot<UserModel>) => {
+        const userData = snapshot.data();
+        if (!userData.accepted) {
+          userData.accepted = 'PENDENT';
+        }
         return snapshot.data();
       })
     );
