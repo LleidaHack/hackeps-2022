@@ -48,6 +48,15 @@ export class AuthenticationService {
       });
   }
 
+  async mailSignUp(email: string, password: string) {
+    const result = await this.afAuth.auth.createUserWithEmailAndPassword(email, password);
+    this.sendEmailVerification();
+  }
+
+  async login(email: string, password: string) {
+    var result = await this.afAuth.auth.signInWithEmailAndPassword(email, password);
+  }
+
   async googleSignIn() {
    const provider = new auth.GoogleAuthProvider();
    const credential = await this.afAuth.auth.signInWithPopup(provider);
@@ -70,6 +79,19 @@ export class AuthenticationService {
     };
 
     return userRef.set(data as User, { merge: true });
+  }
+
+  async sendEmailVerification() {
+    await this.afAuth.auth.currentUser.sendEmailVerification()
+  }
+
+  async sendPasswordResetEmail(passwordResetEmail: string) {
+    return await this.afAuth.auth.sendPasswordResetEmail(passwordResetEmail);
+  }
+
+  async logout(){
+    await this.afAuth.auth.signOut();
+    return this.router.navigate(['/']);
   }
 
 }
