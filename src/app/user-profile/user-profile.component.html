@@ -1,51 +1,56 @@
+<app-loading-overlay [show]="loading"></app-loading-overlay>
 <div class="wrapper">
   <div class="top-grad">
     <img class="skyline" src="/assets/skyline.svg">
   </div>
 
-  <div class="row mt-4">
-    <div class="col-lg-3 col-xl-3 col-md-3 col-sm-12">
-      <div class="user-img p-4">
+  <div class="row mt-4 pr-3 justify-content-center">
+    <div class="col-lg-3 col-md-12 col-sm-12">
+      <div class="user-img pr-4 pl-4 pt-4">
         <img src="{{ user?.photoURL }}" class="img-fluid z-depth-3 rounded-circle" alt="{{ user?.displayName }}-avatar">
       </div>
+      <div *ngIf="user" class="profile-updater-wrapper p-4">
+        <app-profile-updater-form class="d-none d-sm-none d-md-none d-lg-block " (loading)="loading = $event"
+          [user]="user"></app-profile-updater-form>
+      </div>
     </div>
-    <div class="user-dashboard col-9 pr-4 pl-4 pb-4">
-      <mdb-card class="mb-3">
-        <mdb-card-body>
-          <mdb-card-title>
-            <h5 class="montserrat"><i class="fa fa-users" aria-hidden="true"></i> EQUIPO</h5>
-            <h6 class="text-muted mb-2">Crea el mejor equipo posible</h6>
-          </mdb-card-title>
-          <mdb-card-text>
-            <ul class="list-group list-group-horizontal">
-              <li *ngFor="let i of [1, 2, 3]" class="list-group-item ">
-                <div class="view overlay">
-                  <img src="https://cdn.pixabay.com/photo/2017/11/05/20/58/fuchs-2921817_960_720.jpg" class="img-fluid rounded-circle"
-                    alt="team-member-{{ i }}">
-                  <div class="mask flex-center waves-effect waves-light rgba-purple-light rounded-circle">
-                    <p class="white-text">Añade un miembro</p>
-                  </div>
-                </div>
 
-              </li>
-            </ul>
-          </mdb-card-text>
-          <a href="#!" class="card-link">Card link</a>
-          <a href="#!" class="card-link">Another link</a>
-        </mdb-card-body>
-      </mdb-card>
-      <mdb-card>
+    <div class="user-dashboard col-lg-9 col-md-12 col-sm-12 pr-4 pl-4 pb-4">
+      <div class="d-none d-sm-none d-md-none d-lg-block separator"></div>
+
+      <div *ngIf="user" class="team-build-wrapper mb-4">
+        <app-team-build [user]="user"></app-team-build>
+      </div>
+
+      <div *ngIf="user" class="mb-4">
+        <app-accepted [user]="user"></app-accepted>
+      </div>
+
+      <mdb-card class="mb-4">
         <mdb-card-body>
           <mdb-card-title>
             <h5 class="montserrat"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> RETOS DEL CALENDARIO</h5>
             <h6 class="text-muted mb-2">Sube aquí los retos resueltos del calendario</h6>
           </mdb-card-title>
           <mdb-card-text>
-
+            <h3 class="montserrat display-4 text-center">Coming soon...</h3>
           </mdb-card-text>
-          <a href="#!" class="card-link">Upload</a>
         </mdb-card-body>
       </mdb-card>
+
+      <div *ngIf="user" class="d-block d-sm-block d-md-block d-lg-none ">
+        <mdb-card>
+          <mdb-card-body>
+            <mdb-card-title>
+              <h5 class="montserrat"><i class="fa fa-pencil" aria-hidden="true"></i> MODIFICA TUS DATOS</h5>
+              <h6 class="text-muted mb-2">Si te has equivocado durante el registro, modifica aquí tus datos</h6>
+            </mdb-card-title>
+            <mdb-card-text>
+              <app-profile-updater-form (loading)="loading = $event" [user]="user"></app-profile-updater-form>
+            </mdb-card-text>
+          </mdb-card-body>
+        </mdb-card>
+      </div>
     </div>
   </div>
 </div>

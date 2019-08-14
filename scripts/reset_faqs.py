@@ -29,8 +29,9 @@ def clear_collection(db, collection):
 def create_items(db, collection, data):
     """ Add multiple items to a collectoin in a single shot """
     collection = db.collection(collection)
-    for d in data:
+    for i, d in enumerate(data):
         assert isinstance(d, dict), "Only dictionaries can be inserted to a firestore collection"
+        d['order'] = i
         collection.add(d)
 
 

@@ -8,14 +8,18 @@ import { UserModel } from '../shared/models/user.model';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
-
+  public loading = true;
   public user: UserModel;
 
   constructor(private auth: AuthenticationService) { }
 
   ngOnInit() {
-    this.auth.user$
-      .subscribe(u => this.user = u);
+    this.auth.user$.subscribe(user => {
+      this.auth.fetchUserData(user.uid)
+        .subscribe(u => {
+          this.user = u;
+          this.loading = false;
+        });
+    });
   }
-
 }

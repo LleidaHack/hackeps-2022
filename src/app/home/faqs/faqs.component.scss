@@ -14,3 +14,18 @@ h4 {
   align-items: center;
   justify-content: center;
 }
+
+.horizontal-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  .card {
+    width: 20em;
+  }
+
+  .hackeps-card {
+    height: 100%;
+  }
+}

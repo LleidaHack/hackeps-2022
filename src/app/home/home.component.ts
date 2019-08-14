@@ -19,10 +19,10 @@ export class HomeComponent implements OnInit {
     this.loading = true;
     this.auth.loginAfterRedirect().then(creds => {
       this.checkAndRedirect(creds.user);
-    });
+    }).catch(e => alert(JSON.stringify(e)));
   }
 
-  private async checkAndRedirect(user: UserModel) {
+  public async checkAndRedirect(user: UserModel) {
     if (!user) {
       this.loading = false;
       return;

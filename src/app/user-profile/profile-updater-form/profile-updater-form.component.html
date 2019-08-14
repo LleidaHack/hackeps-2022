@@ -1,0 +1,26 @@
+<form [formGroup]="profileUpdaterForm" (ngSubmit)="onSubmit()">
+  <label for="full-name">Nombre completo</label>
+  <input formControlName="fullName" type="text" id="full-name" id="full-name" class="form-control mb-4" placeholder="Jhon Doe">
+
+  <label>Nickname</label>
+  <input formControlName="nickname" type="text" id="nickname" name="nickname" class="form-control mb-4" placeholder="JhonDoe6969">
+
+  <label>Correo electrónico</label>
+  <input formControlName="email" type="email" id="email" name="email" class="form-control mb-4" placeholder="jhon.doe@mail.com">
+
+  <label for="birth-date">Fecha de nacimiento</label>
+  <input formControlName="birthDate" type="date" id="birth-date" name="birth-date" class="form-control mb-4" mdbInput>
+
+  <label for="github-url"><i class="fa fa-github-alt"></i> Github Profile</label>
+  <input formControlName="githubUrl" type="text" id="github-url" name="github-url" class="form-control mb-4"
+    placeholder="https://github.com/JhonDoe">
+
+  <label for="linkedin-url"><i class="fa fa-linkedin"></i> LinkedIn Profile</label>
+  <input formControlName="linkedinUrl" type="text" id="linkedin-url" name="linkedin-url" class="form-control mb-4"
+    placeholder="https://linkedin...">
+
+  <div class="w-100 text-right">
+    <button mdbBtn [disabled]="!profileUpdaterForm.valid" type="submit" gradient="purple" rounded="true" size="sm" mdbWavesEffect>Guardar cambios</button>
+  </div>
+
+</form>
