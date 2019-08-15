@@ -53,7 +53,7 @@ export class AuthenticationService {
     this.sendEmailVerification();
   }
 
-  async login(email: string, password: string) {
+  async loginWithMailAndPassword(email: string, password: string) {
     var result = await this.afAuth.auth.signInWithEmailAndPassword(email, password);
   }
 

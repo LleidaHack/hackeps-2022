@@ -1,6 +1,8 @@
 import { AuthenticationService } from './../../services/authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { UserModel } from 'src/app/shared/models/user.model';
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+
 
 declare var particlesJS: any;
 
@@ -10,11 +12,9 @@ declare var particlesJS: any;
   styleUrls: ['./banner.component.scss']
 })
 export class BannerComponent implements OnInit {
-
   private user: UserModel;
-
+  
   constructor(private auth: AuthenticationService) { }
-
   ngOnInit() {
     particlesJS('particles-js', {
       'particles': {
@@ -115,9 +115,7 @@ export class BannerComponent implements OnInit {
       'retina_detect': true
     });
   }
-
   public login() {
     this.auth.redirectToLogin();
   }
-
 }
