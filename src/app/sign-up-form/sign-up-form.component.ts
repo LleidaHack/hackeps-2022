@@ -19,6 +19,7 @@ export class SignUpFormComponent implements OnInit {
     private fb: FormBuilder,
     private auth: AuthenticationService,
     private router: Router) {
+      // TODO: UrlValidator specific for github and linkedin
     this.signUpForm = this.fb.group({
       fullName:     ['', Validators.compose([Validators.required,
                                              Validators.minLength(10)])],
@@ -29,8 +30,7 @@ export class SignUpFormComponent implements OnInit {
       birthDate:    ['', Validators.required],
       githubUrl:    ['', Validators.compose([Validators.required,
                                              UrlValidator.url])],
-      linkedinUrl:  ['', Validators.compose([Validators.required,
-                                             UrlValidator.url])],
+      linkedinUrl:  ['', Validators.compose([UrlValidator.url])],
       terms: ['', Validators.requiredTrue]
     });
   }

@@ -6,7 +6,7 @@
     </mdb-card-title>
     <mdb-card-text>
       <div *ngIf="team" class="row justify-content-center">
-        <div *ngFor="let m of [team?.creator].concat(team?.members); let i = index" class="col-4 ">
+        <div *ngFor="let m of [team?.creator].concat(team?.members); let i = index" class="col-lg-3 col-md-3 col-sm-6 col-6 mb-4">
           <div class="team-member view overlay">
             <img src="{{ m?.photoURL || 'assets/no-user.png' }}" class="img-fluid rounded-circle"
               alt="team-member-{{ i }}">
@@ -80,7 +80,7 @@
       </div>
       <div class="modal-body">
         <p class="text-muted">
-          Si no sabes que código introducir aquí, pideselo al compañero que ha creado tu equipo.
+          Si no sabes que código introducir aquí, pídeselo al compañero que ha creado tu equipo.
         </p>
         <input [(ngModel)]="teamCode" class="form-control" placeholder="Code of my dream team" required>
         <small class="red-text">{{ error }}</small>

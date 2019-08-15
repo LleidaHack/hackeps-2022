@@ -18,6 +18,7 @@ export class ProfileUpdaterFormComponent implements OnInit, OnChanges {
   constructor(
     private auth: AuthenticationService,
     private fb: FormBuilder) {
+    // TODO: UrlValidator specific for github and linkedin
     this.profileUpdaterForm = this.fb.group({
       fullName:     ['', Validators.compose([Validators.required,
                                              Validators.minLength(10)])],
@@ -28,8 +29,7 @@ export class ProfileUpdaterFormComponent implements OnInit, OnChanges {
       birthDate:    ['', Validators.required],
       githubUrl:    ['', Validators.compose([Validators.required,
                                              UrlValidator.url])],
-      linkedinUrl:  ['', Validators.compose([Validators.required,
-                                             UrlValidator.url])],
+      linkedinUrl:  ['', Validators.compose([UrlValidator.url])],
     });
   }
 

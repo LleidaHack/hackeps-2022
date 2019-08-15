@@ -9,13 +9,13 @@
       <div class="user-img pr-4 pl-4 pt-4">
         <img src="{{ user?.photoURL }}" class="img-fluid z-depth-3 rounded-circle" alt="{{ user?.displayName }}-avatar">
       </div>
-      <div *ngIf="user" class="profile-updater-wrapper p-4">
-        <app-profile-updater-form class="d-none d-sm-none d-md-none d-lg-block " (loading)="loading = $event"
+      <div *ngIf="user" class="profile-updater-wrapper p-4 d-none d-sm-none d-md-none d-lg-block " >
+        <app-profile-updater-form (loading)="loading = $event"
           [user]="user"></app-profile-updater-form>
       </div>
     </div>
 
-    <div class="user-dashboard col-lg-9 col-md-12 col-sm-12 pr-4 pl-4 pb-4">
+    <div class="user-dashboard col-lg-9 col-md-12 col-sm-12 pt-4 pr-md-4 pr-2 pr-lg-4 pl-4 pb-4">
       <div class="d-none d-sm-none d-md-none d-lg-block separator"></div>
 
       <div *ngIf="user" class="team-build-wrapper mb-4">
