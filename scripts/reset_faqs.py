@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import json
 from pathlib import Path
 
@@ -15,7 +16,7 @@ def database_instance():
 
 def load_faqs(assets_path):
     """ Read faqs json file """
-    with assets_path.joinpath('faqs.json').open() as f:
+    with assets_path.joinpath('faqs.json').open(encoding='utf-8') as f:
         return json.load(f)
 
 
@@ -27,7 +28,7 @@ def clear_collection(db, collection):
 
 
 def create_items(db, collection, data):
-    """ Add multiple items to a collectoin in a single shot """
+    """ Add multiple items to a collection in a single shot """
     collection = db.collection(collection)
     for i, d in enumerate(data):
         assert isinstance(d, dict), "Only dictionaries can be inserted to a firestore collection"

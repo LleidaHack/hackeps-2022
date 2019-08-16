@@ -26,22 +26,54 @@
 
             <div class="row mb-4 mt-4">
               <div class="col-sm-12 col-lg-6 col-md-6 mb-4">
-                <label for="github-url"><i class="fa fa-github-alt"></i> Github Profile</label>
+                <label for="github-url"><i class="fab fa-github-alt"></i> Github Profile</label>
                 <input formControlName="githubUrl" type="text" id="github-url" name="github-url" class="form-control"
                   placeholder="https://github.com/JhonDoe">
               </div>
               <div class="col-sm-12 col-lg-6 col-md-6">
-                <label for="linkedin-url"><i class="fa fa-linkedin"></i> LinkedIn Profile</label>
+                <label for="linkedin-url"><i class="fab fa-linkedin"></i> LinkedIn Profile</label>
                 <input formControlName="linkedinUrl" type="text" id="linkedin-url" name="linkedin-url" class="form-control"
                   placeholder="https://linkedin...">
               </div>
             </div>
 
+            <label><i class="fas fa-tshirt"></i> Talla camiseta</label>
+            <div class="mb-4 ml-4">
+
+              <div class="custom-control custom-radio custom-control-inline">
+                <input value="S" formControlName="shirtSize" type="radio" class="custom-control-input" id="s-size" name="inlineDefaultRadiosExample" mdbInput>
+                <label class="custom-control-label" for="s-size">S</label>
+              </div>
+
+              <div class="custom-control custom-radio custom-control-inline">
+                <input value="M" formControlName="shirtSize" type="radio" class="custom-control-input" id="m-size" name="inlineDefaultRadiosExample" mdbInput>
+                <label class="custom-control-label" for="m-size">M</label>
+              </div>
+
+              <div class="custom-control custom-radio custom-control-inline">
+                <input value="L" formControlName="shirtSize" type="radio" class="custom-control-input" id="l-size" name="inlineDefaultRadiosExample" mdbInput>
+                <label class="custom-control-label" for="l-size">L</label>
+              </div>
+
+              <div class="custom-control custom-radio custom-control-inline">
+                <input value="XL" formControlName="shirtSize" type="radio" class="custom-control-input" id="xl-size" name="inlineDefaultRadiosExample" mdbInput>
+                <label class="custom-control-label" for="xl-size">XL</label>
+              </div>
+
+              <div class="custom-control custom-radio custom-control-inline">
+                <input value="XXL" formControlName="shirtSize" type="radio" class="custom-control-input" id="xxl-size" name="inlineDefaultRadiosExample" mdbInput>
+                <label class="custom-control-label" for="xxl-size">XXL</label>
+              </div>
+            </div>
+
+            <label>Alérgenos </label>
+            <textarea formControlName="food" type="text" id="food" name="food" class="form-control mb-4" placeholder="Pescado, lechuga..."></textarea>
+
             <!-- TODO: Add link to legal terms -->
-            <mdb-checkbox formControlName="terms" [default]="true">He leido y acepto los terminos y condiciones</mdb-checkbox>
+            <mdb-checkbox formControlName="terms" [default]="true">He leído y acepto los terminos y condiciones</mdb-checkbox>
 
             <div class="w-100 text-right">
-              <button mdbBtn [disabled]="!signUpForm.valid" type="submit" gradient="purple" rounded="true" mdbWavesEffect>Unete ahora</button>
+              <button mdbBtn [disabled]="!signUpForm.valid" type="submit" gradient="purple" rounded="true" mdbWavesEffect>Únete ahora</button>
             </div>
 
           </form>

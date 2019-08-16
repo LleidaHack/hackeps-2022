@@ -9,4 +9,6 @@ export interface UserModel {
   githubUrl?: string;
   linkedinUrl?: string;
   accepted?: string;
+  food?: string;
+  shirtSize?: string;
 }

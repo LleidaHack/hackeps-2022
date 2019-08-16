@@ -19,8 +19,8 @@ export class FaqsService {
     return this.faqsCollection.get().pipe(
       map(value => {
         const result = [];
-        value.forEach(d => result.push(d.data()))
-        return result;
+        value.forEach(d => result.push(d.data()));
+        return result.sort((a, b) => a.order - b.order);
       })
     );
   }

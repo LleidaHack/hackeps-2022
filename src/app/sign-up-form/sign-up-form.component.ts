@@ -30,8 +30,10 @@ export class SignUpFormComponent implements OnInit {
       birthDate:    ['', Validators.required],
       githubUrl:    ['', Validators.compose([Validators.required,
                                              UrlValidator.url])],
-      linkedinUrl:  ['', Validators.compose([UrlValidator.url])],
-      terms: ['', Validators.requiredTrue]
+      linkedinUrl:  ['', UrlValidator.url],
+      terms: ['', Validators.requiredTrue],
+      shirtSize: ['S'],
+      food: [''],
     });
   }
 

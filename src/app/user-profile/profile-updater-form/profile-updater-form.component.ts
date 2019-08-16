@@ -30,11 +30,12 @@ export class ProfileUpdaterFormComponent implements OnInit, OnChanges {
       githubUrl:    ['', Validators.compose([Validators.required,
                                              UrlValidator.url])],
       linkedinUrl:  ['', Validators.compose([UrlValidator.url])],
+      food: [''],
+      shirtSize: [''],
     });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    // this.user = changes.user.currentValue;
   }
 
   ngOnInit() {
@@ -51,6 +52,10 @@ export class ProfileUpdaterFormComponent implements OnInit, OnChanges {
       .setValue(this.user.githubUrl);
     this.profileUpdaterForm.get('linkedinUrl')
       .setValue(this.user.linkedinUrl);
+    this.profileUpdaterForm.get('food')
+      .setValue(this.user.food);
+    this.profileUpdaterForm.get('shirtSize')
+      .setValue(this.user.shirtSize);
   }
 
   public onSubmit() {
