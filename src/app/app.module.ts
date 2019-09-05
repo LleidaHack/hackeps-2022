@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 // Components
 import { AppComponent } from './app.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 // Firebase
 import { AngularFireModule } from '@angular/fire';
@@ -14,12 +15,13 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { environment } from '../environments/environment';
-import { CalendarComponent } from './calendar/calendar.component';
+import { TitleCasePipe } from 'src/assets/utils/pipes/titleCasePipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CalendarComponent
+    CalendarComponent,
+    TitleCasePipe
   ],
   imports: [
     BrowserModule,

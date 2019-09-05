@@ -1,14 +1,20 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Subject, BehaviorSubject } from 'rxjs';
+
+import { ChallengeService } from './../services/challenge.service';
+import { DataProcesingEvent } from '../../assets/models/Events';
+import { Challenge, dummyChallenge } from './../../assets/models/Challenge';
 
 import * as moment from 'moment';
 import * as _ from 'lodash';
-import { Subject, BehaviorSubject } from 'rxjs';
 
 export interface CalendarDate {
   mDate: moment.Moment;
   selected?: boolean;
   today?: boolean;
 }
+
+moment.locale('es')
 
 @Component({
   selector: 'app-calendar',
@@ -22,12 +28,17 @@ export class CalendarComponent implements OnInit, OnChanges {
   sortedDates: CalendarDate[] = [];
   selectedDays: Array<CalendarDate> = [];
 
+  event1 = DataProcesingEvent;
+  challenge: Challenge = dummyChallenge;
+
   $dateSelection: BehaviorSubject<CalendarDate> = new BehaviorSubject(null);
 
   @Input() selectedDates: CalendarDate[] = [];
   @Output() onSelectDate = new EventEmitter<CalendarDate>();
 
-  constructor() {
+  constructor(
+    public challengeService: ChallengeService
+  ) {
     this.$dateSelection.subscribe(datePicked => {
       this.weeks.forEach(week => {
         week.forEach(day => {
@@ -76,10 +87,16 @@ export class CalendarComponent implements OnInit, OnChanges {
     if (this.retrieveSelection(date)) return;
     this.$dateSelection.next(date);
     this.onSelectDate.emit(date);
+    var hearChallenges: Subject<firebase.firestore.DocumentData> = this.challengeService.checkChallenges(date);
+    
+    hearChallenges.subscribe( data => {
+      this.challenge = this.challengeService.formatChallenge(data);
+    });
   }
 
   retrieveSelection(datePicked: CalendarDate) {
     if (this.selectedDays.length < 1) return;
+    this.challenge = dummyChallenge;
     var lastSelection: CalendarDate = this.selectedDays[this.selectedDays.length - 1];
     if (lastSelection.mDate.isSame(datePicked.mDate) && lastSelection.selected == true) {
       this.selectedDays.pop().selected = false;
@@ -92,6 +109,7 @@ export class CalendarComponent implements OnInit, OnChanges {
   clearSelection() {
     if (this.selectedDays.length < 1) return;
     this.selectedDays.pop().selected = false;
+    this.challenge = dummyChallenge;
   }
 
   // actions from calendar

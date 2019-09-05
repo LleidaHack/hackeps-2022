@@ -4,7 +4,7 @@
       <a class="limited-area unselectable" (click)="prevMonth()" type="button" color="default" rounded="true" mdbWavesEffect>
         <img class="previous-month" src="../../assets/media/month-arrow.svg" alt="previous-month">
       </a>
-      <span class="h3 p4 mt-4 unselectable">{{ currentDate.format('MMMM') }}</span>
+      <span class="h3 p4 mt-4 unselectable month-title">{{ currentDate.format('MMMM') | titleCasePipe }}</span>
       <a class="unselectable" (click)="nextMonth()" type="button" color="default" rounded="true" mdbWavesEffect>
         <img class="previous-month flip-y-axis" src="../../assets/media/month-arrow.svg" alt="previous-month">
       </a>
@@ -15,12 +15,16 @@
       <button (click)="nextYear()">&gt;</button>
     </div> -->
   </div>
-  <div class="day-info-banner" style="text-align: center" [ngClass]="{ 'day-info-banner-on': this.selectedDays.length >= 1 }">
-    <br>
-    <br>
+  <div class="challenge-container" [ngClass]="{ 'challenge-container-on': this.challenge.title != '' }">
     <span>
-      SPECIAL BANNER:
-      DAY INFO GOES HERE
+      <div class="challenge-title-container">
+        <b class="challenge-title">{{ challenge.title }}</b>
+        <a class="challenge-link" href="{{ this.challenge.link }}" target="_blank" *ngIf="this.challenge.title != ''">
+          >> Ir al reto! &lt;&lt;
+        </a>
+      </div>
+      <p class="challenge-description">{{ challenge.description }}</p>
+      {{ challenge.example }}
     </span>
     <br>
     <br>
