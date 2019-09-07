@@ -51,7 +51,8 @@
 @media (min-width: 980px) {
   .user-img {
     img {
-      height: 100%;
+      height: auto;
+      width: 100%;
       display: block;
       margin: auto;
     }
