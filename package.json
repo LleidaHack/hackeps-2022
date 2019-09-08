@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod --base-href ./",
+    "deploy": "npm run build && ngh --dir dist/hackeps2019/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
