@@ -15,12 +15,20 @@
   z-index: 2;
 }
 
-button {
+.banner-button {
   position: absolute;
-  top: 60%;
-  left: 50%;
   transform: translate(-50%, 50%);
   z-index: 2;
+}
+
+.signUp-button {
+  top: 60%;
+  left: 57%;
+}
+
+.signIn-button {
+  top: 60%;
+  left: 45%;
 }
 
 .skyline {

@@ -14,7 +14,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 
 // MDBBootstrap
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { environment } from '../environments/environment';
 
 import { BannerComponent } from './home/banner/banner.component';
@@ -51,6 +51,7 @@ import { AcceptedComponent } from './user-profile/accepted/accepted.component';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    FontAwesomeModule,
 
     // Bootstrap
     MDBBootstrapModule.forRoot(),

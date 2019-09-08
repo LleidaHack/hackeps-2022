@@ -1,8 +1,9 @@
 import { AuthenticationService } from '../../shared/services/authentication.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { UserModel } from 'src/app/shared/models/user.model';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { faEnvelope, faLock, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faGooglePlusG } from '@fortawesome/free-brands-svg-icons' 
 
 declare var particlesJS: any;
 
@@ -12,11 +13,25 @@ declare var particlesJS: any;
   styleUrls: ['./banner.component.scss']
 })
 export class BannerComponent implements OnInit {
+  // FontAwesome
+  private faEnvelope = faEnvelope;
+  private faLock = faLock;
+  private faPlus = faPlus;
+  private faGooglePlusG = faGooglePlusG;
+
   private user: UserModel;
+  private validatingForm: FormGroup;
+  private showConfirmPassword: boolean;
+  private signIn: boolean;
   @Output() public afterLogin = new EventEmitter();
 
   constructor(private auth: AuthenticationService) { }
   ngOnInit() {
+    this.validatingForm = new FormGroup({
+      loginFormModalEmail: new FormControl('', Validators.email),
+      loginFormModalPassword: new FormControl('', Validators.required),
+      loginFormModalConfirmPassword: new FormControl('', Validators.required)
+    });
     particlesJS('particles-js', {
       'particles': {
         'number': {
@@ -116,7 +131,55 @@ export class BannerComponent implements OnInit {
       'retina_detect': true
     });
   }
-  public login() {
+
+  get loginFormModalEmail() {
+    return this.validatingForm.get('loginFormModalEmail');
+  }
+
+  get loginFormModalPassword() {
+    return this.validatingForm.get('loginFormModalPassword');
+  }
+
+  get loginFormModalConfirmPassword() {
+    return this.validatingForm.get('loginFormModalConfirmPassword');
+  }
+
+  getShowConfirmPassword() {
+    return this.showConfirmPassword
+  }
+
+  getSignIn() {
+    return this.signIn;
+  }
+
+  enableSignin() {
+    this.signIn = true;
+  }
+
+  enableSignUp() {
+    this.signIn = false;
+  }
+
+  enableConfirmPassword() {
+    this.showConfirmPassword = true;
+    console.log(this.showConfirmPassword);
+  }
+
+  disableConfirmPassword() {
+    this.showConfirmPassword = false;
+    console.log(this.showConfirmPassword);
+  }
+
+  public loginWithGoogle() {
     this.auth.redirectToLogin();
   }
+/*
+  public signInWithMailAndPass() {
+    this.auth.
+  }
+
+  public signUpWithMailAndPass() {
+    this.auth.
+  }
+  */
 }
