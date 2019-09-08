@@ -32,6 +32,7 @@ import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 import { ProfileUpdaterFormComponent } from './user-profile/profile-updater-form/profile-updater-form.component';
 import { TeamBuildComponent } from './user-profile/team-build/team-build.component';
 import { AcceptedComponent } from './user-profile/accepted/accepted.component';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,7 @@ import { AcceptedComponent } from './user-profile/accepted/accepted.component';
     // QR Generator
     QRCodeModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

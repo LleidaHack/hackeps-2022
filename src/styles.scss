@@ -33,8 +33,10 @@
 
 html, body {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 a {
-  color: #988cdb !important;
+  color: #988cdb;
 }
+

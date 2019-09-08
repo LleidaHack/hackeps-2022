@@ -38,3 +38,8 @@ button {
   z-index: 1;
 }
 
+@media (max-width: 980px) {
+  .logo {
+    margin-top: 25%;
+  }
+}

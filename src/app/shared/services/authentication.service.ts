@@ -10,13 +10,14 @@ import {
   AngularFirestoreDocument,
   DocumentSnapshot
 } from '@angular/fire/firestore';
+import { isNullOrUndefined } from 'util';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
   user$: Observable<UserModel>;
 
   constructor(
-    private afAuth: AngularFireAuth,
+    public afAuth: AngularFireAuth,
     private afStore: AngularFirestore,
     private router: Router
   ) {
@@ -28,7 +29,7 @@ export class AuthenticationService {
   }
 
   public isLoggedIn(): boolean {
-    return this.afAuth.auth.currentUser != null;
+    return !isNullOrUndefined(this.afAuth.auth.currentUser);
   }
 
   public fetchUserData(uid): Observable<UserModel> {
