@@ -147,7 +147,7 @@
           background-color: transparent;
           background-image: url("../../assets/media/Selected-bg.svg");
           
-      background-attachment: fixed;
+          background-attachment: fixed;
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
@@ -168,6 +168,15 @@
       &.disabled {
         color: #CCCCCC;
       }
+    }
+
+    .event {
+      font-weight: bold;
+      background-color: transparent;
+      background-image: url("../../assets/media/Calendar_Events_Closed_Compact.svg") !important;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
 
     .today {

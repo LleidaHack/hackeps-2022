@@ -5,6 +5,8 @@ import { ChallengeService } from './../services/challenge.service';
 import { DataProcesingEvent } from '../../assets/models/Events';
 import { Challenge, dummyChallenge } from './../../assets/models/Challenge';
 
+import { sameWeekPeriod } from './../../assets/models/Week';
+
 import * as moment from 'moment';
 import * as _ from 'lodash';
 
@@ -25,6 +27,7 @@ export class CalendarComponent implements OnInit, OnChanges {
   currentDate = moment();
   dayNames = ['D', 'L', 'M', 'Mi', 'J', 'V', 'S'];
   weeks: CalendarDate[][] = [];
+  challengeDates: number[] = [];
   sortedDates: CalendarDate[] = [];
   selectedDays: Array<CalendarDate> = [];
 
@@ -39,6 +42,8 @@ export class CalendarComponent implements OnInit, OnChanges {
   constructor(
     public challengeService: ChallengeService
   ) {
+    this.getChallenges();
+
     this.$dateSelection.subscribe(datePicked => {
       this.weeks.forEach(week => {
         week.forEach(day => {
@@ -87,6 +92,7 @@ export class CalendarComponent implements OnInit, OnChanges {
     if (this.retrieveSelection(date)) return;
     this.$dateSelection.next(date);
     this.onSelectDate.emit(date);
+    if (!sameWeekPeriod(date)) return;
     var hearChallenges: Subject<firebase.firestore.DocumentData> = this.challengeService.checkChallenges(date);
     
     hearChallenges.subscribe( data => {
@@ -100,7 +106,7 @@ export class CalendarComponent implements OnInit, OnChanges {
     var lastSelection: CalendarDate = this.selectedDays[this.selectedDays.length - 1];
     if (lastSelection.mDate.isSame(datePicked.mDate) && lastSelection.selected == true) {
       this.selectedDays.pop().selected = false;
-      console.log(this.selectedDays)
+      // console.log(this.selectedDays)
       return true;
     }
     return false;
@@ -110,6 +116,15 @@ export class CalendarComponent implements OnInit, OnChanges {
     if (this.selectedDays.length < 1) return;
     this.selectedDays.pop().selected = false;
     this.challenge = dummyChallenge;
+  }
+
+  getChallenges() {
+    this.challengeService.getChallenges().subscribe(challenges => {
+      this.challengeDates = []
+      console.log('Changes detected!');
+      challenges.forEach(challenge => this.challengeDates.push(challenge.date.seconds * 1000));
+      console.log(this.challengeDates);
+    });
   }
 
   // actions from calendar
@@ -170,5 +185,15 @@ export class CalendarComponent implements OnInit, OnChanges {
                 mDate: d,
               };
             });
+  }
+
+  isChallengeDay(day: CalendarDate) {
+    // return this.challengeDates.forEach(date => {
+    //   var temp_date = new Date(date*1000);
+    //   if (day.mDate.toDate().getTime() == temp_date.getTime()) return true;
+    //   return false;
+    // });
+
+    return this.challengeDates.indexOf(day.mDate.toDate().getTime()) > -1;
   }
 }

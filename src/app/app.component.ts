@@ -10,6 +10,6 @@ export class AppComponent {
   title = 'hackeps2019';
 
   constructor(private faqService: FaqsService) {
-    faqService.all().subscribe(console.log);
+    // faqService.all().subscribe(console.log); TODO: uncomment before commit
   }
 }

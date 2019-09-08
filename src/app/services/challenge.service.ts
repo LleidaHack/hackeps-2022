@@ -1,6 +1,6 @@
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, BehaviorSubject } from 'rxjs';
 
 import { Challenge } from './../../assets/models/Challenge';
 import { CalendarDate } from './../../assets/models/CalendarDate';
@@ -39,6 +39,28 @@ export class ChallengeService {
     result: Subject<firebase.firestore.DocumentData>) {
     snapshot.forEach(doc => {
       (doc.data().date.seconds == date.mDate.toDate().getTime() / 1000) && result.next(doc.data())
+    });
+  }
+
+  getChallenges(): BehaviorSubject<Challenge[]> {
+    var result: BehaviorSubject<Challenge[]> = new BehaviorSubject<Challenge[]>([]);
+
+    this.afs.collection('challenges').ref.get()
+    .then(snapshot => this.insertChallenges(snapshot, result))
+    .catch(_ => {
+      console.error('Error retrieving the events data, no events published')
+    });
+
+    console.log('Data is here: ');
+    return result;
+  }
+
+  insertChallenges(snapshot:firebase.firestore.QuerySnapshot, 
+    result: BehaviorSubject<firebase.firestore.DocumentData[]>) {
+    snapshot.forEach(doc => {
+      console.log(doc)
+      result.getValue().push(doc.data());
+      result.next(result.getValue());
     });
   }
 }
