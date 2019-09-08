@@ -12,6 +12,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
+// QR Generator
+import { QRCodeModule } from 'angularx-qrcode';
+
 // MDBBootstrap
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
@@ -19,7 +22,7 @@ import { environment } from '../environments/environment';
 
 import { BannerComponent } from './home/banner/banner.component';
 import { HomeComponent } from './home/home.component';
-// import { LoginComponent } from './home/banner/login/login.component';
+
 import { FaqsComponent } from './home/faqs/faqs.component';
 import { SponsorsComponent } from './home/sponsors/sponsors.component';
 import { CalendarComponent } from './home/calendar/calendar.component';
@@ -35,7 +38,6 @@ import { AcceptedComponent } from './user-profile/accepted/accepted.component';
     AppComponent,
     BannerComponent,
     HomeComponent,
-    // LoginComponent
     FaqsComponent,
     SponsorsComponent,
     CalendarComponent,
@@ -59,6 +61,9 @@ import { AcceptedComponent } from './user-profile/accepted/accepted.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
+
+    // QR Generator
+    QRCodeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
