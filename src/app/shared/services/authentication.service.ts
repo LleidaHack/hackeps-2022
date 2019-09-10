@@ -10,25 +10,35 @@ import {
   AngularFirestoreDocument,
   DocumentSnapshot
 } from '@angular/fire/firestore';
+import { isNullOrUndefined } from 'util';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
-  user$: Observable<UserModel>;
+  public user$: Observable<UserModel>;
 
   constructor(
-    private afAuth: AngularFireAuth,
+    public afAuth: AngularFireAuth,
     private afStore: AngularFirestore,
     private router: Router
   ) {
     this.user$ = this.afAuth.authState.pipe(
-      map(({ uid, email, displayName, photoURL }: User) => {
-        return { uid, email, displayName, photoURL };
+      map((u: User) => {
+        if (!u) {
+          return null;
+        }
+
+        return {
+          uid: u.uid,
+          email: u.email,
+          displayName: u.displayName,
+          photoURL: u.photoURL
+        } as UserModel;
       })
     );
   }
 
   public isLoggedIn(): boolean {
-    return this.afAuth.auth.currentUser != null;
+    return !isNullOrUndefined(this.afAuth.auth.currentUser);
   }
 
   public fetchUserData(uid): Observable<UserModel> {

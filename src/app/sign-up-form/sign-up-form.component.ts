@@ -38,7 +38,7 @@ export class SignUpFormComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.auth.user$.subscribe(user => {
+    this.auth.afAuth.auth.onAuthStateChanged(user => {
       if (user) {
         this.user = user;
         this.signUpForm.get('email')

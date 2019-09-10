@@ -9,15 +9,23 @@
         <div *ngIf="user?.accepted === 'PENDENT'">
           <h3 class="montserrat display-4 pendent">
             <i class="far fa-clock"></i>
-            Todavía tenemos que valorar tu petición
+            Pendiente
           </h3>
         </div>
 
         <div *ngIf="user?.accepted === 'YES'">
-          <h3 class="montserrat display-4 yes">
-            <i class="fas fa-check"></i>
-            Felicidades! Has sido admitido como participante a la Hackeps 2019
-          </h3>
+          <div class="row align-items-center justify-content-center">
+            <div class="col-3">
+              <qrcode [qrdata]="user?.email" [size]="128" [level]="'M'"></qrcode>
+              <small class="text-muted">Muestra este código para identificarte</small>
+            </div>
+            <div class="col-9">
+              <h3 class="montserrat display-4 yes">
+                <i class="fas fa-check"></i>
+                Felicidades! Has sido admitido como participante
+              </h3>
+            </div>
+          </div>
         </div>
 
         <div *ngIf="user?.accepted === 'NO'">

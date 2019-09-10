@@ -9,3 +9,12 @@
 .yes {
   color: #71b468;
 }
+
+h3 {
+  font-size: 1.6em;
+}
+
+:host::ng-deep img {
+  margin: auto;
+  display: block;
+}
