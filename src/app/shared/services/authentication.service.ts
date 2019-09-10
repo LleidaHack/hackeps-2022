@@ -14,7 +14,7 @@ import {
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
   user$: Observable<UserModel>;
-
+  public loading: boolean;
   constructor(
     private afAuth: AngularFireAuth,
     private afStore: AngularFirestore,
@@ -86,15 +86,27 @@ export class AuthenticationService {
 
   public async mailSignUp(email: string, password: string) {
     const result = await this.afAuth.auth.createUserWithEmailAndPassword(email, password);
-    this.sendEmailVerification();
+    this.checkAndRedirect(result.user);
   }
 
   async loginWithMailAndPassword(email: string, password: string) {
     var result = await this.afAuth.auth.signInWithEmailAndPassword(email, password);
+    this.checkAndRedirect(result.user);
   }
 
   async sendEmailVerification() {
     await this.afAuth.auth.currentUser.sendEmailVerification()
+  }
 
+  public async checkAndRedirect(user: UserModel) {
+    if (!user) {
+      this.loading = false;
+      return;
+    }
+    if (await this.isRegistered(user)) {
+      this.router.navigateByUrl('/user');
+    } else {
+      this.router.navigateByUrl('/user/signup');
+    }
   }
 }
