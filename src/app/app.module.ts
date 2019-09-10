@@ -17,7 +17,7 @@ import { QRCodeModule } from 'angularx-qrcode';
 
 // MDBBootstrap
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { environment } from '../environments/environment';
 
 import { BannerComponent } from './home/banner/banner.component';
@@ -54,6 +54,7 @@ import { AuthGuard } from './shared/guards/auth.guard';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    FontAwesomeModule,
 
     // Bootstrap
     MDBBootstrapModule.forRoot(),

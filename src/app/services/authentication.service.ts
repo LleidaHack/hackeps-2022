@@ -48,6 +48,7 @@ export class AuthenticationService {
       });
   }
 
+
   async mailSignUp(email: string, password: string) {
     const result = await this.afAuth.auth.createUserWithEmailAndPassword(email, password);
     this.sendEmailVerification();

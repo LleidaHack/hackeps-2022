@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import {Observable, of} from 'rxjs';
-import { switchMap, map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { UserModel } from '../models/user.model';
-import {auth, User} from 'firebase/app';
+import { auth, User } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import {
   AngularFirestore,
@@ -14,7 +14,9 @@ import { isNullOrUndefined } from 'util';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
+
   public user$: Observable<UserModel>;
+  public loading: boolean;
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -92,5 +94,31 @@ export class AuthenticationService {
     const userRef = this.afStore.doc(`users/${user.uid}`);
     const snapshot = await userRef.get().toPromise();
     return snapshot.exists;
+  }
+
+  public async mailSignUp(email: string, password: string) {
+    const result = await this.afAuth.auth.createUserWithEmailAndPassword(email, password);
+    this.checkAndRedirect(result.user);
+  }
+
+  async loginWithMailAndPassword(email: string, password: string) {
+    var result = await this.afAuth.auth.signInWithEmailAndPassword(email, password);
+    this.checkAndRedirect(result.user);
+  }
+
+  async sendEmailVerification() {
+    await this.afAuth.auth.currentUser.sendEmailVerification()
+  }
+
+  public async checkAndRedirect(user: UserModel) {
+    if (!user) {
+      this.loading = false;
+      return;
+    }
+    if (await this.isRegistered(user)) {
+      this.router.navigateByUrl('/user');
+    } else {
+      this.router.navigateByUrl('/user/signup');
+    }
   }
 }
