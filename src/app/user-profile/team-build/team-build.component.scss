@@ -1,7 +1,9 @@
 .team-member {
   margin: auto;
+  height: 100%;
 
   img {
+    height: inherit;
     margin: auto;
     display: block;
   }
