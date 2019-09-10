@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.auth.afAuth.auth.onAuthStateChanged((user) => {
+    this.auth.user$.subscribe((user) => {
       if (!user) {
         this.user = null;
         return;

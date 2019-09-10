@@ -14,7 +14,7 @@ import { isNullOrUndefined } from 'util';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
-  user$: Observable<UserModel>;
+  public user$: Observable<UserModel>;
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -22,8 +22,17 @@ export class AuthenticationService {
     private router: Router
   ) {
     this.user$ = this.afAuth.authState.pipe(
-      map(({ uid, email, displayName, photoURL }: User) => {
-        return { uid, email, displayName, photoURL };
+      map((u: User) => {
+        if (!u) {
+          return null;
+        }
+
+        return {
+          uid: u.uid,
+          email: u.email,
+          displayName: u.displayName,
+          photoURL: u.photoURL
+        } as UserModel;
       })
     );
   }
