@@ -1,9 +1,10 @@
 import { AuthenticationService } from '../../shared/services/authentication.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { UserModel } from 'src/app/shared/models/user.model';
-import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { FormControl, FormGroup, Validators, FormBuilder } from "@angular/forms";
 import { faEnvelope, faLock, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faGooglePlusG } from '@fortawesome/free-brands-svg-icons' 
+import { MustMatch } from 'src/app/shared/validators/sign.validator';
 
 declare var particlesJS: any;
 
@@ -23,14 +24,17 @@ export class BannerComponent implements OnInit {
   private validatingForm: FormGroup;
   private showConfirmPassword: boolean;
   private signIn: boolean;
+  private modalTitle: string;
   @Output() public afterLogin = new EventEmitter();
 
-  constructor(private auth: AuthenticationService) { }
+  constructor(private auth: AuthenticationService, private formBuilder: FormBuilder) { }
   ngOnInit() {
-    this.validatingForm = new FormGroup({
-      loginFormModalEmail: new FormControl('', Validators.email),
-      loginFormModalPassword: new FormControl('', Validators.required),
-      loginFormModalConfirmPassword: new FormControl('', Validators.required)
+    this.validatingForm = this.formBuilder.group({
+      loginFormModalEmail: new FormControl('', Validators.compose([Validators.email, Validators.required])),
+      loginFormModalPassword: new FormControl('', Validators.compose([Validators.required, Validators.minLength(8)])),
+      loginFormModalConfirmPassword: new FormControl('', Validators.compose([Validators.required]))
+    },{
+      validator: MustMatch('loginFormModalPassword', 'loginFormModalConfirmPassword')
     });
     particlesJS('particles-js', {
       'particles': {
@@ -148,11 +152,7 @@ export class BannerComponent implements OnInit {
     return this.showConfirmPassword
   }
 
-  getSignIn() {
-    return this.signIn;
-  }
-
-  enableSignin() {
+  enableSignIn() {
     this.signIn = true;
   }
 
@@ -160,26 +160,34 @@ export class BannerComponent implements OnInit {
     this.signIn = false;
   }
 
+  getSignIn() {
+    return this.signIn;
+  }
+
+  getModalTitle(){
+    return this.modalTitle;
+  }
+
   enableConfirmPassword() {
     this.showConfirmPassword = true;
-    console.log(this.showConfirmPassword);
+    this.modalTitle = "Únete ahora!"
   }
 
   disableConfirmPassword() {
     this.showConfirmPassword = false;
-    console.log(this.showConfirmPassword);
+    this.modalTitle = "Entra ahora!"
   }
 
   public loginWithGoogle() {
     this.auth.redirectToLogin();
   }
-/*
+
   public signInWithMailAndPass() {
-    this.auth.
+    this.auth.loginWithMailAndPassword(this.loginFormModalEmail.value, this.loginFormModalPassword.value)
   }
 
   public signUpWithMailAndPass() {
-    this.auth.
+    this.auth.mailSignUp(this.loginFormModalEmail.value, this.loginFormModalPassword.value);
   }
-  */
+  
 }

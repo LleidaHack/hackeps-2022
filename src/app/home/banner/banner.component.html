@@ -3,18 +3,17 @@
   <img class="logo" src="assets/logo-hackeps.png">
   <img class="skyline" src="assets/skyline.svg">
   <button class="signIn-button banner-button" type="button" mdbBtn gradient="purple" rounded="true" data-toggle="modal" data-target="#basicExample"
-  (click)="disableConfirmPassword(); frame.show()" mdbWavesEffect>Entra ahora</button>
+  (click)="disableConfirmPassword(); enableSignIn(); frame.show()" mdbWavesEffect>Entra ahora</button>
   <button class="signUp-button banner-button" type="button" mdbBtn gradient="purple" rounded="true" data-toggle="modal" data-target="#basicExample"
-  (click)="enableConfirmPassword(); frame.show()" mdbWavesEffect>Únete ahora</button>
-  <!--<button mdbBtn (click)="login()" type="button" gradient="purple" rounded="true" mdbWavesEffect>Únete ahora</button>-->
+  (click)="enableConfirmPassword(); enableSignUp(); frame.show()" mdbWavesEffect>Únete ahora</button>
 </div>
 
-<div mdbModal #frame="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
-     aria-labelledby="myModalLabel" aria-hidden="true">
+<div mdbModal #frame="mdbModal" class="modal fade left" id="signModal" tabindex="-1" role="dialog"
+     aria-labelledby="signModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+        <h4 class="modal-title w-100 font-weight-bold">{{this.getModalTitle()}}</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -27,14 +26,9 @@
           <label for="defaultForm-email">Tu correo</label>
           <mdb-error
             *ngIf="loginFormModalEmail.invalid && (loginFormModalEmail.dirty || loginFormModalEmail.touched)">
-            Input invalid
+            Correo inválido
           </mdb-error>
-          <mdb-success
-            *ngIf="loginFormModalEmail.valid && (loginFormModalEmail.dirty || loginFormModalEmail.touched)">Input
-            valid
-          </mdb-success>
         </div>
-
         <div class="md-form mb-4">
           <fa-icon [icon]="faLock" class="prefix grey-text"></fa-icon>
           <input type="password" id="defaultForm-pass" [formControl]="loginFormModalPassword" class="form-control"
@@ -42,12 +36,8 @@
           <label for="defaultForm-pass">Contraseña</label>
           <mdb-error
             *ngIf="loginFormModalPassword.invalid && (loginFormModalPassword.dirty || loginFormModalPassword.touched)">
-            Input invalid
+            Contraseña inválida
           </mdb-error>
-          <mdb-success
-            *ngIf="loginFormModalPassword.valid && (loginFormModalPassword.dirty || loginFormModalPassword.touched)">
-            Input valid
-          </mdb-success>
         </div>
         <div *ngIf="this.getShowConfirmPassword()">
           <div class="md-form mb-4">
@@ -57,23 +47,20 @@
             <label for="defaultForm-pass">Confirma tu contraseña</label>
             <mdb-error
               *ngIf="loginFormModalConfirmPassword.invalid && (loginFormModalConfirmPassword.dirty || loginFormModalConfirmPassword.touched)">
-              Input invalid
+              Las contraseñas no coinciden.
             </mdb-error>
-            <mdb-success
-              *ngIf="loginFormModalConfirmPassword.valid && (loginFormModalConfirmPassword.dirty || loginFormModalConfirmPassword.touched)">
-              Input valid
-            </mdb-success>
           </div>
         </div>
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <div *ngIf="this.getSignIn; then signUp">
-          <button mdbBtn gradient="purple" class="waves-light" mdbWavesEffect><fa-icon [icon]="faEnvelope" class="prefix"></fa-icon> Login With Mail</button>
+        <div *ngIf="this.getSignIn(); else signUp">
+          <button [disabled]="loginFormModalPassword.invalid || loginFormModalEmail.invalid" mdbBtn (click)="signInWithMailAndPass()" gradient="purple" class="waves-light" mdbWavesEffect><fa-icon [icon]="faEnvelope" class="prefix"></fa-icon> Con tu Correo</button>
+          <button mdbBtn (click)="loginWithGoogle()" gradient="purple" class="waves-light" mdbWavesEffect><fa-icon [icon]="faGooglePlusG" class="prefix"></fa-icon> Con Google</button>          
         </div>
         <ng-template #signUp>
-          <button mdbBtn gradient="purple" class="waves-light" mdbWavesEffect><fa-icon [icon]="faEnvelope" class="prefix"></fa-icon> Login With Mail</button>
+          <button [disabled]="loginFormModalPassword.invalid || loginFormModalEmail.invalid || loginFormModalConfirmPassword.invalid" mdbBtn (click)="signUpWithMailAndPass()" gradient="purple" class="waves-light" mdbWavesEffect><fa-icon [icon]="faEnvelope" class="prefix"></fa-icon> Con tu Correo</button>
+          <button mdbBtn (click)="loginWithGoogle()" gradient="purple" class="waves-light" mdbWavesEffect><fa-icon [icon]="faGooglePlusG" class="prefix"></fa-icon> Con Google </button>
         </ng-template>
-        <button mdbBtn (click)="loginWithGoogle()" gradient="purple" class="waves-light" mdbWavesEffect><fa-icon [icon]="faGooglePlusG" class="prefix"></fa-icon> Login With Google</button>
       </div>
     </div>
   </div>

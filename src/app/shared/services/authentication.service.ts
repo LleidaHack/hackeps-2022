@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import {Observable, of} from 'rxjs';
-import { switchMap, map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { UserModel } from '../models/user.model';
-import {auth, User} from 'firebase/app';
+import { auth, User } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import {
   AngularFirestore,
@@ -82,5 +82,19 @@ export class AuthenticationService {
     const userRef = this.afStore.doc(`users/${user.uid}`);
     const snapshot = await userRef.get().toPromise();
     return snapshot.exists;
+  }
+
+  public async mailSignUp(email: string, password: string) {
+    const result = await this.afAuth.auth.createUserWithEmailAndPassword(email, password);
+    this.sendEmailVerification();
+  }
+
+  async loginWithMailAndPassword(email: string, password: string) {
+    var result = await this.afAuth.auth.signInWithEmailAndPassword(email, password);
+  }
+
+  async sendEmailVerification() {
+    await this.afAuth.auth.currentUser.sendEmailVerification()
+
   }
 }
