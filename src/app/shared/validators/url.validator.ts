@@ -3,7 +3,7 @@ import { FormControl } from '@angular/forms';
 export class UrlValidator {
 
   static url(control: FormControl): { [key: string]: any } {
-    if (control.value === '') {
+    if (!control.value || control.value === '') {
       return null;
     }
 

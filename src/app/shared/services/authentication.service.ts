@@ -47,6 +47,9 @@ export class AuthenticationService {
     return userRef.get().pipe(
       map((snapshot: DocumentSnapshot<UserModel>) => {
         const userData = snapshot.data();
+        if (!userData) {
+          return null;
+        }
         if (!userData.accepted) {
           userData.accepted = 'PENDENT';
         }

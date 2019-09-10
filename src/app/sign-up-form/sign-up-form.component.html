@@ -12,23 +12,32 @@
         </mdb-card-title>
         <mdb-card-text>
           <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
-            <label for="full-name">Nombre completo</label>
-            <input formControlName="fullName" type="text" id="full-name" id="full-name" class="form-control mb-4" placeholder="Jhon Doe">
-
-            <label>Nickname</label>
-            <input formControlName="nickname" type="text" id="nickname" name="nickname" class="form-control mb-4" placeholder="JhonDoe6969">
-
-            <label>Correo electrónico</label>
-            <input formControlName="email" type="email" id="email" name="email" class="form-control mb-4" placeholder="jhon.doe@mail.com">
-
-            <label for="birth-date">Fecha de nacimiento</label>
-            <input formControlName="birthDate" type="date" id="birth-date" name="birth-date" class="form-control" mdbInput>
-
+            <div>
+              <label for="full-name">Nombre completo *</label>
+              <input formControlName="fullName" type="text" id="full-name" id="full-name" class="form-control mb-4" placeholder="Jhon Doe">
+              <span class="error" *ngIf="shouldShowError('fullName')">El nombre es obligatorio</span>
+            </div>
+            <div>
+              <label>Nickname *</label>
+              <input formControlName="nickname" type="text" id="nickname" name="nickname" class="form-control mb-4" placeholder="JhonDoe6969">
+              <span class="error" *ngIf="shouldShowError('nickname')">El apodo es obligatorio</span>
+            </div>
+            <div>
+              <label>Correo electrónico *</label>
+              <input formControlName="email" type="email" id="email" name="email" class="form-control mb-4" placeholder="jhon.doe@mail.com">
+              <span class="error" *ngIf="shouldShowError('email')">El correo electrónico es obligatorio</span>
+            </div>
+            <div>
+              <label for="birth-date">Fecha de nacimiento *</label>
+              <input formControlName="birthDate" type="date" id="birth-date" name="birth-date" class="form-control" mdbInput>
+              <span class="error" *ngIf="shouldShowError('birthDate')">La fecha de nacimiento es obligatoria</span>
+            </div>
             <div class="row mb-4 mt-4">
               <div class="col-sm-12 col-lg-6 col-md-6 mb-4">
-                <label for="github-url"><i class="fab fa-github-alt"></i> Github Profile</label>
+                <label for="github-url"><i class="fab fa-github-alt"></i> Github Profile *</label>
                 <input formControlName="githubUrl" type="text" id="github-url" name="github-url" class="form-control"
                   placeholder="https://github.com/JhonDoe">
+                <span class="error" *ngIf="shouldShowError('githubUrl')">Tu perfil de GitHub es obligatorio</span>
               </div>
               <div class="col-sm-12 col-lg-6 col-md-6">
                 <label for="linkedin-url"><i class="fab fa-linkedin"></i> LinkedIn Profile</label>
@@ -37,7 +46,7 @@
               </div>
             </div>
 
-            <label><i class="fas fa-tshirt"></i> Talla camiseta</label>
+            <label><i class="fas fa-tshirt"></i> Talla camiseta *</label>
             <div class="mb-4 ml-4">
 
               <div class="custom-control custom-radio custom-control-inline">
@@ -69,8 +78,9 @@
             <label>Alérgenos </label>
             <textarea formControlName="food" type="text" id="food" name="food" class="form-control mb-4" placeholder="Pescado, lechuga..."></textarea>
 
-            <!-- TODO: Add link to legal terms -->
-            <mdb-checkbox formControlName="terms" [default]="true">He leído y acepto los terminos y condiciones</mdb-checkbox>
+            <mdb-checkbox formControlName="terms" [default]="true">He leído y acepto los <a [routerLink]="['/terms-and-conditions']">terminos y condiciones</a> *</mdb-checkbox>
+
+            <i class="text-muted mt-2">* Campos obligatorios</i>
 
             <div class="w-100 text-right">
               <button mdbBtn [disabled]="!signUpForm.valid" type="submit" gradient="purple" rounded="true" mdbWavesEffect>Únete ahora</button>

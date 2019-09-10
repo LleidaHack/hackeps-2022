@@ -33,6 +33,7 @@ import { ProfileUpdaterFormComponent } from './user-profile/profile-updater-form
 import { TeamBuildComponent } from './user-profile/team-build/team-build.component';
 import { AcceptedComponent } from './user-profile/accepted/accepted.component';
 import { AuthGuard } from './shared/guards/auth.guard';
+import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { AuthGuard } from './shared/guards/auth.guard';
     SignUpFormComponent,
     ProfileUpdaterFormComponent,
     TeamBuildComponent,
-    AcceptedComponent
+    AcceptedComponent,
+    TermsAndConditionsComponent
   ],
   imports: [
     BrowserModule,
