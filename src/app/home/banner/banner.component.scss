@@ -40,12 +40,24 @@
 @media screen and (max-width: 1349px) and (min-width: 1000px) {
   .signUp-button {
     top: 60%;
-    left: 57%;
+    left: 42%;
   }
   
   .signIn-button {
     top: 60%;
-    left: 45%;
+    left: 61%;
+  }
+}
+
+@media screen and (max-width: 999px) and (min-width: 501px) {
+  .signUp-button {
+    top: 60%;
+    left: 37%;
+  }
+  
+  .signIn-button {
+    top: 60%;
+    left: 65%;
   }
 }
 

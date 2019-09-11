@@ -2,10 +2,10 @@
   <div id="particles-js"></div>
   <img class="logo" src="assets/logo-hackeps.png">
   <img class="skyline" src="assets/skyline.svg">
-  <button class="signIn-button banner-button" type="button" mdbBtn gradient="purple" rounded="true" data-toggle="modal" data-target="#basicExample"
-  (click)="disableConfirmPassword(); enableSignIn(); frame.show()" mdbWavesEffect>Entra ahora</button>
   <button class="signUp-button banner-button" type="button" mdbBtn gradient="purple" rounded="true" data-toggle="modal" data-target="#basicExample"
   (click)="enableConfirmPassword(); enableSignUp(); frame.show()" mdbWavesEffect>Únete ahora</button>
+  <button class="signIn-button banner-button" type="button" mdbBtn gradient="purple" rounded="true" data-toggle="modal" data-target="#basicExample"
+  (click)="disableConfirmPassword(); enableSignIn(); frame.show()" mdbWavesEffect>Entra ahora</button>
 </div>
 
 <div mdbModal #frame="mdbModal" class="modal fade left" id="signModal" tabindex="-1" role="dialog"
