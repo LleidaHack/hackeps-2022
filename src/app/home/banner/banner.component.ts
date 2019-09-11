@@ -182,6 +182,14 @@ export class BannerComponent implements OnInit {
     this.auth.redirectToLogin();
   }
 
+  public signInSignUpMailAndPass() {
+    if (this.showConfirmPassword) {
+      this.signUpWithMailAndPass();
+    } else {
+      this.signInWithMailAndPass();
+    }
+  }
+  
   public signInWithMailAndPass() {
     this.auth.loginWithMailAndPassword(this.loginFormModalEmail.value, this.loginFormModalPassword.value)
   }

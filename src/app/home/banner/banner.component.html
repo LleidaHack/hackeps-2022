@@ -53,14 +53,8 @@
         </div>
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <div *ngIf="this.getSignIn(); else signUp">
-          <button [disabled]="loginFormModalPassword.invalid || loginFormModalEmail.invalid" mdbBtn (click)="signInWithMailAndPass()" gradient="purple" class="waves-light" mdbWavesEffect><fa-icon [icon]="faEnvelope" class="prefix"></fa-icon> Con tu Correo</button>
+          <button mdbBtn (click)="signInSignUpMailAndPass()"[disabled]="loginFormModalPassword.invalid || loginFormModalEmail.invalid" gradient="purple" class="waves-light" mdbWavesEffect><fa-icon [icon]="faEnvelope" class="prefix"></fa-icon> Con tu Correo</button>
           <button mdbBtn (click)="loginWithGoogle()" gradient="purple" class="waves-light" mdbWavesEffect><fa-icon [icon]="faGooglePlusG" class="prefix"></fa-icon> Con Google</button>          
-        </div>
-        <ng-template #signUp>
-          <button [disabled]="loginFormModalPassword.invalid || loginFormModalEmail.invalid || loginFormModalConfirmPassword.invalid" mdbBtn (click)="signUpWithMailAndPass()" gradient="purple" class="waves-light" mdbWavesEffect><fa-icon [icon]="faEnvelope" class="prefix"></fa-icon> Con tu Correo</button>
-          <button mdbBtn (click)="loginWithGoogle()" gradient="purple" class="waves-light" mdbWavesEffect><fa-icon [icon]="faGooglePlusG" class="prefix"></fa-icon> Con Google </button>
-        </ng-template>
       </div>
     </div>
   </div>

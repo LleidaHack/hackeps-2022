@@ -25,15 +25,42 @@
   margin-top: 20%;
 }
 
-.signUp-button {
-  top: 60%;
-  left: 57%;
+@media (min-width: 1350px) {
+  .signUp-button {
+    top: 60%;
+    left: 57%;
+  }
+  
+  .signIn-button {
+    top: 60%;
+    left: 45%;
+  }
 }
 
-.signIn-button {
-  top: 60%;
-  left: 45%;
+@media screen and (max-width: 1349px) and (min-width: 1000px) {
+  .signUp-button {
+    top: 60%;
+    left: 57%;
+  }
+  
+  .signIn-button {
+    top: 60%;
+    left: 45%;
+  }
 }
+
+@media screen and (max-width: 500px) {
+  .signUp-button {
+    top: 50%;
+    left: 50%;
+  }
+  
+  .signIn-button {
+    top: 60%;
+    left: 50%;
+  }
+}
+
 
 .skyline {
   position: absolute;
