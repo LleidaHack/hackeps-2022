@@ -23,6 +23,9 @@ export class UserProfileComponent implements OnInit {
         .subscribe(u => {
           this.user = u;
           this.loading = false;
+          if(!this.user.photoURL) {
+            this.user.photoURL = "https://www.fillmurray.com/600/600";
+          }
         });
     });
   }
