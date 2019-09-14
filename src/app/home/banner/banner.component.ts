@@ -3,7 +3,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { UserModel } from 'src/app/shared/models/user.model';
 import { FormControl, FormGroup, Validators, FormBuilder } from "@angular/forms";
 import { faEnvelope, faLock, faPlus } from '@fortawesome/free-solid-svg-icons';
-import { faGooglePlusG } from '@fortawesome/free-brands-svg-icons' 
+import { faGooglePlusG } from '@fortawesome/free-brands-svg-icons'
 import { MustMatch } from 'src/app/shared/validators/sign.validator';
 
 declare var particlesJS: any;
@@ -15,12 +15,12 @@ declare var particlesJS: any;
 })
 export class BannerComponent implements OnInit {
   // FontAwesome
-  private faEnvelope = faEnvelope;
-  private faLock = faLock;
-  private faPlus = faPlus;
-  private faGooglePlusG = faGooglePlusG;
+  public faEnvelope = faEnvelope;
+  public faLock = faLock;
+  public faPlus = faPlus;
+  public faGooglePlusG = faGooglePlusG;
 
-  private user: UserModel;
+  public user: UserModel;
   private validatingForm: FormGroup;
   private showConfirmPassword: boolean;
   private signIn: boolean;
@@ -189,7 +189,7 @@ export class BannerComponent implements OnInit {
       this.signInWithMailAndPass();
     }
   }
-  
+
   public signInWithMailAndPass() {
     this.auth.loginWithMailAndPassword(this.loginFormModalEmail.value, this.loginFormModalPassword.value)
   }
@@ -197,5 +197,5 @@ export class BannerComponent implements OnInit {
   public signUpWithMailAndPass() {
     this.auth.mailSignUp(this.loginFormModalEmail.value, this.loginFormModalPassword.value);
   }
-  
+
 }
