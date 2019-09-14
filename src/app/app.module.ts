@@ -17,7 +17,7 @@ import { QRCodeModule } from 'angularx-qrcode';
 
 // MDBBootstrap
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { environment } from '../environments/environment';
 
 import { BannerComponent } from './home/banner/banner.component';
@@ -33,6 +33,7 @@ import { ProfileUpdaterFormComponent } from './user-profile/profile-updater-form
 import { TeamBuildComponent } from './user-profile/team-build/team-build.component';
 import { AcceptedComponent } from './user-profile/accepted/accepted.component';
 import { AuthGuard } from './shared/guards/auth.guard';
+import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 
 @NgModule({
   declarations: [
@@ -47,13 +48,15 @@ import { AuthGuard } from './shared/guards/auth.guard';
     SignUpFormComponent,
     ProfileUpdaterFormComponent,
     TeamBuildComponent,
-    AcceptedComponent
+    AcceptedComponent,
+    TermsAndConditionsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    FontAwesomeModule,
 
     // Bootstrap
     MDBBootstrapModule.forRoot(),

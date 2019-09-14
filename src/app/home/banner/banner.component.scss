@@ -15,12 +15,79 @@
   z-index: 2;
 }
 
-button {
+.banner-button {
   position: absolute;
-  top: 60%;
-  left: 50%;
   transform: translate(-50%, 50%);
   z-index: 2;
+}
+
+.modal-pos {
+  margin-top: 20%;
+}
+
+@media (min-width: 1350px) {
+  .signUp-button {
+    top: 60%;
+    left: 45%;
+  }
+  
+  .signIn-button {
+    top: 60%;
+    left: 57%;
+  }
+}
+
+@media screen and (max-width: 1349px) and (min-width: 1000px) {
+  .signUp-button {
+    top: 60%;
+    left: 42%;
+  }
+  
+  .signIn-button {
+    top: 60%;
+    left: 61%;
+  }
+}
+
+@media screen and (max-width: 999px) and (min-width: 500px) {
+  .signUp-button {
+    top: 60%;
+    left: 37%;
+  }
+  
+  .signIn-button {
+    top: 60%;
+    left: 65%;
+  }
+}
+
+@media screen and (max-width: 499px) and (min-width: 351px) {
+  .logo {
+    margin-top: 20%!important;
+  }
+  .signUp-button {
+    top: 55%;
+    left: 50%;
+  }
+  
+  .signIn-button {
+    top: 65%;
+    left: 50%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .signUp-button {
+    top: 50%;
+    left: 50%;
+    font-size: 0.74rem!important;
+  }
+  
+  .signIn-button {
+    top: 60%;
+    left: 50%;
+    font-size: 0.74rem!important;
+  }
 }
 
 .skyline {
@@ -41,5 +108,11 @@ button {
 @media (max-width: 980px) {
   .logo {
     margin-top: 25%;
+  }
+}
+
+@media (max-height: 450px ){
+  .logo {
+    margin-top: 15%!important;
   }
 }

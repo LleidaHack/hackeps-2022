@@ -44,7 +44,7 @@ export class SignUpFormComponent implements OnInit {
         this.signUpForm.get('email')
           .setValue(user.email);
         this.signUpForm.get('nickname')
-          .setValue(user.displayName.split(' ')[0]);
+          .setValue(user.displayName && user.displayName.split(' ')[0]);
         this.signUpForm.get('fullName')
           .setValue(user.displayName);
       }
@@ -67,5 +67,10 @@ export class SignUpFormComponent implements OnInit {
       .catch(e => {
         alert(JSON.stringify(e));
       });
+  }
+
+  public shouldShowError(name: string): boolean {
+    return this.signUpForm.get(name).touched &&
+           this.signUpForm.get(name).invalid;
   }
 }
