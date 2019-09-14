@@ -266,6 +266,161 @@ Apache-2.0
 @firebase/webchannel-wrapper
 Apache-2.0
 
+@fortawesome/angular-fontawesome
+MIT
+
+@fortawesome/fontawesome-free
+(CC-BY-4.0 AND OFL-1.1 AND MIT)
+Font Awesome Free License
+-------------------------
+
+Font Awesome Free is free, open source, and GPL friendly. You can use it for
+commercial projects, open source projects, or really almost whatever you want.
+Full Font Awesome Free license: https://fontawesome.com/license/free.
+
+# Icons: CC BY 4.0 License (https://creativecommons.org/licenses/by/4.0/)
+In the Font Awesome Free download, the CC BY 4.0 license applies to all icons
+packaged as SVG and JS file types.
+
+# Fonts: SIL OFL 1.1 License (https://scripts.sil.org/OFL)
+In the Font Awesome Free download, the SIL OFL license applies to all icons
+packaged as web and desktop font files.
+
+# Code: MIT License (https://opensource.org/licenses/MIT)
+In the Font Awesome Free download, the MIT license applies to all non-font and
+non-icon files.
+
+# Attribution
+Attribution is required by MIT, SIL OFL, and CC BY licenses. Downloaded Font
+Awesome Free files already contain embedded comments with sufficient
+attribution, so you shouldn't need to do anything additional when using these
+files normally.
+
+We've kept attribution comments terse, so we ask that you do not actively work
+to remove them from files, especially code. They're a great way for folks to
+learn about Font Awesome.
+
+# Brand Icons
+All brand icons are trademarks of their respective owners. The use of these
+trademarks does not indicate endorsement of the trademark holder by Font
+Awesome, nor vice versa. **Please do not use brand logos for any purpose except
+to represent the company, product, or service to which they refer.**
+
+
+@fortawesome/fontawesome-svg-core
+MIT
+Font Awesome Free License
+-------------------------
+
+Font Awesome Free is free, open source, and GPL friendly. You can use it for
+commercial projects, open source projects, or really almost whatever you want.
+Full Font Awesome Free license: https://fontawesome.com/license/free.
+
+# Icons: CC BY 4.0 License (https://creativecommons.org/licenses/by/4.0/)
+In the Font Awesome Free download, the CC BY 4.0 license applies to all icons
+packaged as SVG and JS file types.
+
+# Fonts: SIL OFL 1.1 License (https://scripts.sil.org/OFL)
+In the Font Awesome Free download, the SIL OFL license applies to all icons
+packaged as web and desktop font files.
+
+# Code: MIT License (https://opensource.org/licenses/MIT)
+In the Font Awesome Free download, the MIT license applies to all non-font and
+non-icon files.
+
+# Attribution
+Attribution is required by MIT, SIL OFL, and CC BY licenses. Downloaded Font
+Awesome Free files already contain embedded comments with sufficient
+attribution, so you shouldn't need to do anything additional when using these
+files normally.
+
+We've kept attribution comments terse, so we ask that you do not actively work
+to remove them from files, especially code. They're a great way for folks to
+learn about Font Awesome.
+
+# Brand Icons
+All brand icons are trademarks of their respective owners. The use of these
+trademarks does not indicate endorsement of the trademark holder by Font
+Awesome, nor vice versa. **Please do not use brand logos for any purpose except
+to represent the company, product, or service to which they refer.**
+
+
+@fortawesome/free-brands-svg-icons
+(CC-BY-4.0 AND MIT)
+Font Awesome Free License
+-------------------------
+
+Font Awesome Free is free, open source, and GPL friendly. You can use it for
+commercial projects, open source projects, or really almost whatever you want.
+Full Font Awesome Free license: https://fontawesome.com/license/free.
+
+# Icons: CC BY 4.0 License (https://creativecommons.org/licenses/by/4.0/)
+In the Font Awesome Free download, the CC BY 4.0 license applies to all icons
+packaged as SVG and JS file types.
+
+# Fonts: SIL OFL 1.1 License (https://scripts.sil.org/OFL)
+In the Font Awesome Free download, the SIL OFL license applies to all icons
+packaged as web and desktop font files.
+
+# Code: MIT License (https://opensource.org/licenses/MIT)
+In the Font Awesome Free download, the MIT license applies to all non-font and
+non-icon files.
+
+# Attribution
+Attribution is required by MIT, SIL OFL, and CC BY licenses. Downloaded Font
+Awesome Free files already contain embedded comments with sufficient
+attribution, so you shouldn't need to do anything additional when using these
+files normally.
+
+We've kept attribution comments terse, so we ask that you do not actively work
+to remove them from files, especially code. They're a great way for folks to
+learn about Font Awesome.
+
+# Brand Icons
+All brand icons are trademarks of their respective owners. The use of these
+trademarks does not indicate endorsement of the trademark holder by Font
+Awesome, nor vice versa. **Please do not use brand logos for any purpose except
+to represent the company, product, or service to which they refer.**
+
+
+@fortawesome/free-solid-svg-icons
+(CC-BY-4.0 AND MIT)
+Font Awesome Free License
+-------------------------
+
+Font Awesome Free is free, open source, and GPL friendly. You can use it for
+commercial projects, open source projects, or really almost whatever you want.
+Full Font Awesome Free license: https://fontawesome.com/license/free.
+
+# Icons: CC BY 4.0 License (https://creativecommons.org/licenses/by/4.0/)
+In the Font Awesome Free download, the CC BY 4.0 license applies to all icons
+packaged as SVG and JS file types.
+
+# Fonts: SIL OFL 1.1 License (https://scripts.sil.org/OFL)
+In the Font Awesome Free download, the SIL OFL license applies to all icons
+packaged as web and desktop font files.
+
+# Code: MIT License (https://opensource.org/licenses/MIT)
+In the Font Awesome Free download, the MIT license applies to all non-font and
+non-icon files.
+
+# Attribution
+Attribution is required by MIT, SIL OFL, and CC BY licenses. Downloaded Font
+Awesome Free files already contain embedded comments with sufficient
+attribution, so you shouldn't need to do anything additional when using these
+files normally.
+
+We've kept attribution comments terse, so we ask that you do not actively work
+to remove them from files, especially code. They're a great way for folks to
+learn about Font Awesome.
+
+# Brand Icons
+All brand icons are trademarks of their respective owners. The use of these
+trademarks does not indicate endorsement of the trademark holder by Font
+Awesome, nor vice versa. **Please do not use brand logos for any purpose except
+to represent the company, product, or service to which they refer.**
+
+
 angular-bootstrap-md
 %PDF-1.4%����
 1 0 obj<</Type/Page/Parent 171 0 R/Contents 36 0 R/MediaBox[0 0 842.88 1192.07996]/Annots[2 0 R 4 0 R 6 0 R 8 0 R]/Resources<</ProcSet[/PDF/Text]/ExtGState<</G0 10 0 R>>/Font<</F0 11 0 R/F1 16 0 R/F2 21 0 R/F3 26 0 R/F4 31 0 R>>>>>>endobj2 0 obj<</Subtype/Link/Rect[783.98083 907.91742 813.99994 937.93652]/Border[0 0 0]/F 4/NM(PDFE-48D670C6E11236510)/P 1 0 R/A 3 0 R>>endobj3 0 obj<</S/URI/URI(https://mdbootstrap.com/docs/jquery/)>>endobj4 0 obj<</Subtype/Link/Rect[783.98083 877.89832 813.99994 907.91742]/Border[0 0 0]/F 4/NM(PDFE-48D670C6E11236511)/P 1 0 R/A 5 0 R>>endobj5 0 obj<</S/URI/URI(https://mdbootstrap.com/docs/angular/)>>endobj6 0 obj<</Subtype/Link/Rect[783.98083 847.87915 813.99994 877.89832]/Border[0 0 0]/F 4/NM(PDFE-48D670C6E11236512)/P 1 0 R/A 7 0 R>>endobj7 0 obj<</S/URI/URI(https://mdbootstrap.com/docs/react/)>>endobj8 0 obj<</Subtype/Link/Rect[783.98083 817.86005 813.99994 847.87915]/Border[0 0 0]/F 4/NM(PDFE-48D670C6E11236513)/P 1 0 R/A 9 0 R>>endobj9 0 obj<</S/URI/URI(https://mdbootstrap.com/docs/vue/)>>endobj10 0 obj<</Type/ExtGState/BM/Normal/ca 1>>endobj11 0 obj<</Type/Font/Subtype/Type0/BaseFont/ArialMT/Encoding/Identity-H/DescendantFonts[12 0 R]/ToUnicode 15 0 R>>endobj12 0 obj<</Type/Font/Subtype/CIDFontType2/BaseFont/ArialMT/CIDSystemInfo<</Registry(Adobe)/Ordering(Identity)/Supplement 0>>/CIDToGIDMap/Identity/FontDescriptor 13 0 R/DW 0/W[0[750 0 0 277.83203]16[333.00781 277.83203 277.83203]19 28 556.15234 29[277.83203]37[666.99219 0 722.16797]47[556.15234 833.00781]68 69 556.15234 70[500 556.15234 556.15234 277.83203 556.15234 556.15234 222.16797 0 0 222.16797 833.00781]81 84 556.15234 85[333.00781 500 277.83203]]>>endobj13 0 obj<</Type/FontDescriptor/FontName/ArialMT/Flags 4/FontBBox[-664.55078 -324.70703 2000 1039.55078]/Ascent 905.27344/CapHeight 716.30859/Descent 211.91406/StemV 45.89844/ItalicAngle 0/FontFile2 14 0 R>>endobj14 0 obj<</Length1 84448/Filter/FlateDecode/Length 32326>>stream
@@ -964,6 +1119,30 @@ endobjxref0 1750000000000 65535 f
 0000143330 00000 n
 trailer<</Size 175/Root 172 0 R/Info 173 0 R/ID[<48318A4B2798DB417A8EE706030906F9><48318A4B2798DB417A8EE706030906F9>]>>startxref144290%%EOF
 
+angularx-qrcode
+MIT
+The MIT License (MIT)
+---------------------
+Copyright (c) 2018 - present Andreas Jacob (Cordobo)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
 core-js
 MIT
 Copyright (c) 2014-2019 Denis Pushkarev
@@ -1012,6 +1191,23 @@ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 
 
+
+qrcodejs2
+MIT
+The MIT License (MIT)
+---------------------
+Copyright (c) 2012 davidshimjs
+
+Permission is hereby granted, free of charge,
+to any person obtaining a copy of this software and associated documentation files (the "Software"),
+to deal in the Software without restriction,
+including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 rxjs
 Apache-2.0
