@@ -1,5 +1,5 @@
 <!--Navbar-->
-<mdb-navbar style="z-index: 9999" SideClass="navbar navbar-expand-lg navbar-dark purple lighten-1" [containerInside]="false" mdbStickyHeader>
+<mdb-navbar #navbar style="z-index: 9999" SideClass="navbar navbar-expand-lg navbar-dark purple lighten-1" [containerInside]="false" mdbStickyHeader>
   <mdb-navbar-brand>
     <a class="navbar-brand" [routerLink]="['/']">
       <img width="40" src="assets/logo-hackeps.png" alt="navbar-logo"/>
@@ -10,10 +10,10 @@
       <li class="nav-item">
         <a class="nav-link waves-light" [routerLink]="['/']" mdbWavesEffect>Home</a>
       </li>
-      <li class="nav-item" *ngIf="route.url === '/'">
+      <li class="nav-item" *ngIf="currentUrl === '/'">
         <a class="nav-link waves-light" href="#faqs" mdbWavesEffect>FAQ</a>
       </li>
-      <li class="nav-item" *ngIf="route.url === '/'">
+      <li class="nav-item" *ngIf="currentUrl === '/'">
         <a class="nav-link waves-light" href="#sponsors" mdbWavesEffect>Sponsors</a>
       </li>
     </ul>
@@ -24,8 +24,8 @@
           <img src="{{ user?.photoURL }}" alt="" width=40
             class="img-fluid rounded-circle z-depth-0"></a>
         <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
-          <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/user']">My account</a>
-          <a class="dropdown-item waves-light" mdbWavesEffect (click)="logout()">Log out</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/user']">Mi cuenta</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect (click)="logout()">Cerrar sesión</a>
         </div>
       </li>
     </ul>

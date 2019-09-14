@@ -34,6 +34,7 @@ import { TeamBuildComponent } from './user-profile/team-build/team-build.compone
 import { AcceptedComponent } from './user-profile/accepted/accepted.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
+import { RouterExtService } from './shared/services/router-ext.service';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,7 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
     // QR Generator
     QRCodeModule
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, RouterExtService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
