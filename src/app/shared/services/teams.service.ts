@@ -4,6 +4,7 @@ import { Observable, forkJoin, from, Subscriber } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { UserModel } from '../models/user.model';
 import { Team } from '../models/team.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,8 @@ export class TeamsService {
   private teamsCollection: AngularFirestoreCollection<Team>;
 
   constructor(private afs: AngularFirestore) {
-    this.teamsCollection = afs.collection('teams');
+    const collection = `${environment.baseCollection}/teams`;
+    this.teamsCollection = afs.collection(collection);
   }
 
   private generateUid(length: number) {

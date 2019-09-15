@@ -11,12 +11,15 @@ import {
   DocumentSnapshot
 } from '@angular/fire/firestore';
 import { isNullOrUndefined } from 'util';
+import { environment } from 'src/environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
 
   public user$: Observable<UserModel>;
   public loading: boolean;
+
+  private collection = `${environment.baseCollection}/users`;
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -45,7 +48,7 @@ export class AuthenticationService {
 
   public fetchUserData(uid): Observable<UserModel> {
     const userRef: AngularFirestoreDocument<UserModel> =
-      this.afStore.doc(`users/${uid}`);
+      this.afStore.doc(`${this.collection}/${uid}`);
     return userRef.get().pipe(
       map((snapshot: DocumentSnapshot<UserModel>) => {
         const userData = snapshot.data();
@@ -55,7 +58,10 @@ export class AuthenticationService {
         if (!userData.accepted) {
           userData.accepted = 'PENDENT';
         }
-        return snapshot.data();
+        if (!userData.photoURL) {
+          userData.photoURL = 'assets/no-user.png';
+        }
+        return userData;
       })
     );
   }
@@ -88,13 +94,13 @@ export class AuthenticationService {
 
   public updateUserData(user: UserModel) {
     const userRef: AngularFirestoreDocument<UserModel> =
-      this.afStore.doc(`users/${user.uid}`);
+      this.afStore.doc(`${this.collection}/${user.uid}`);
 
     return userRef.set(user, { merge: true });
   }
 
   public async isRegistered(user: UserModel) {
-    const userRef = this.afStore.doc(`users/${user.uid}`);
+    const userRef = this.afStore.doc(`${this.collection}/${user.uid}`);
     const snapshot = await userRef.get().toPromise();
     return snapshot.exists;
   }
@@ -105,12 +111,12 @@ export class AuthenticationService {
   }
 
   async loginWithMailAndPassword(email: string, password: string) {
-    var result = await this.afAuth.auth.signInWithEmailAndPassword(email, password);
+    const result = await this.afAuth.auth.signInWithEmailAndPassword(email, password);
     this.checkAndRedirect(result.user);
   }
 
   async sendEmailVerification() {
-    await this.afAuth.auth.currentUser.sendEmailVerification()
+    await this.afAuth.auth.currentUser.sendEmailVerification();
   }
 
   public async checkAndRedirect(user: UserModel) {

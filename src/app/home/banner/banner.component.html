@@ -44,9 +44,10 @@
             <fa-icon [icon]="faLock" class="prefix grey-text"></fa-icon>
             <input type="password" id="defaultForm-ConfirmPass" [formControl]="loginFormModalConfirmPassword" class="form-control"
                   mdbInput mdbValidate>
-            <label for="defaultForm-pass">Confirma tu contraseña</label>
+            <label for="defaultForm-ConfirmPass">Confirma tu contraseña</label>
             <mdb-error
-              *ngIf="loginFormModalConfirmPassword.invalid && (loginFormModalConfirmPassword.dirty || loginFormModalConfirmPassword.touched)">
+              *ngIf="loginFormModalConfirmPassword.invalid &&
+                      (loginFormModalConfirmPassword.dirty || loginFormModalConfirmPassword.touched)">
               Las contraseñas no coinciden.
             </mdb-error>
           </div>
@@ -54,7 +55,7 @@
       </div>
       <div class="modal-footer d-flex justify-content-center">
           <button mdbBtn (click)="signInSignUpMailAndPass()"[disabled]="loginFormModalPassword.invalid || loginFormModalEmail.invalid" gradient="purple" class="waves-light" mdbWavesEffect><fa-icon [icon]="faEnvelope" class="prefix"></fa-icon> Con tu Correo</button>
-          <button mdbBtn (click)="loginWithGoogle()" gradient="purple" class="waves-light" mdbWavesEffect><fa-icon [icon]="faGooglePlusG" class="prefix"></fa-icon> Con Google</button>          
+          <button mdbBtn (click)="loginWithGoogle()" gradient="purple" class="waves-light" mdbWavesEffect><fa-icon [icon]="faGooglePlusG" class="prefix"></fa-icon> Con Google</button>
       </div>
     </div>
   </div>
