@@ -97,16 +97,20 @@ export class TeamBuildComponent implements OnInit {
 
   public leaveTeam(modal: any) {
     this.teamService.getTeamByUser(this.user).subscribe(
-      res => {
-        if (res) {
-          this.teamService.removeMember(res, this.user).subscribe(res => {
-            if (res !== 'Ok') {
-              alert('Error inesperado');
+      team => {
+        if (team) {
+          this.teamService.removeMember(team, this.user).subscribe(msg => {
+            if (msg !== 'Ok') {
+              this.error = 'Error inesperado, intentalo más tarde';
+              setTimeout(() => this.error = '', 5000);
             } else {
               this.team = null;
+              modal.hide();
             }
-            modal.hide();
           });
+        } else {
+          this.error = 'Error al obtener los datos del equipo';
+          setTimeout(() => this.error = '', 5000);
         }
       }
     );
