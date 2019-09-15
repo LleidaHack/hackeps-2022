@@ -1,7 +1,7 @@
 [
     {
         "question": "¿Qué es la HackEPS?",
-        "answer": "La segunda edición de la Hackathon en la Universidad de Lleida, con el objetivo de motivar a la programación como afición."
+        "answer": "La tercera edición de la Hackathon en la Universidad de Lleida, con el objetivo de motivar a la programación como afición."
     },
     {
         "question": "¿Cuándo es la HackEPS?",
@@ -17,7 +17,7 @@
     },
     {
         "question": "¿Se participa en equipos?",
-        "answer": "Sí, equipos de máximo 4 personas. Nuestra experiencia dice que 3 o 4 personas es lo mejor."
+        "answer": "Sí, se puede participar individualmente o en equipos de máximo 4 personas. Nuestra experiencia dice que 3 o 4 personas es lo mejor."
     },
     {
         "question": "¿Y si no tengo equipo?",
@@ -33,6 +33,6 @@
     },
     {
         "question": "¿Quieres colaborar con nosotros?",
-        "answer": "Estamos abiertos a cualquier tipo de colaboración ya sea como un organizador más, como sponsor o como mentor. Contacta con nosotros."
+        "answer": "Estamos abiertos a cualquier tipo de colaboración ya sea como organizador o sponsor. Contacta con nosotros."
     }
 ]
