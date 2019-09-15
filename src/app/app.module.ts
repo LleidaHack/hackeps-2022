@@ -35,6 +35,7 @@ import { AcceptedComponent } from './user-profile/accepted/accepted.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 import { RouterExtService } from './shared/services/router-ext.service';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { RouterExtService } from './shared/services/router-ext.service';
     ProfileUpdaterFormComponent,
     TeamBuildComponent,
     AcceptedComponent,
-    TermsAndConditionsComponent
+    TermsAndConditionsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
