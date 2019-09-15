@@ -6,7 +6,7 @@
     </mdb-card-title>
     <mdb-card-text>
       <div *ngIf="team" class="row justify-content-center">
-        <div *ngFor="let m of [team?.creator].concat(team?.members); let i = index" class="col-lg-3 col-md-3 col-sm-6 col-6 mb-4">
+        <div *ngFor="let m of team?.members; let i = index" class="col-lg-3 col-md-3 col-sm-6 col-6 mb-4">
           <div class="team-member view overlay">
             <img src="{{ m?.photoURL || 'assets/no-user.png' }}" class="img-fluid rounded-circle"
               alt="team-member-{{ i }}">
@@ -31,8 +31,12 @@
     </div>
     <div *ngIf="team" class="text-center">
       <h3 class="display-4 team-name"><i class="fas fa-shield-alt"></i> {{ team.name }}</h3>
-      <small class="text-muted">Miembros: {{ this.team.members.length + 1 }}/4 </small><br>
+      <small class="text-muted">Miembros: {{ this.team.members.length }}/4 </small><br>
       <small class="text-muted">Comparte este código con tus amigos: {{ team.uid }}</small>
+    </div>
+    <div *ngIf="team" class="text-right">
+      <a (click)="!loadingTeam && leaveTeamModal.show()" class="card-link"><i class="fas fa-sign-out-alt"></i>
+        Abandonar el equipo</a>
     </div>
   </mdb-card-body>
 </mdb-card>
@@ -92,4 +96,29 @@
       </div>
     </div>
   </div>
+</div>
+
+<div mdbModal #leaveTeamModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="leaveTeamModal"aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="joinTeamMoal.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title w-100" id="myModalLabel"> <i class="fas fa-qrcode"></i>
+            Abandonar el equipo</h4>
+        </div>
+        <div class="modal-body">
+          <p class="text-muted">
+            ¿Estás seguro que deseas abandonar tu equipo?
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" mdbBtn color="danger" class="waves-light" aria-label="Close" (click)="leaveTeamModal.hide()"
+            size="sm" mdbWavesEffect>Cancelar</button>
+          <button type="button" size="sm" mdbBtn color="secondary" class="relative waves-light"
+            (click)="leaveTeam(leaveTeamModal)" mdbWavesEffect>Abandonar equipo</button>
+        </div>
+      </div>
+    </div>
 </div>
