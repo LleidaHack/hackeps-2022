@@ -11,7 +11,9 @@
 <div mdbModal #frame="mdbModal" class="modal fade left" id="signModal" tabindex="-1" role="dialog"
      aria-labelledby="signModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
+    
     <div class="modal-content modal-pos">
+      <alert></alert>
       <div class="modal-header text-center">
         <h4 class="modal-title w-100 font-weight-bold">{{this.getModalTitle()}}</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
@@ -54,7 +56,7 @@
       </div>
       <div class="modal-footer d-flex justify-content-center">
           <button mdbBtn (click)="signInSignUpMailAndPass()"[disabled]="loginFormModalPassword.invalid || loginFormModalEmail.invalid" gradient="purple" class="waves-light" mdbWavesEffect><fa-icon [icon]="faEnvelope" class="prefix"></fa-icon> Con tu Correo</button>
-          <button mdbBtn (click)="loginWithGoogle()" gradient="purple" class="waves-light" mdbWavesEffect><fa-icon [icon]="faGooglePlusG" class="prefix"></fa-icon> Con Google</button>          
+          <button mdbBtn (click)="loginWithGoogle()" gradient="purple" class="waves-light" mdbWavesEffect><fa-icon [icon]="faGooglePlusG" class="prefix"></fa-icon> Con Google</button>
       </div>
     </div>
   </div>

@@ -5,6 +5,7 @@ import { FormControl, FormGroup, Validators, FormBuilder } from "@angular/forms"
 import { faEnvelope, faLock, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faGooglePlusG } from '@fortawesome/free-brands-svg-icons' 
 import { MustMatch } from 'src/app/shared/validators/sign.validator';
+import { AlertService } from 'src/app/external/_alert';
 
 declare var particlesJS: any;
 
@@ -15,19 +16,24 @@ declare var particlesJS: any;
 })
 export class BannerComponent implements OnInit {
   // FontAwesome
-  private faEnvelope = faEnvelope;
-  private faLock = faLock;
-  private faPlus = faPlus;
-  private faGooglePlusG = faGooglePlusG;
+  faEnvelope = faEnvelope;
+  faLock = faLock;
+  faPlus = faPlus;
+  faGooglePlusG = faGooglePlusG;
 
   private user: UserModel;
   private validatingForm: FormGroup;
   private showConfirmPassword: boolean;
   private signIn: boolean;
   private modalTitle: string;
+  public errorMessage: string;
   @Output() public afterLogin = new EventEmitter();
 
-  constructor(private auth: AuthenticationService, private formBuilder: FormBuilder) { }
+  constructor(
+    private auth: AuthenticationService, 
+    private formBuilder: FormBuilder,
+    private alertService: AlertService
+    ) { }
   ngOnInit() {
     this.validatingForm = this.formBuilder.group({
       loginFormModalEmail: new FormControl('', Validators.compose([Validators.email, Validators.required])),
@@ -152,6 +158,14 @@ export class BannerComponent implements OnInit {
     return this.showConfirmPassword
   }
 
+  getErrorMessage() {
+    return  this.errorMessage;
+  }
+
+  setErrorMessage(errorMessage: string) {
+    this.errorMessage = errorMessage;
+  }
+
   enableSignIn() {
     this.signIn = true;
   }
@@ -184,18 +198,22 @@ export class BannerComponent implements OnInit {
 
   public signInSignUpMailAndPass() {
     if (this.showConfirmPassword) {
-      this.signUpWithMailAndPass();
+      this.auth.mailSignUp(this.loginFormModalEmail.value, this.loginFormModalPassword.value).
+      then((code) => { 
+        if(code) {
+          this.alertService.clear(); 
+          this.alertService.error(code); 
+        }
+      });
     } else {
-      this.signInWithMailAndPass();
+      this.auth.loginWithMailAndPassword(this.loginFormModalEmail.value, this.loginFormModalPassword.value).
+      then((code) => { 
+        if(code) {
+          this.alertService.clear(); 
+          this.alertService.error(code); 
+        }
+      });
     }
   }
-  
-  public signInWithMailAndPass() {
-    this.auth.loginWithMailAndPassword(this.loginFormModalEmail.value, this.loginFormModalPassword.value)
-  }
 
-  public signUpWithMailAndPass() {
-    this.auth.mailSignUp(this.loginFormModalEmail.value, this.loginFormModalPassword.value);
-  }
-  
 }

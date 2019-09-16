@@ -20,6 +20,10 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { environment } from '../environments/environment';
 
+//Alerts
+import { AlertModule } from './external/_alert';
+import { MultiAlertsComponent } from './external/multi-alerts';
+
 import { BannerComponent } from './home/banner/banner.component';
 import { HomeComponent } from './home/home.component';
 
@@ -34,6 +38,9 @@ import { TeamBuildComponent } from './user-profile/team-build/team-build.compone
 import { AcceptedComponent } from './user-profile/accepted/accepted.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
+import { MessagesService } from './shared/services/messages.service';
+
+
 
 @NgModule({
   declarations: [
@@ -49,7 +56,8 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
     ProfileUpdaterFormComponent,
     TeamBuildComponent,
     AcceptedComponent,
-    TermsAndConditionsComponent
+    TermsAndConditionsComponent,
+    MultiAlertsComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +65,7 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
     ReactiveFormsModule,
     FormsModule,
     FontAwesomeModule,
+    AlertModule,
 
     // Bootstrap
     MDBBootstrapModule.forRoot(),
@@ -69,7 +78,7 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
     // QR Generator
     QRCodeModule
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, MessagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -11,6 +11,7 @@ import {
   DocumentSnapshot
 } from '@angular/fire/firestore';
 import { isNullOrUndefined } from 'util';
+import { MessagesService } from './messages.service';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
@@ -22,6 +23,7 @@ export class AuthenticationService {
     public afAuth: AngularFireAuth,
     private afStore: AngularFirestore,
     private router: Router
+
   ) {
     this.user$ = this.afAuth.authState.pipe(
       map((u: User) => {
@@ -99,18 +101,22 @@ export class AuthenticationService {
     return snapshot.exists;
   }
 
-  public async mailSignUp(email: string, password: string) {
-    const result = await this.afAuth.auth.createUserWithEmailAndPassword(email, password);
-    this.checkAndRedirect(result.user);
+  public async mailSignUp(email: string, password: string){
+    return this.afAuth.auth.createUserWithEmailAndPassword(email, password).then(function(success){
+      this.checkAndRedirect(success.user);
+    }).catch(function(error){
+      const messageService = new MessagesService()
+      return messageService.translateMessage(error.code);
+    });
   }
 
-  async loginWithMailAndPassword(email: string, password: string) {
-    var result = await this.afAuth.auth.signInWithEmailAndPassword(email, password);
-    this.checkAndRedirect(result.user);
-  }
-
-  async sendEmailVerification() {
-    await this.afAuth.auth.currentUser.sendEmailVerification()
+  public async loginWithMailAndPassword(email: string, password: string) {
+    return this.afAuth.auth.signInWithEmailAndPassword(email, password).then(function(success){
+      this.checkAndRedirect(success.user);
+    }).catch(function(error){
+      const messageService = new MessagesService();
+      return messageService.translateMessage(error.code);
+    });
   }
 
   public async checkAndRedirect(user: UserModel) {
