@@ -41,6 +41,8 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
 import { MessagesService } from './shared/services/messages.service';
 
 
+import { RouterExtService } from './shared/services/router-ext.service';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +60,7 @@ import { MessagesService } from './shared/services/messages.service';
     AcceptedComponent,
     TermsAndConditionsComponent,
     MultiAlertsComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,7 +81,7 @@ import { MessagesService } from './shared/services/messages.service';
     // QR Generator
     QRCodeModule
   ],
-  providers: [AuthGuard, MessagesService],
+  providers: [AuthGuard, MessagesService, RouterExtService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

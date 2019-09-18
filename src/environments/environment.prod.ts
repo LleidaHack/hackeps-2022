@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
+  baseCollection: 'hackeps-2019/prod',
   firebase: {
     apiKey: "AIzaSyA0n4ujEDzIuJz1_w5Wg-QAVZ6Ket54oy4",
     authDomain: "hackeps-2019.firebaseapp.com",

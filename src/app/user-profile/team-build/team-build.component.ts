@@ -1,3 +1,4 @@
+import { Team } from './../../shared/models/team.model';
 import { TeamsService } from './../../shared/services/teams.service';
 import { UserModel } from './../../shared/models/user.model';
 import { Component, OnInit, Input } from '@angular/core';
@@ -16,11 +17,9 @@ export class TeamBuildComponent implements OnInit {
   public error: string;
 
   public loadingTeam = true;
-  public iAmCreator = false;
   public team: {
     uid?: string,
     name?: string,
-    creator?: UserModel,
     members?: UserModel[]
   };
 
@@ -36,14 +35,12 @@ export class TeamBuildComponent implements OnInit {
       if (isNullOrUndefined(t)) {
         this.loadingTeam = false;
       } else {
-        this.teamService.getMembersOfTeam(t).subscribe(r => {
+        this.teamService.getMembersOfTeam(t).subscribe(members => {
           this.team = {
             uid: t.uid,
             name: t.name,
-            creator: r.creator,
-            members: r.members
+            members
           };
-          this.iAmCreator = r.creator.uid === this.user.uid;
           this.loadingTeam = false;
         });
       }
@@ -86,11 +83,9 @@ export class TeamBuildComponent implements OnInit {
             this.error = `Error al crear el equipo. Vuelve a probar más tarde`;
             setTimeout(() => this.error = '', 5000);
           } else {
-            this.iAmCreator = true;
             this.team = {
               uid: team.uid,
               members: [],
-              creator: this.user,
               name: team.name
             };
             modal.hide();
@@ -98,5 +93,26 @@ export class TeamBuildComponent implements OnInit {
         });
       }
     });
+  }
+
+  public leaveTeam(modal: any) {
+    this.teamService.getTeamByUser(this.user).subscribe(
+      team => {
+        if (team) {
+          this.teamService.removeMember(team, this.user).subscribe(msg => {
+            if (msg !== 'Ok') {
+              this.error = 'Error inesperado, intentalo más tarde';
+              setTimeout(() => this.error = '', 5000);
+            } else {
+              this.team = null;
+              modal.hide();
+            }
+          });
+        } else {
+          this.error = 'Error al obtener los datos del equipo';
+          setTimeout(() => this.error = '', 5000);
+        }
+      }
+    );
   }
 }

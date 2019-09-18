@@ -1,8 +1,9 @@
 import { AuthenticationService } from '../shared/services/authentication.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { UserModel } from '../shared/models/user.model';
 import { ReturnStatement } from '@angular/compiler';
+import { RouterExtService } from '../shared/services/router-ext.service';
 
 @Component({
   selector: 'app-home',
@@ -11,13 +12,21 @@ import { ReturnStatement } from '@angular/compiler';
 })
 export class HomeComponent implements OnInit {
   public loading: boolean;
+  private previousUrl: string;
+  private currentUrl: string;
 
   constructor(
     private auth: AuthenticationService,
-    private router: Router) { }
+    private router: Router,
+    private routerExt: RouterExtService) {
+    }
 
   ngOnInit() {
     this.loading = true;
+    if (this.routerExt.getPreviousUrl() === '/user') {
+      this.loading = false;
+      return;
+    }
 
     this.auth.loginAfterRedirect().then(creds => {
       this.checkAndRedirect(creds.user);
@@ -31,9 +40,10 @@ export class HomeComponent implements OnInit {
     }
 
     if (await this.auth.isRegistered(user)) {
-      this.router.navigateByUrl('/user').then(() => this.loading = false);
+      await this.router.navigateByUrl('/user');
     } else {
-      this.router.navigateByUrl('/user/signup').then(() => this.loading = false);
+      await this.router.navigateByUrl('/user/signup');
     }
+    this.loading = false;
   }
 }

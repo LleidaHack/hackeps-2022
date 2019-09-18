@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, DocumentSnapshot, QuerySnapshot } from '@angular/fire/firestore';
-import { Observable, forkJoin, from, of, Subscriber } from 'rxjs';
+import { Observable, forkJoin, from, Subscriber } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { UserModel } from '../models/user.model';
 import { Team } from '../models/team.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,8 @@ export class TeamsService {
   private teamsCollection: AngularFirestoreCollection<Team>;
 
   constructor(private afs: AngularFirestore) {
-    this.teamsCollection = afs.collection('teams');
+    const collection = `${environment.baseCollection}/teams`;
+    this.teamsCollection = afs.collection(collection);
   }
 
   private generateUid(length: number) {
@@ -30,8 +32,7 @@ export class TeamsService {
     const code = this.generateUid(15);
     const newTeam = {
       uid: code,
-      creator: this.afs.doc(`/users/${user.uid}`).ref,
-      members: [],
+      members: [this.afs.doc(`/users/${user.uid}`).ref],
       name: teamName
     };
 
@@ -64,19 +65,13 @@ export class TeamsService {
     );
   }
 
-  public getMembersOfTeam(team: Team)
-    : Observable<{creator: UserModel, members: UserModel[]}> {
-    const creator$ = team.creator.get();
+  public getMembersOfTeam(team: Team): Observable<UserModel[]> {
     const members$ = team.members.map(m => m.get());
 
-    return forkJoin(members$.concat(creator$)).pipe(
+    return forkJoin(members$).pipe(
       map((res: DocumentSnapshot<UserModel>[]) => {
-        const members =
-          res.slice(0, res.length - 1).map(m => m.data());
-
-        const creator = res[res.length - 1].data();
-
-        return { creator, members };
+        const members = res.map(m => m.data());
+        return members;
       })
     );
   }
@@ -85,23 +80,16 @@ export class TeamsService {
     const userRef = this.afs.collection('users').doc(user.uid).ref;
     const collectionRef = this.teamsCollection.ref;
 
-    const creatorTeam = collectionRef.where('creator', '==', userRef)
-                                      .limit(1);
-
     const member = collectionRef.where('members',
                                        'array-contains',
                                        userRef)
                                 .limit(1);
 
     return new Observable<Team>(obs => {
-      forkJoin(creatorTeam.get(), member.get()).subscribe(
-        (res: [QuerySnapshot<Team>, QuerySnapshot<Team>]) => {
-          if (res[0].docs.length > 0) {
-            // Found the team which `user` is the creator
-            obs.next(res[0].docs[0].data());
-          } else if (res[1].docs.length > 0) {
-            // Found the team which `user` is a member
-            obs.next(res[1].docs[0].data());
+      from(member.get()).subscribe(
+        (res: QuerySnapshot<Team>) => {
+          if (res.docs.length > 0) {
+            obs.next(res.docs[0].data());
           } else {
             obs.next(null);
           }
@@ -112,8 +100,7 @@ export class TeamsService {
   }
 
   private pushNewMember(team: Team, user: UserModel, obs: Subscriber<string>) {
-
-    if (team.members.length < 3) {
+    if (team.members.length < 4) {
       const userRef = this.afs.doc(`/users/${user.uid}`).ref;
       team.members.push(userRef);
       this.teamsCollection.doc(team.name).set(team)
@@ -124,9 +111,36 @@ export class TeamsService {
           this.nextUnexpectedError(obs);
         });
     } else {
-      obs.next('El equipo ya dispone de 3 miembros más el creador');
+      obs.next('El equipo ya dispone de 4 miembros más el creador');
       obs.complete();
     }
+  }
+
+  public removeMember(team: Team, user: UserModel) {
+    const userRef = this.afs.doc(`/users/${user.uid}`).ref;
+    const willDelete = team.members.length === 1;
+    return new Observable(obs => {
+      if (willDelete) {
+        // If the team is composed of a single member
+        // We delete the team collection instead of only the member
+        this.teamsCollection.doc(team.name).delete().then(() => {
+          obs.next('Ok');
+          obs.complete();
+        })
+        .catch(() => {
+          this.nextUnexpectedError(obs);
+        });
+      } else {
+        team.members.splice(team.members.indexOf(userRef), 1);
+        this.teamsCollection.doc(team.name).set(team)
+          .then(() => {
+            obs.next('Ok');
+            obs.complete();
+          }).catch(() => {
+            this.nextUnexpectedError(obs);
+          });
+      }
+    });
   }
 
   public addMemberByCode(teamCode: string, user: UserModel): Observable<string> {

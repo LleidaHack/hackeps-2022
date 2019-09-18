@@ -46,7 +46,9 @@
               <h6 class="text-muted mb-2">Si te has equivocado durante el registro, modifica aquí tus datos</h6>
             </mdb-card-title>
             <mdb-card-text>
+              <div>
               <app-profile-updater-form (loading)="loading = $event" [user]="user"></app-profile-updater-form>
+              </div>
             </mdb-card-text>
           </mdb-card-body>
         </mdb-card>

@@ -12,12 +12,15 @@ import {
 } from '@angular/fire/firestore';
 import { isNullOrUndefined } from 'util';
 import { MessagesService } from './messages.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
 
   public user$: Observable<UserModel>;
   public loading: boolean;
+
+  private collection = `${environment.baseCollection}/users`;
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -47,7 +50,7 @@ export class AuthenticationService {
 
   public fetchUserData(uid): Observable<UserModel> {
     const userRef: AngularFirestoreDocument<UserModel> =
-      this.afStore.doc(`users/${uid}`);
+      this.afStore.doc(`${this.collection}/${uid}`);
     return userRef.get().pipe(
       map((snapshot: DocumentSnapshot<UserModel>) => {
         const userData = snapshot.data();
@@ -57,7 +60,10 @@ export class AuthenticationService {
         if (!userData.accepted) {
           userData.accepted = 'PENDENT';
         }
-        return snapshot.data();
+        if (!userData.photoURL) {
+          userData.photoURL = 'assets/no-user.png';
+        }
+        return userData;
       })
     );
   }
@@ -90,20 +96,20 @@ export class AuthenticationService {
 
   public updateUserData(user: UserModel) {
     const userRef: AngularFirestoreDocument<UserModel> =
-      this.afStore.doc(`users/${user.uid}`);
-
+      this.afStore.doc(`${this.collection}/${user.uid}`);
     return userRef.set(user, { merge: true });
   }
 
   public async isRegistered(user: UserModel) {
-    const userRef = this.afStore.doc(`users/${user.uid}`);
+    const userRef = this.afStore.doc(`${this.collection}/${user.uid}`);
     const snapshot = await userRef.get().toPromise();
     return snapshot.exists;
   }
 
   public async mailSignUp(email: string, password: string){
-    return this.afAuth.auth.createUserWithEmailAndPassword(email, password).then(function(success){
-      this.checkAndRedirect(success.user);
+    return this.afAuth.auth.createUserWithEmailAndPassword(email, password).then(
+      success => {
+        this.checkAndRedirect(success.user);
     }).catch(function(error){
       const messageService = new MessagesService()
       return messageService.translateMessage(error.code);
@@ -120,6 +126,7 @@ export class AuthenticationService {
   }
 
   public async checkAndRedirect(user: UserModel) {
+    console.log(user);  
     if (!user) {
       this.loading = false;
       return;
@@ -129,5 +136,11 @@ export class AuthenticationService {
     } else {
       this.router.navigateByUrl('/user/signup');
     }
+  }
+
+  public getDummyUser(userMail: string) {
+    var userModel: UserModel;
+    userModel.uid = "Jhon Doe";
+    userModel.email = userMail;
   }
 }
