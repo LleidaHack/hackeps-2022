@@ -78,6 +78,8 @@
             <label>Alérgenos </label>
             <textarea formControlName="food" type="text" id="food" name="food" class="form-control mb-4" placeholder="Pescado, lechuga..."></textarea>
 
+            <mdb-checkbox formControlName="gdpr" [default]="true">Acepto que las empresas colaboradoras puedan conocer mi datos</mdb-checkbox>
+
             <mdb-checkbox formControlName="terms" [default]="true">He leído y acepto los <a [routerLink]="['/terms-and-conditions']">terminos y condiciones</a> *</mdb-checkbox>
 
             <i class="text-muted mt-2">* Campos obligatorios</i>
