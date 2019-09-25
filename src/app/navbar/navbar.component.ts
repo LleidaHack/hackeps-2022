@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, DebugElement } from '@angular/core';
 import { UserModel } from '../shared/models/user.model';
 import { AuthenticationService } from '../shared/services/authentication.service';
 import { Router, NavigationEnd } from '@angular/router';
@@ -45,5 +45,12 @@ export class NavbarComponent implements OnInit {
 
   public logout() {
     this.auth.signOut().then(() => this.navbar.hide());
+  }
+
+  /*Not logged url validator using regex*/
+  public urlRegexValidator(){
+    var partialUrl = new RegExp('[//#]\w*'); //Validate if the url is like --> '/#' + '<qualsevol paraula>'
+    return partialUrl.test(this.currentUrl) || this.currentUrl === '/';
+   
   }
 }
