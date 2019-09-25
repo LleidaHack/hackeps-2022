@@ -49,8 +49,7 @@ export class NavbarComponent implements OnInit {
 
   /*Not logged url validator using regex*/
   public urlRegexValidator(){
-    var partialUrl = new RegExp('[//#]\w*'); //Validate if the url is like --> '/#' + '<qualsevol paraula>'
-    return partialUrl.test(this.currentUrl) || this.currentUrl === '/';
-   
+    //Validate if the url is like --> '/#' + '<qualsevol paraula>'
+    return new RegExp('[//#]\w*').test(this.currentUrl) || this.currentUrl === '/';
   }
 }
