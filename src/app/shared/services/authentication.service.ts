@@ -117,7 +117,8 @@ export class AuthenticationService {
   }
 
   public async loginWithMailAndPassword(email: string, password: string) {
-    return this.afAuth.auth.signInWithEmailAndPassword(email, password).then(function(success){
+    return this.afAuth.auth.signInWithEmailAndPassword(email, password).then(
+      success => {
       this.checkAndRedirect(success.user);
     }).catch(function(error){
       const messageService = new MessagesService();
