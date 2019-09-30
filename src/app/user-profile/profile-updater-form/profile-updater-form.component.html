@@ -7,10 +7,6 @@
   <input formControlName="nickname" type="text" id="nickname" name="nickname" class="form-control mb-4"
     placeholder="JhonDoe6969">
 
-  <label>Correo electrónico</label>
-  <input formControlName="email" type="email" id="email" name="email" class="form-control mb-4"
-    placeholder="jhon.doe@mail.com">
-
   <label for="birth-date">Fecha de nacimiento</label>
   <input formControlName="birthDate" type="date" id="birth-date" name="birth-date" class="form-control mb-4" mdbInput>
 
@@ -22,43 +18,11 @@
   <input formControlName="linkedinUrl" type="text" id="linkedin-url" name="linkedin-url" class="form-control mb-4"
     placeholder="https://linkedin...">
 
-  <label><i class="fas fa-tshirt"></i> Talla camiseta</label>
-  <div class="mb-4 ml-4">
-
-    <div class="custom-control custom-radio custom-control-inline">
-      <input value="S" formControlName="shirtSize" type="radio" class="custom-control-input" id="s-size"
-        name="shirtSize" mdbInput>
-      <label class="custom-control-label" for="s-size">S</label>
-    </div>
-
-    <div class="custom-control custom-radio custom-control-inline">
-      <input value="M" formControlName="shirtSize" type="radio" class="custom-control-input" id="m-size"
-        name="shirtSize" mdbInput>
-      <label class="custom-control-label" for="m-size">M</label>
-    </div>
-
-    <div class="custom-control custom-radio custom-control-inline">
-      <input value="L" formControlName="shirtSize" type="radio" class="custom-control-input" id="l-size"
-        name="shirtSize" mdbInput>
-      <label class="custom-control-label" for="l-size">L</label>
-    </div>
-
-    <div class="custom-control custom-radio custom-control-inline">
-      <input value="XL" formControlName="shirtSize" type="radio" class="custom-control-input" id="xl-size"
-        name="shirtSize" mdbInput>
-      <label class="custom-control-label" for="xl-size">XL</label>
-    </div>
-
-    <div class="custom-control custom-radio custom-control-inline">
-      <input value="XXL" formControlName="shirtSize" type="radio" class="custom-control-input" id="xxl-size"
-        name="shirtSize" mdbInput>
-      <label class="custom-control-label" for="xxl-size">XXL</label>
-    </div>
-  </div>
-
   <label>Alérgenos </label>
   <textarea formControlName="food" type="text" id="food" name="food" class="form-control mb-4"
     placeholder="Pescado, lechuga..."></textarea>
+
+  <mdb-checkbox formControlName="gdpr" [default]="true">Acepto que las empresas colaboradoras puedan conocer mi datos</mdb-checkbox>
 
   <div class="w-100 text-right">
     <button mdbBtn [disabled]="!profileUpdaterForm.valid" type="submit" gradient="purple" rounded="true" size="sm"

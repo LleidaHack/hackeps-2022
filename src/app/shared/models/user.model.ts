@@ -9,6 +9,7 @@ export interface UserModel {
   githubUrl?: string;
   linkedinUrl?: string;
   accepted?: string;
+  gdpr?: boolean;
   food?: string;
   shirtSize?: string;
 }
