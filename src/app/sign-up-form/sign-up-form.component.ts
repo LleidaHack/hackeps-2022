@@ -34,6 +34,7 @@ export class SignUpFormComponent implements OnInit {
       terms: ['', Validators.requiredTrue],
       shirtSize: ['S'],
       food: [''],
+      gdpr: ['']
     });
   }
 

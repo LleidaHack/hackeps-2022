@@ -24,14 +24,12 @@ export class ProfileUpdaterFormComponent implements OnInit, OnChanges {
                                              Validators.minLength(10)])],
       nickname:     ['', Validators.compose([Validators.required,
                                              Validators.minLength(2)])],
-      email:        ['', Validators.compose([Validators.required,
-                                             Validators.email])],
       birthDate:    ['', Validators.required],
       githubUrl:    ['', Validators.compose([Validators.required,
                                              UrlValidator.url])],
       linkedinUrl:  ['', Validators.compose([UrlValidator.url])],
       food: [''],
-      shirtSize: [''],
+      gdpr: ['']
     });
   }
 
@@ -44,8 +42,6 @@ export class ProfileUpdaterFormComponent implements OnInit, OnChanges {
       .setValue(this.user.nickname);
     this.profileUpdaterForm.get('fullName')
       .setValue(this.user.fullName);
-    this.profileUpdaterForm.get('email')
-      .setValue(this.user.email);
     this.profileUpdaterForm.get('birthDate')
       .setValue(this.user.birthDate);
     this.profileUpdaterForm.get('githubUrl')
@@ -54,8 +50,8 @@ export class ProfileUpdaterFormComponent implements OnInit, OnChanges {
       .setValue(this.user.linkedinUrl);
     this.profileUpdaterForm.get('food')
       .setValue(this.user.food);
-    this.profileUpdaterForm.get('shirtSize')
-      .setValue(this.user.shirtSize);
+    this.profileUpdaterForm.get('gdpr')
+      .setValue(this.user.gdpr);
   }
 
   public onSubmit() {

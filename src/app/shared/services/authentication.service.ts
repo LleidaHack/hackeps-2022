@@ -57,12 +57,9 @@ export class AuthenticationService {
         if (!userData) {
           return null;
         }
-        if (!userData.accepted) {
-          userData.accepted = 'PENDENT';
-        }
-        if (!userData.photoURL) {
-          userData.photoURL = 'assets/no-user.png';
-        }
+        userData.accepted = userData.accepted || 'PENDENT';
+        userData.photoURL = userData.photoURL || 'assets/no-user.png';
+        userData.gdpr = userData.gdpr || false;
         return userData;
       })
     );
@@ -117,7 +114,8 @@ export class AuthenticationService {
   }
 
   public async loginWithMailAndPassword(email: string, password: string) {
-    return this.afAuth.auth.signInWithEmailAndPassword(email, password).then(function(success){
+    return this.afAuth.auth.signInWithEmailAndPassword(email, password).then(
+      success => {
       this.checkAndRedirect(success.user);
     }).catch(function(error){
       const messageService = new MessagesService();
@@ -126,7 +124,7 @@ export class AuthenticationService {
   }
 
   public async checkAndRedirect(user: UserModel) {
-    console.log(user);  
+    console.log(user);
     if (!user) {
       this.loading = false;
       return;

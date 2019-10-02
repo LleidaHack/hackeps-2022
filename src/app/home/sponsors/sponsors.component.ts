@@ -19,11 +19,6 @@ export class SponsorsComponent implements OnInit {
       level: 0
     },
     {
-      web: 'https://enginyeriainformatica.cat/?page_id=25696',
-      img: 'assets/colegi-info.png',
-      level: 1
-    },
-    {
       web: 'https://www.dominospizza.es',
       img: 'assets/dominos_pizza.png',
       level: 2
@@ -53,6 +48,25 @@ export class SponsorsComponent implements OnInit {
       img: 'assets/semic.png',
       level: 1
     },
+
+    {
+      web: 'https://enginyeriainformatica.cat/',
+      img: 'assets/coinf.png',
+      level: 2
+    },
+    {
+      web: 'https://alumni.udl.cat/alumni/',
+      img: 'assets/alumni.jpg',
+      level: 2
+    },
+
+    {
+      web: 'http://www.udl.es/ca/',
+      img: 'assets/logo_udl.jpg',
+      level: 0
+    },
+
+
   ];
 
   constructor() { }
