@@ -43,6 +43,7 @@ import { MessagesService } from './shared/services/messages.service';
 
 import { RouterExtService } from './shared/services/router-ext.service';
 import { NavbarComponent } from './navbar/navbar.component';
+import { TermsAndConditionsTextComponent } from './terms-and-conditions/terms-and-conditions-text/terms-and-conditions-text.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     TeamBuildComponent,
     AcceptedComponent,
     TermsAndConditionsComponent,
+    TermsAndConditionsTextComponent,
     MultiAlertsComponent,
     NavbarComponent,
   ],
