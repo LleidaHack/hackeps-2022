@@ -66,7 +66,7 @@ export class TeamsService {
   }
 
   public getMembersOfTeam(team: Team): Observable<UserModel[]> {
-    const members$ = team.members.map(m => m.get());
+    const members$ = team.members.map(m => this.afs.doc(`${environment.baseCollection}/${m.path}`).get());
 
     return forkJoin(members$).pipe(
       map((res: DocumentSnapshot<UserModel>[]) => {
