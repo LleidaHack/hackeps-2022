@@ -65,8 +65,11 @@ export class SponsorsComponent implements OnInit {
       img: 'assets/logo_udl.jpg',
       level: 0
     },
-
-
+    {
+      web: 'http://www.consell-eps.udl.cat/',
+      img: 'assets/consell.jpg',
+      level: 3
+    },
   ];
 
   constructor() { }
