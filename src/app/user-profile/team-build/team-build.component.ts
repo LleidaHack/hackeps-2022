@@ -85,7 +85,7 @@ export class TeamBuildComponent implements OnInit {
           } else {
             this.team = {
               uid: team.uid,
-              members: [],
+              members: [this.user],
               name: team.name
             };
             modal.hide();

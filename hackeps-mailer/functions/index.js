@@ -60,7 +60,7 @@ const sendAdmissionMail = (user, isAccepted) => {
 }
 
 exports.updateAdmission = functions.firestore
-  .document('users/{userId}')
+  .document('hackeps-2019/dev/users/{userId}')
   .onUpdate((change, context) => {
     const newUser = change.after.data();
     const oldUser = change.before.data();
