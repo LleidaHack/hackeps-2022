@@ -44,6 +44,7 @@ import { MessagesService } from './shared/services/messages.service';
 import { RouterExtService } from './shared/services/router-ext.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TermsAndConditionsTextComponent } from './terms-and-conditions/terms-and-conditions-text/terms-and-conditions-text.component';
+import { CalendarUploaderComponent } from './user-profile/calendar-uploader/calendar-uploader.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { TermsAndConditionsTextComponent } from './terms-and-conditions/terms-an
     TermsAndConditionsTextComponent,
     MultiAlertsComponent,
     NavbarComponent,
+    CalendarUploaderComponent,
   ],
   imports: [
     BrowserModule,

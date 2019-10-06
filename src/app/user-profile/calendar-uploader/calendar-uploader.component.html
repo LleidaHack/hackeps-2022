@@ -1,0 +1,49 @@
+<mdb-card>
+  <mdb-card-body>
+    <mdb-card-title>
+      <h5 class="montserrat"><i class="fas fa-calendar-alt"></i> CALENDARIO</h5>
+      <h6 class="text-muted mb-4">Comparte tus soluciones con el equipo de HackEPS</h6>
+    </mdb-card-title>
+    <mdb-card-text>
+      <div class="row pl-3 align-items-center">
+        <div class="col-10">
+          <label><i class="fas fa-microchip mr-1"></i> Reto de algoritmia</label>
+          <input type="text" id="challenge1" name="challenge1" class="form-control mb-4"
+            #challenge1 placeholder="URL de tu repositorio de GitHub">
+        </div>
+        <div class="col-2">
+          <button mdbBtn type="submit"
+                  gradient="purple" rounded="true"
+                  size="sm"
+                  (click)="submitCostChallenge(challenge1)"
+                  mdbWavesEffect>Subir</button>
+        </div>
+
+        <div class="col-10">
+          <label><img class="pokemon-challenge-icon mr-1" src="assets/pokemon-challenge.svg" /> Reto Pokémon <i>Web
+              Spider</i></label>
+          <input type="text" id="challenge2" name="challenge2" class="form-control mb-4"
+            #challenge2 placeholder="URL de tu repositorio de GitHub">
+        </div>
+        <div class="col-2">
+          <button mdbBtn type="submit"
+                  gradient="purple" rounded="true"
+                  size="sm"
+                  (click)="submitPokemonChallenge(challenge2)"
+                  mdbWavesEffect>Subir</button>
+        </div>
+        <div class="col-10">
+          <label><i class="fas fa-brain mr-1"></i> Reto <i>Machine Learning</i></label>
+          <input type="text" id="challenge3" name="challenge3" class="form-control mb-4"
+            #challenge3 placeholder="URL de tu repositorio de GitHub">
+        </div>
+        <div class="col-2">
+          <button mdbBtn type="submit"
+                  gradient="purple" rounded="true"
+                  (click)="submitMLChallenge(challenge3)"
+                  size="sm" mdbWavesEffect>Subir</button>
+        </div>
+      </div>
+    </mdb-card-text>
+  </mdb-card-body>
+</mdb-card>

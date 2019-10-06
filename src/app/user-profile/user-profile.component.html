@@ -26,17 +26,9 @@
         <app-accepted [user]="user"></app-accepted>
       </div>
 
-      <!-- <mdb-card class="mb-4">
-        <mdb-card-body>
-          <mdb-card-title>
-            <h5 class="montserrat"><i class="far fa-calendar-alt"></i> RETOS DEL CALENDARIO</h5>
-            <h6 class="text-muted mb-2">Sube aquí los retos resueltos del calendario</h6>
-          </mdb-card-title>
-          <mdb-card-text>
-            <h3 class="montserrat display-4 text-center">Coming soon...</h3>
-          </mdb-card-text>
-        </mdb-card-body>
-      </mdb-card> -->
+      <div *ngIf="user" class="mb-4">
+        <app-calendar-uploader [user]="user"></app-calendar-uploader>
+      </div>
 
       <div *ngIf="user" class="d-block d-sm-block d-md-block d-lg-none ">
         <mdb-card>
