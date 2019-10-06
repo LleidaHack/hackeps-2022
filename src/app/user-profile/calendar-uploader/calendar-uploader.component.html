@@ -5,6 +5,9 @@
       <h6 class="text-muted mb-4">Comparte tus soluciones con el equipo de HackEPS</h6>
     </mdb-card-title>
     <mdb-card-text>
+      <p class="text-center mb-w">
+      <small [class]="msg.startsWith('Error') ? 'error' : 'success'">{{ msg }}</small>
+      </p>
       <div class="row pl-3 align-items-center">
         <div class="col-10">
           <label><i class="fas fa-microchip mr-1"></i> Reto de algoritmia</label>
