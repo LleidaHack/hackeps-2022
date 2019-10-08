@@ -1,4 +1,4 @@
-# Hackeps2019
+# HackEPS 2019
 
 ## Frequently Asked Question (FAQs)
 

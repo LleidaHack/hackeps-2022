@@ -32,6 +32,7 @@ export class TeamsService {
     const code = this.generateUid(15);
     const newTeam = {
       uid: code,
+      // TODO: Update for next version
       members: [this.afs.doc(`/users/${user.uid}`).ref],
       name: teamName
     };
@@ -66,7 +67,9 @@ export class TeamsService {
   }
 
   public getMembersOfTeam(team: Team): Observable<UserModel[]> {
-    const members$ = team.members.map(m => this.afs.doc(`${environment.baseCollection}/${m.path}`).get());
+    // TODO: Update for next version
+    const members$ = team.members.map(
+      m => this.afs.doc(`${environment.baseCollection}/${m.path}`).get());
 
     return forkJoin(members$).pipe(
       map((res: DocumentSnapshot<UserModel>[]) => {
