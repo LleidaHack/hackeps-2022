@@ -23,9 +23,9 @@ export class CalendarUploaderComponent implements OnInit {
   ngOnInit() {
     this.calendarService.getUserSubmissions(this.user.uid)
       .subscribe(res => {
-        this.costChallenge.nativeElement.value = res[0] && res[0].solution;
-        this.pokemonChallenge.nativeElement.value = res[1] && res[1].solution;
-        this.mlChallenge.nativeElement.value = res[2] && res[2].solution;
+        this.costChallenge.nativeElement.value = (res[0] && res[0].solution) || '';
+        this.pokemonChallenge.nativeElement.value = (res[1] && res[1].solution) || '';
+        this.mlChallenge.nativeElement.value = (res[2] && res[2].solution) || '';
       });
   }
 
@@ -43,8 +43,25 @@ export class CalendarUploaderComponent implements OnInit {
     }, 5000);
   }
 
+  private setMessage(msg: string) {
+    this.msg = msg;
+    setTimeout(() => {
+      this.msg = '';
+    }, 5000);
+  }
+
+  private isGitHubUrl(url: string) {
+    return /^https:\/\/github.com\/(:?[a-zA-z0-9\-\_]+)\/(:?[a-zA-z0-9\-\_]+)$/
+      .test(url);
+  }
+
   public submitCostChallenge(input: HTMLInputElement) {
     const url = input.value;
+    if (!this.isGitHubUrl(url)) {
+      this.setMessage('Error: El texto introducido no es un repositorio de GitHub');
+      return;
+    }
+
     const challengeUid = CalendarChallengesService.CHALLENGES_UIDS.cost;
     this.calendarService.uploadSubmission(challengeUid, this.user, url)
       .subscribe(r => this.postProcessRequest(r, this));
@@ -52,6 +69,10 @@ export class CalendarUploaderComponent implements OnInit {
 
   public submitPokemonChallenge(input: HTMLInputElement) {
     const url = input.value;
+    if (!this.isGitHubUrl(url)) {
+      this.setMessage('Error: El texto introducido no es un repositorio de GitHub');
+      return;
+    }
     const challengeUid = CalendarChallengesService.CHALLENGES_UIDS.pokemon;
     this.calendarService.uploadSubmission(challengeUid, this.user, url)
       .subscribe(r => this.postProcessRequest(r, this));
@@ -59,6 +80,12 @@ export class CalendarUploaderComponent implements OnInit {
 
   public submitMLChallenge(input: HTMLInputElement) {
     const url = input.value;
-    const challengeUid = '';
+    if (!this.isGitHubUrl(url)) {
+      this.setMessage('Error: El texto introducido no es un repositorio de GitHub');
+      return;
+    }
+    const challengeUid = CalendarChallengesService.CHALLENGES_UIDS.ml;
+    this.calendarService.uploadSubmission(challengeUid, this.user, url)
+    .subscribe(r => this.postProcessRequest(r, this));
   }
 }

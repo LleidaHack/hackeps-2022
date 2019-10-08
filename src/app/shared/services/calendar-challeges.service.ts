@@ -11,9 +11,9 @@ import { UserModel } from '../models/user.model';
 })
 export class CalendarChallengesService {
   public static CHALLENGES_UIDS = {
-    cost: 'YmoqxputFMgnYqUl3agM', // Cost challenge
-    pokemon: 'H5Bqab7GCLMDIAYaHhi1', // Pokemon challenge,
-    ml: 'test', // ML challenge
+    cost: 'gqkqKYQxVRQDIpvayEsQ',     // Cost challenge
+    pokemon: 'mNCU8KXGAnLi0fwCAK5W',  // Pokemon challenge,
+    ml: 'JDnjlMvXBKWAbjop1Ie',        // ML challenge
   };
 
   private challengesCollection: AngularFirestoreCollection<Challenge>;
@@ -26,15 +26,6 @@ export class CalendarChallengesService {
     const challengesUids = Object.values(CalendarChallengesService.CHALLENGES_UIDS);
     const docs$ = challengesUids.map(id => this.afs.doc(`challenges/${id}/submissions/${userUid}`).get());
     return forkJoin(docs$).pipe(map(res => res.map(r => r.data())));
-    // .pipe(
-    //   map(res => {
-    //     const submissions = {};
-    //     for (let i = 0; i < challengesUids.length; i++) {
-    //       submissions[challengesUids[i]] = res[i].data();
-    //     }
-    //     return submissions;
-    //   })
-    // );
   }
 
   public all(): Observable<Challenge[]> {
