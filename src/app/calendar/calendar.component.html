@@ -16,18 +16,13 @@
     </div> -->
   </div>
   <div class="challenge-container" [ngClass]="{ 'challenge-container-on': this.challenge.title != '' }">
-    <span>
-      <div class="challenge-title-container">
-        <b class="challenge-title">{{ challenge.title }}</b>
-        <a class="challenge-link" href="{{ this.challenge.link }}" target="_blank" *ngIf="this.challenge.title != ''">
-          >> Ir al reto! &lt;&lt;
-        </a>
-      </div>
-      <p class="challenge-description">{{ challenge.description }}</p>
-      {{ challenge.example }}
-    </span>
-    <br>
-    <br>
+    <div class="challenge-title-container">
+      <b class="challenge-title">{{ challenge.title }}</b>
+    </div>
+    <p style="height: .05em;"></p>
+    <a class="challenge-link" href="{{ this.challenge.link }}" target="_blank" *ngIf="this.challenge.title != ''">
+      >> Ir al reto! &lt;&lt;
+    </a>
   </div>
   <div class="month-grid">
     <div class="day-names">
