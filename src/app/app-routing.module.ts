@@ -1,4 +1,5 @@
 import { HomeComponent } from './home/home.component';
+import { CalendarComponent } from './calendar/calendar.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'terms-and-conditions', component: TermsAndConditionsComponent },
   { path: 'user', component: UserProfileComponent, canActivate: [AuthGuard] },
   { path: 'user/signup', component: SignUpFormComponent },
+  { path: 'calendar', component: CalendarComponent }
 ];
 
 @NgModule({

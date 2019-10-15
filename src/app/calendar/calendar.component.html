@@ -1,0 +1,50 @@
+<h2 class="hackeps-title mb-4">Calendario</h2>
+<div class="calendar">
+  <div class="calendar-navs">
+    <div class="month-nav">
+      <a class="limited-area unselectable" (click)="prevMonth()" type="button" color="default" rounded="true" mdbWavesEffect>
+        <img class="previous-month" src="../../assets/media/month-arrow.svg" alt="previous-month">
+      </a>
+      <span class="h3 p4 mt-4 unselectable month-title">{{ currentDate.format('MMMM') | titleCasePipe }}</span>
+      <a class="unselectable" (click)="nextMonth()" type="button" color="default" rounded="true" mdbWavesEffect>
+        <img class="previous-month flip-y-axis" src="../../assets/media/month-arrow.svg" alt="previous-month">
+      </a>
+  </div>
+  <div class="challenge-container" [ngClass]="{ 'challenge-container-on': this.challenge.title != '' }">
+    <div class="challenge-title-container">
+      <b class="challenge-title">{{ challenge.title }}</b>
+    </div>
+    <p style="height: .05em;"></p>
+    <a class="challenge-link" href="{{ this.challenge.link }}" target="_blank" *ngIf="this.challenge.title != ''">
+      >> Ir al reto! &lt;&lt;
+    </a>
+  </div>
+  <div class="month-grid">
+    <div class="day-names">
+      <div *ngFor="let name of dayNames" class="day-name p9">
+        <span class="unselectable">{{ name }}</span>
+      </div>
+    </div>
+    <div class="weeks">
+      <div *ngFor="let week of weeks" class="week">
+        <ng-container *ngFor="let day of week">
+          <div class="week-date disabled" *ngIf="!isSelectedMonth(day.mDate)">
+            <span class="date-text unselectable">{{ day.mDate.date() }}</span>
+          </div>
+          <div style="width: inherit">
+            <div class="week-date enabled"
+                  *ngIf="isSelectedMonth(day.mDate)"
+                  (click)="selectDate(day)"
+                  [ngClass]="{ 
+                    'today rounded-lg': day.today, 
+                    selected: day.selected,
+                    event: isChallengeDay(day)
+                  }">
+              <span class="date-text unselectable">{{ day.mDate.date() }}</span>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
