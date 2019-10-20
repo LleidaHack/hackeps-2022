@@ -16,5 +16,11 @@ function getNumberOfWeek(date: Date) {
 
 function insideWeek(date: Date): boolean {
   var today: Date = new Date();
-  return today.getTime() >= date.getTime() && today.getTime() < date.getTime() + 86400000*7;
+  return (today.getTime() >= date.getTime() && 
+    today.getTime() < date.getTime() + 86400000*7) || 
+    isHackEPS(date);
+}
+
+function isHackEPS(date: Date): boolean {
+  return date.getTime() >= 1574463600000 && date.getTime() <= 1574550000000;
 }

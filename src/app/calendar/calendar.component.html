@@ -16,9 +16,12 @@
         <b class="challenge-title">{{ challenge.title }}</b>
       </div>
       <p style="height: .05em;"></p>
-      <a class="challenge-link" href="{{ this.challenge.link }}" target="_blank" *ngIf="this.challenge.title != ''">
+      <a class="challenge-link" href="{{ this.challenge.link }}" target="_blank" *ngIf="this.challenge.link != null">
         >> Ir al reto! &lt;&lt;
       </a>
+      <p class="challenge-link" target="_blank" *ngIf="this.challenge.title == 'HackEPS'">
+        {{ challenge.description }}
+      </p>
     </div>
   </div>
   <div class="month-grid">
