@@ -50,7 +50,7 @@ export class CalendarComponent implements OnInit, OnChanges {
           if (day.mDate.isSame(datePicked.mDate)) {
             if (this.selectedDays.length >= 1) this.selectedDays.pop().selected = false;
             this.selectedDays = [];
-            if (!day.today) day.selected = true;
+            day.selected = true;
             this.selectedDays.push(day);
           }
         });
@@ -73,7 +73,6 @@ export class CalendarComponent implements OnInit, OnChanges {
   }
 
   // date checkers
-
   isToday(date: moment.Moment): boolean {
     return moment().isSame(moment(date), 'day');
   }
@@ -91,7 +90,8 @@ export class CalendarComponent implements OnInit, OnChanges {
   selectDate(date: CalendarDate): void {
     if (this.retrieveSelection(date)) return;
     this.$dateSelection.next(date);
-    this.onSelectDate.emit(date);
+    // this.onSelectDate.emit(date); Scalable version
+
     if (!sameWeekPeriod(date)) return;
     var hearChallenges: Subject<firebase.firestore.DocumentData> = this.challengeService.checkChallenges(date);
     
@@ -106,7 +106,6 @@ export class CalendarComponent implements OnInit, OnChanges {
     var lastSelection: CalendarDate = this.selectedDays[this.selectedDays.length - 1];
     if (lastSelection.mDate.isSame(datePicked.mDate) && lastSelection.selected == true) {
       this.selectedDays.pop().selected = false;
-      // console.log(this.selectedDays)
       return true;
     }
     return false;
@@ -121,14 +120,11 @@ export class CalendarComponent implements OnInit, OnChanges {
   getChallenges() {
     this.challengeService.getChallenges().subscribe(challenges => {
       this.challengeDates = []
-      console.log('Changes detected!');
       challenges.forEach(challenge => this.challengeDates.push(challenge.date.seconds * 1000));
-      console.log(this.challengeDates);
     });
   }
 
   // actions from calendar
-
   prevMonth(): void {
     this.clearSelection();
     this.currentDate = moment(this.currentDate).subtract(1, 'months');
@@ -162,7 +158,6 @@ export class CalendarComponent implements OnInit, OnChanges {
   }
 
   // generate the calendar grid
-
   generateCalendar(): void {
     const dates = this.fillDates(this.currentDate);
     const weeks: CalendarDate[][] = [];

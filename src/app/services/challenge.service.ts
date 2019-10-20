@@ -50,15 +50,12 @@ export class ChallengeService {
     .catch(_ => {
       console.error('Error retrieving the events data, no events published')
     });
-
-    console.log('Data is here: ');
     return result;
   }
 
   insertChallenges(snapshot:firebase.firestore.QuerySnapshot, 
     result: BehaviorSubject<firebase.firestore.DocumentData[]>) {
     snapshot.forEach(doc => {
-      console.log(doc)
       result.getValue().push(doc.data());
       result.next(result.getValue());
     });

@@ -194,6 +194,11 @@
 
 // Challenge styles
 
+.calendar-info {
+  display: flex;
+  justify-content: center;
+}
+
 .challenge-container {
   background-color: #FFFFFF;
   border-radius: 7px;
@@ -201,14 +206,15 @@
 
   justify-content: center;
   text-align: center;
-  padding: 1em;
-  margin: 1em;
 
   opacity: 0;
   height: 0px;
+  width: 85%;
+  
   visibility: hidden;
-  transition: height 2s, opacity 2s linear;
-  display: none;
+  transition: height 1s, margin 1s, opacity .25s ease-in-out;
+  -moz-transition: height 1s, margin 1s, opacity .25s ease-in-out;
+  -webkit-transition: height 1s, margin 1s, opacity .25s ease-in-out;
 }
 
 .challenge-container-on {
@@ -216,7 +222,11 @@
   opacity: 1;
   visibility: visible;
   height: 100px;
-  transition: height 1s, opacity 2s linear;
+  transition: height 1s, margin 1s, opacity 1s ease-in;
+}
+
+.challenge-title-container {
+  margin-top: 1em;
 }
 
 .challenge-title {

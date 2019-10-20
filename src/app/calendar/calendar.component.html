@@ -10,14 +10,16 @@
         <img class="previous-month flip-y-axis" src="../../assets/media/month-arrow.svg" alt="previous-month">
       </a>
   </div>
-  <div class="challenge-container" [ngClass]="{ 'challenge-container-on': this.challenge.title != '' }">
-    <div class="challenge-title-container">
-      <b class="challenge-title">{{ challenge.title }}</b>
+  <div class="calendar-info">
+    <div class="challenge-container" [ngClass]="{ 'challenge-container-on': this.challenge.title != '' }">
+      <div class="challenge-title-container" [ngClass]="{ 'challenge-title-container-on': this.challenge.title != '' }">
+        <b class="challenge-title">{{ challenge.title }}</b>
+      </div>
+      <p style="height: .05em;"></p>
+      <a class="challenge-link" href="{{ this.challenge.link }}" target="_blank" *ngIf="this.challenge.title != ''">
+        >> Ir al reto! &lt;&lt;
+      </a>
     </div>
-    <p style="height: .05em;"></p>
-    <a class="challenge-link" href="{{ this.challenge.link }}" target="_blank" *ngIf="this.challenge.title != ''">
-      >> Ir al reto! &lt;&lt;
-    </a>
   </div>
   <div class="month-grid">
     <div class="day-names">
@@ -37,8 +39,8 @@
                   (click)="selectDate(day)"
                   [ngClass]="{ 
                     'today rounded-lg': day.today, 
-                    selected: day.selected,
-                    event: isChallengeDay(day)
+                    'selected': day.selected,
+                    'event': isChallengeDay(day)
                   }">
               <span class="date-text unselectable">{{ day.mDate.date() }}</span>
             </div>
