@@ -1,3 +1,4 @@
+import { AuthenticationService } from './../shared/services/authentication.service';
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Subject, BehaviorSubject } from 'rxjs';
 
@@ -16,7 +17,7 @@ export interface CalendarDate {
   today?: boolean;
 }
 
-moment.locale('es')
+moment.locale('es');
 
 @Component({
   selector: 'app-calendar',
@@ -40,7 +41,7 @@ export class CalendarComponent implements OnInit, OnChanges {
   @Output() onSelectDate = new EventEmitter<CalendarDate>();
 
   constructor(
-    public challengeService: ChallengeService
+    public challengeService: ChallengeService,
   ) {
     this.getChallenges();
 
@@ -48,7 +49,7 @@ export class CalendarComponent implements OnInit, OnChanges {
       this.weeks.forEach(week => {
         week.forEach(day => {
           if (day.mDate.isSame(datePicked.mDate)) {
-            if (this.selectedDays.length >= 1) this.selectedDays.pop().selected = false;
+            if (this.selectedDays.length >= 1) { this.selectedDays.pop().selected = false; }
             this.selectedDays = [];
             day.selected = true;
             this.selectedDays.push(day);
@@ -88,23 +89,23 @@ export class CalendarComponent implements OnInit, OnChanges {
   }
 
   selectDate(date: CalendarDate): void {
-    if (this.retrieveSelection(date)) return;
+    if (this.retrieveSelection(date)) { return; }
     this.$dateSelection.next(date);
     // this.onSelectDate.emit(date); Scalable version
 
-    if (!sameWeekPeriod(date)) return;
-    var hearChallenges: Subject<firebase.firestore.DocumentData> = this.challengeService.checkChallenges(date);
-    
+    if (!sameWeekPeriod(date)) { return; }
+    const hearChallenges: Subject<firebase.firestore.DocumentData> = this.challengeService.checkChallenges(date);
+
     hearChallenges.subscribe( data => {
       this.challenge = this.challengeService.formatChallenge(data);
     });
   }
 
   retrieveSelection(datePicked: CalendarDate) {
-    if (this.selectedDays.length < 1) return;
+    if (this.selectedDays.length < 1) { return; }
     this.challenge = dummyChallenge;
-    var lastSelection: CalendarDate = this.selectedDays[this.selectedDays.length - 1];
-    if (lastSelection.mDate.isSame(datePicked.mDate) && lastSelection.selected == true) {
+    const lastSelection: CalendarDate = this.selectedDays[this.selectedDays.length - 1];
+    if (lastSelection.mDate.isSame(datePicked.mDate) && lastSelection.selected === true) {
       this.selectedDays.pop().selected = false;
       return true;
     }
@@ -112,14 +113,14 @@ export class CalendarComponent implements OnInit, OnChanges {
   }
 
   clearSelection() {
-    if (this.selectedDays.length < 1) return;
+    if (this.selectedDays.length < 1) { return; }
     this.selectedDays.pop().selected = false;
     this.challenge = dummyChallenge;
   }
 
   getChallenges() {
     this.challengeService.getChallenges().subscribe(challenges => {
-      this.challengeDates = []
+      this.challengeDates = [];
       challenges.forEach(challenge => this.challengeDates.push(challenge.date.seconds * 1000));
     });
   }
