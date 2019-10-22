@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 import { Subject, BehaviorSubject } from 'rxjs';
 
 import { ChallengeService } from './../services/challenge.service';
+import { WeekService } from '../services/week.service';
 import { DataProcesingEvent } from '../../assets/models/Events';
 import { Challenge, dummyChallenge } from './../../assets/models/Challenge';
 
@@ -33,6 +34,7 @@ export class CalendarComponent implements OnInit, OnChanges {
 
   event1 = DataProcesingEvent;
   challenge: Challenge = dummyChallenge;
+  exploitOngoing: boolean = false;
 
   $dateSelection: BehaviorSubject<CalendarDate> = new BehaviorSubject(null);
 
@@ -40,9 +42,11 @@ export class CalendarComponent implements OnInit, OnChanges {
   @Output() onSelectDate = new EventEmitter<CalendarDate>();
 
   constructor(
-    public challengeService: ChallengeService
+    public challengeService: ChallengeService,
+    public weekService: WeekService
   ) {
     this.getChallenges();
+    this.weekService.isTryingToExploit(new Date()).subscribe(isTrying => this.exploitOngoing = isTrying);
 
     this.$dateSelection.subscribe(datePicked => {
       this.weeks.forEach(week => {
@@ -91,12 +95,15 @@ export class CalendarComponent implements OnInit, OnChanges {
     if (this.retrieveSelection(date)) return;
     this.$dateSelection.next(date);
     // this.onSelectDate.emit(date); Scalable version
+    if (this.exploitOngoing) this.loadNiceTryChallenge;
 
-    if (!sameWeekPeriod(date)) return;
-    var hearChallenges: Subject<firebase.firestore.DocumentData> = this.challengeService.checkChallenges(date);
-    
-    hearChallenges.subscribe( data => {
-      this.challenge = this.challengeService.formatChallenge(data);
+    this.weekService.sameWeekPeriod(date).subscribe( isSameWeek => {
+      if (!isSameWeek) return;
+      var hearChallenges: Subject<firebase.firestore.DocumentData> = this.challengeService.checkChallenges(date);
+      
+      hearChallenges.subscribe( data => {
+        this.challenge = this.challengeService.formatChallenge(data);
+      });
     });
   }
 
@@ -180,6 +187,10 @@ export class CalendarComponent implements OnInit, OnChanges {
                 mDate: d,
               };
             });
+  }
+
+  loadNiceTryChallenge() {
+    
   }
 
   isChallengeDay(day: CalendarDate) {

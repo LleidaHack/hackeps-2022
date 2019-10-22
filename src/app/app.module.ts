@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 // Components
 import { AppComponent } from './app.component';
@@ -67,7 +68,7 @@ import { CalendarUploaderComponent } from './user-profile/calendar-uploader/cale
     MultiAlertsComponent,
     NavbarComponent,
     CalendarUploaderComponent,
-    TitleCasePipe
+    TitleCasePipe,
   ],
   imports: [
     BrowserModule,
@@ -76,6 +77,7 @@ import { CalendarUploaderComponent } from './user-profile/calendar-uploader/cale
     FormsModule,
     FontAwesomeModule,
     AlertModule,
+    HttpClientModule,
 
     // Bootstrap
     MDBBootstrapModule.forRoot(),

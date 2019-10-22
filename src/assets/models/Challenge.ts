@@ -34,3 +34,11 @@ export var dummyChallenge: Challenge = new Challenge(
   '',
   ''
 );
+
+export var NiceTryChallenge: Challenge = new Challenge(
+  new FirebaseDate(0,0),
+  null,
+  null,
+  null,
+  'Nice try ;)'
+);

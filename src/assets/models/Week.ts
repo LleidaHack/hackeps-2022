@@ -1,4 +1,5 @@
 import { CalendarDate } from './../../app/calendar/calendar.component';
+
 export var weekdays = new Array(
   'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'
 );
