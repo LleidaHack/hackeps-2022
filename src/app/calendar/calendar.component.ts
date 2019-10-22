@@ -4,7 +4,7 @@ import { Subject, BehaviorSubject } from 'rxjs';
 import { ChallengeService } from './../services/challenge.service';
 import { WeekService } from '../services/week.service';
 import { DataProcesingEvent } from '../../assets/models/Events';
-import { Challenge, dummyChallenge } from './../../assets/models/Challenge';
+import { Challenge, dummyChallenge, NiceTryChallenge } from './../../assets/models/Challenge';
 
 import * as moment from 'moment';
 import * as _ from 'lodash';
@@ -93,7 +93,10 @@ export class CalendarComponent implements OnInit, OnChanges {
     if (this.retrieveSelection(date)) { return; }
     this.$dateSelection.next(date);
     // this.onSelectDate.emit(date); Scalable version
-    if (this.exploitOngoing) this.loadNiceTryChallenge;
+    if (this.exploitOngoing) {
+      this.challenge = NiceTryChallenge;
+      return;
+    }
 
     this.weekService.sameWeekPeriod(date).subscribe( isSameWeek => {
       if (!isSameWeek) return;
@@ -186,11 +189,7 @@ export class CalendarComponent implements OnInit, OnChanges {
               };
             });
   }
-
-  loadNiceTryChallenge() {
-    
-  }
-
+  
   isChallengeDay(day: CalendarDate) {
     // return this.challengeDates.forEach(date => {
     //   var temp_date = new Date(date*1000);
