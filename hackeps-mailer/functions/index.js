@@ -27,7 +27,7 @@ const sendAdmissionMail = (user, isAccepted) => {
     Nos emociona informarte que has sido admitido oficialmente para participar en la HackEPS2019 y por tanto te esperamos con los brazos abiertos y el Wifi preparado el próximo 23 de Noviembre en la Escuela Politécnica Superior de la Universidad de Lleida (Campus de Cappont. Calle Jaume II, 69. 25001 Lleida) entre las 8:30 y 10:30 para realizar el Check-In.
     </p>
     <p>
-    Recuerda, si aún no lo has hecho, registrar tu equipo en la página para agilizar el proceso de llegada. Si no tienes equipo no te preocupes: podemos ayudarte a encontrar uno.
+    <b>Recuerda, si aún no lo has hecho, registrar tu equipo en la página para agilizar el proceso de llegada. Si no tienes equipo no te preocupes: podemos ayudarte a encontrar uno.</b>
     </p>
     <p>
     También queremos pedirte que ante cualquier imprevisto o cambio de planes contactes con nosotros a través del correo lleidahack@gmail.com con la mayor brevedad para poder gestionarlo cuanto antes.
