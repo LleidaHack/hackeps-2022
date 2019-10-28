@@ -124,7 +124,6 @@ export class AuthenticationService {
   }
 
   public async checkAndRedirect(user: UserModel) {
-    console.log(user);
     if (!user) {
       this.loading = false;
       return;
@@ -132,7 +131,8 @@ export class AuthenticationService {
     if (await this.isRegistered(user)) {
       this.router.navigateByUrl('/user');
     } else {
-      this.router.navigateByUrl('/user/signup');
+
+      this.router.navigateByUrl('/');
     }
   }
 

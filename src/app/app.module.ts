@@ -3,9 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 // Components
 import { AppComponent } from './app.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 // Firebase
 import { AngularFireModule } from '@angular/fire';
@@ -19,6 +21,7 @@ import { QRCodeModule } from 'angularx-qrcode';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { environment } from '../environments/environment';
+import { TitleCasePipe } from 'src/assets/utils/pipes/titleCasePipe';
 
 //Alerts
 import { AlertModule } from './external/_alert';
@@ -29,7 +32,7 @@ import { HomeComponent } from './home/home.component';
 
 import { FaqsComponent } from './home/faqs/faqs.component';
 import { SponsorsComponent } from './home/sponsors/sponsors.component';
-import { CalendarComponent } from './home/calendar/calendar.component';
+// import { CalendarComponent } from './home/calendar/calendar.component';
 import { LoadingOverlayComponent } from './shared/loading-overlay/loading-overlay.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
@@ -65,6 +68,7 @@ import { CalendarUploaderComponent } from './user-profile/calendar-uploader/cale
     MultiAlertsComponent,
     NavbarComponent,
     CalendarUploaderComponent,
+    TitleCasePipe,
   ],
   imports: [
     BrowserModule,
@@ -73,6 +77,7 @@ import { CalendarUploaderComponent } from './user-profile/calendar-uploader/cale
     FormsModule,
     FontAwesomeModule,
     AlertModule,
+    HttpClientModule,
 
     // Bootstrap
     MDBBootstrapModule.forRoot(),
