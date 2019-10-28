@@ -48,6 +48,7 @@ import { RouterExtService } from './shared/services/router-ext.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TermsAndConditionsTextComponent } from './terms-and-conditions/terms-and-conditions-text/terms-and-conditions-text.component';
 import { CalendarUploaderComponent } from './user-profile/calendar-uploader/calendar-uploader.component';
+import { ScheduleComponent } from './home/schedule/schedule.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { CalendarUploaderComponent } from './user-profile/calendar-uploader/cale
     NavbarComponent,
     CalendarUploaderComponent,
     TitleCasePipe,
+    ScheduleComponent,
   ],
   imports: [
     BrowserModule,
