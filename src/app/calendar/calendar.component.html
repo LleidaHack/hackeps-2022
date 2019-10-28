@@ -1,0 +1,87 @@
+<h2 class="hackeps-title mb-4">Calendario</h2>
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-12 p-4 text-justify montserrat">
+      <p>
+        Dailyhack se trata de un concurso formado por tres retos.
+      </p>
+      <p>
+        Completar estos retos te permitirá adquirir nuevos conocimientos que te ayudaran en la HackEPS. Además, si
+        presentas todos los retos puedes ganar un premio extra, el
+        cual descubrirás en la misma HackEPS durante la entrega de premios.
+      </p>
+      <p>
+        Cada uno de los retos será de una temática distinta y estarán disponibles a partir de una fecha determinada. (Ver <img height="20" src="assets/media/Calendar_Events_Closed_Compact.svg" alt="present"> en el calendario)
+      </p>
+      <ul>
+        <li>Algoritmica</li>
+        <li>Web Scraping</li>
+        <li>Machine Learning</li>
+      </ul>
+      <p>
+        Los retos son individuales y deberás desarrollarlos en un repositorio público de <a href="https://github.com">GitHub</a>, así podrás referenciarlos desde tu
+        perfil en la sección de "CALENDARIO".
+      </p>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+      <div class="calendar">
+        <div class="calendar-navs">
+          <div class="month-nav">
+            <a class="limited-area unselectable" (click)="prevMonth()" type="button" color="default" rounded="true"
+              mdbWavesEffect>
+              <img class="previous-month" src="assets/media/month-arrow.svg" alt="previous-month">
+            </a>
+            <span class="h3 p4 mt-4 unselectable montserrat month-title">{{ currentDate.format('MMMM') | titleCasePipe }}</span>
+            <a class="unselectable" (click)="nextMonth()" type="button" color="default" rounded="true" mdbWavesEffect>
+              <img class="previous-month flip-y-axis" src="assets/media/month-arrow.svg" alt="previous-month">
+            </a>
+          </div>
+          <div class="calendar-info">
+            <div class="challenge-container" [ngClass]="{ 'challenge-container-on': this.challenge.title != '' }">
+              <div class="challenge-title-container"
+                [ngClass]="{ 'challenge-title-container-on': this.challenge.title != '' }">
+                <b class="challenge-title">{{ challenge.title }}</b>
+              </div>
+              <p style="height: .05em;"></p>
+              <a class="challenge-link" href="{{ this.challenge.link }}" target="_blank"
+                *ngIf="this.challenge.link != null">
+                >> Ir al reto! &lt;&lt;
+              </a>
+              <p class="challenge-link" target="_blank" *ngIf="this.challenge.title == 'HackEPS'">
+                {{ challenge.description }}
+              </p>
+            </div>
+          </div>
+          <div class="month-grid">
+            <div class="day-names">
+              <div *ngFor="let name of dayNames" class="day-name p9">
+                <span class="unselectable">{{ name }}</span>
+              </div>
+            </div>
+            <div class="weeks">
+              <div *ngFor="let week of weeks" class="week">
+                <ng-container *ngFor="let day of week">
+                  <div class="week-date disabled" *ngIf="!isSelectedMonth(day.mDate)">
+                    <span class="date-text unselectable">{{ day.mDate.date() }}</span>
+                  </div>
+                  <div style="width: inherit">
+                    <div class="week-date enabled" *ngIf="isSelectedMonth(day.mDate)" (click)="selectDate(day)"
+                      [ngClass]="{
+                              'today rounded-lg': day.today,
+                              'selected': day.selected,
+                              'event': isChallengeDay(day)
+                            }">
+                      <span class="date-text unselectable">{{ day.mDate.date() }}</span>
+                    </div>
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
