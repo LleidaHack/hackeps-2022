@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class WeekService {
   constructor(
@@ -15,8 +15,8 @@ export class WeekService {
 
   sameWeekPeriod(date: CalendarDate): Subject<boolean> {
     var response = new Subject<boolean>();
-    this.insideWeek(date.mDate.toDate()).subscribe(value=> {
-        response.next(value);
+    this.insideWeek(date.mDate.toDate()).subscribe(value => {
+      response.next(value);
     });
     return response;
   }
@@ -24,23 +24,23 @@ export class WeekService {
   insideWeek(date: Date): Subject<boolean> {
     var response = new Subject<boolean>();
 
-    this.getToday().subscribe(today=> {
-      var insideWeekValue = (today.getTime() >= date.getTime() && 
-        today.getTime() < date.getTime() + 86400000*7) || 
+    this.getToday().subscribe(today => {
+      var insideWeekValue = (today.getTime() >= date.getTime() &&
+        today.getTime() < date.getTime() + 86400000 * 7) ||
         this.isHackEPS(date);
       response.next(insideWeekValue);
     });
     return response;
   }
-  
+
   isHackEPS(date: Date): boolean {
     return date.getTime() >= 1574463600000 && date.getTime() <= 1574550000000;
   }
 
   getToday(): Subject<Date> {
     var response = new Subject<Date>();
-    this.http.get("http://worldtimeapi.org/api/timezone/Europe/Madrid").subscribe(
-      today=> {
+    this.http.get("https://worldtimeapi.org/api/timezone/Europe/Madrid").subscribe(
+      today => {
         response.next(new Date(today["datetime"]));
       }, err => {
         console.error("Failed to retrieve the local Date, try again later, " + err);
@@ -52,7 +52,7 @@ export class WeekService {
 
   isTryingToExploit(date: Date): Subject<boolean> {
     var response = new Subject<boolean>();
-    this.getToday().subscribe(today => 
+    this.getToday().subscribe(today =>
       response.next(today.getTime() + 86400000 <= date.getTime()));
     return response;
   }
