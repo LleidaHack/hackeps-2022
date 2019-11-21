@@ -34,8 +34,8 @@ export class SponsorsComponent implements OnInit {
       level: 1
     },
     {
-      web: 'https://www.semic.es/es',
-      img: 'assets/semic.png',
+      web: 'http://www.actiumdigital.es/es',
+      img: 'assets/actium.png',
       level: 1
     },
     {
@@ -82,7 +82,22 @@ export class SponsorsComponent implements OnInit {
       web: 'https://linktr.ee/labicicleta.ads',
       img: 'assets/bicicleta.png',
       level: 3
-    },
+	},
+	{
+	  web: 'http://www.delsamscafes.com/',
+	  img: 'assets/delsams.png',
+	  level: 3
+	},
+	{
+	  web: 'http://arfonfruits.com/',
+	  img: 'assets/arfon.png',
+	  level: 3
+	},
+	{
+	  web: 'https://es-es.facebook.com/pages/category/Event-Planner/Planeta-Gastro-Eventos-216982095712423/',
+	  img: 'assets/planetagastro.jpeg',
+	  level: 3
+	}
   ];
 
   constructor() { }
