@@ -1,100 +1,29 @@
-<div class="schedule">
+<div class="schedule ">
   <h2 class="hackeps-title mb-4">Horario</h2>
 
-  <section class="timeline">
-    <div class="container">
-      <div class="timeline-item">
-        <div class="timeline-img"></div>
-
-        <div class="timeline-content js--fadeInLeft">
-          <h2>Abre Check-in</h2>
-          <div class="date">8:30 - 23 OCT</div>
+  <div class="d-none d-sm-none d-md-block d-lg-block" style="display:inline-block;width:100%;overflow-y:auto;">
+    <ul class="timeline timeline-vertical">
+      <li *ngFor="let e of events; let i = index" class="timeline-item {{ i }}">
+        <div class="timeline-badge info">
+          <i class="{{ e.icon }}"></i>
         </div>
-      </div>
-
-
-      <div class="timeline-item">
-        <div class="timeline-img"></div>
-
-        <div class="timeline-content js--fadeInLeft">
-          <h2>Cierra Check-in y empieza la ceremonia</h2>
-          <div class="date">10:00 - 23 OCT</div>
+        <div class="timeline-panel info">
+          <div class="timeline-heading">
+            <h4 class="timeline-title title">{{ e.name }}</h4>
+            <p>
+              <i class="text-muted fa fa-clock mr-3"></i>
+              <small class="time text-muted">{{ e.date }}</small>
+            </p>
+          </div>
         </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-img"></div>
-
-        <div class="timeline-content js--fadeInLeft">
-          <h2>Start hacking</h2>
-          <div class="date">11:00  - 23 OCT</div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-img"></div>
-
-        <div class="timeline-content js--fadeInLeft">
-          <h2>Comida</h2>
-          <div class="date">14:00 - 23 OCT</div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-img"></div>
-
-        <div class="timeline-content js--fadeInLeft">
-          <h2>Cena</h2>
-          <div class="date">20:30 - 23 OCT</div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-img"></div>
-
-        <div class="timeline-content js--fadeInLeft">
-          <h2>Snack Time</h2>
-          <div class="date">03:00 - 24 OCT</div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-img"></div>
-
-        <div class="timeline-content js--fadeInLeft">
-          <h2>Se acaba la hack</h2>
-          <div class="date">11:00 - 24 OCT</div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-img"></div>
-
-        <div class="timeline-content js--fadeInLeft">
-          <h2>Persentación de retos</h2>
-          <div class="date">11:30 - 24 OCT</div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-img"></div>
-
-        <div class="timeline-content js--fadeInLeft">
-          <h2>Ceremonia clausura</h2>
-          <div class="date">13:00 - 24 OCT</div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-img"></div>
-
-        <div class="timeline-content js--fadeInLeft">
-          <h2>Comiday despedida</h2>
-          <div class="date">15:00 - 24 OCT</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
+      </li>
+    </ul>
+  </div>
+  <div class="d-lg-none d-sm-block d-md-none d-block">
+    <ul>
+      <li *ngFor="let e of events; let i = index" class="mb-2" style="color: whitesmoke">
+          <i class="{{ e.icon }} mr-1"></i> {{ e.name }} - {{ e.date }}
+      </li>
+    </ul>
+  </div>
 </div>
