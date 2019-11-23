@@ -32,7 +32,6 @@ import { HomeComponent } from './home/home.component';
 
 import { FaqsComponent } from './home/faqs/faqs.component';
 import { SponsorsComponent } from './home/sponsors/sponsors.component';
-// import { CalendarComponent } from './home/calendar/calendar.component';
 import { LoadingOverlayComponent } from './shared/loading-overlay/loading-overlay.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
@@ -42,6 +41,8 @@ import { AcceptedComponent } from './user-profile/accepted/accepted.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 import { MessagesService } from './shared/services/messages.service';
+import { CountdownModule } from 'ngx-countdown';
+import { CountdownTimerModule } from 'ngx-countdown-timer';
 
 
 import { RouterExtService } from './shared/services/router-ext.service';
@@ -49,6 +50,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { TermsAndConditionsTextComponent } from './terms-and-conditions/terms-and-conditions-text/terms-and-conditions-text.component';
 import { CalendarUploaderComponent } from './user-profile/calendar-uploader/calendar-uploader.component';
 import { ScheduleComponent } from './home/schedule/schedule.component';
+import { CountdownComponent } from './countdown/countdown.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +73,7 @@ import { ScheduleComponent } from './home/schedule/schedule.component';
     CalendarUploaderComponent,
     TitleCasePipe,
     ScheduleComponent,
+    CountdownComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,7 +83,8 @@ import { ScheduleComponent } from './home/schedule/schedule.component';
     FontAwesomeModule,
     AlertModule,
     HttpClientModule,
-
+    CountdownModule,
+    CountdownTimerModule.forRoot(),
     // Bootstrap
     MDBBootstrapModule.forRoot(),
 

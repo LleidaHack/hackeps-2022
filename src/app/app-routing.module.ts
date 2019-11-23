@@ -1,3 +1,4 @@
+import { CountdownComponent } from './countdown/countdown.component';
 import { HomeComponent } from './home/home.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { NgModule } from '@angular/core';
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'terms-and-conditions', component: TermsAndConditionsComponent },
   { path: 'user', component: UserProfileComponent, canActivate: [AuthGuard] },
   { path: 'user/signup', component: SignUpFormComponent },
-  { path: 'calendar', component: CalendarComponent }
+  { path: 'calendar', component: CalendarComponent },
+  { path: 'countdown', component: CountdownComponent }
 ];
 
 @NgModule({
