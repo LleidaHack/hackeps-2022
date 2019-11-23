@@ -19,7 +19,7 @@ export class ScheduleComponent implements OnInit {
     },
     {
       icon: 'fas fa-laptop-code',
-      date: '11:00 - 23 OCT',
+      date: '11:30 - 23 OCT',
       name: 'Start hacking'
     },
     {
@@ -39,22 +39,22 @@ export class ScheduleComponent implements OnInit {
     },
     {
       icon: 'fas fa-flag-checkered',
-      date: '11:00 - 24 OCT',
-      name: 'Finaliza el timepo de hack',
+      date: '11:30 - 24 OCT',
+      name: 'End hack',
     },
     {
       icon: 'fas fa-chalkboard-teacher',
-      date: '11:30 - 24 OCT',
+      date: '12:00 - 24 OCT',
       name: 'Presentación de las soluciones',
     },
     {
       icon: 'fas fa-trophy',
-      date: '13:00 - 24 OCT',
+      date: '13:30 - 24 OCT',
       name: 'Ceremonia de clausura y entrega de premios',
     },
     {
       icon: 'fas fa-drumstick-bite',
-      date: '15:00 - 24 OCT',
+      date: '14:30 - 24 OCT',
       name: 'Comida y despedida',
     },
   ];
