@@ -39,12 +39,12 @@ export class ScheduleComponent implements OnInit {
     },
     {
       icon: 'fas fa-flag-checkered',
-      date: '11:00 - 24 NOV',
-      name: 'Finaliza el timepo de hack',
+      date: '11:30 - 24 NOV',
+      name: 'Finaliza el tiempo de hack',
     },
     {
       icon: 'fas fa-chalkboard-teacher',
-      date: '11:30 - 24 NOV',
+      date: '12:00 - 24 NOV',
       name: 'Presentación de las soluciones',
     },
     {
