@@ -40,7 +40,7 @@ export class ScheduleComponent implements OnInit {
     {
       icon: 'fas fa-flag-checkered',
       date: '11:30 - 24 OCT',
-      name: 'End hack',
+      name: 'End hacking',
     },
     {
       icon: 'fas fa-chalkboard-teacher',
