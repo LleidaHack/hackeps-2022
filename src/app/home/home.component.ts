@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
     if (await this.auth.isRegistered(user)) {
       await this.router.navigateByUrl('/user');
     } else {
-      await this.router.navigateByUrl('/');
+      await this.router.navigateByUrl('/user/signup');
     }
     this.loading = false;
   }

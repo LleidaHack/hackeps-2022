@@ -132,7 +132,7 @@ export class AuthenticationService {
       this.router.navigateByUrl('/user');
     } else {
 
-      this.router.navigateByUrl('/');
+      this.router.navigateByUrl('/user/signup');
     }
   }
 

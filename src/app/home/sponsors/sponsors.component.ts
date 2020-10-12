@@ -34,21 +34,6 @@ export class SponsorsComponent implements OnInit {
       level: 1
     },
     {
-      web: 'http://www.actiumdigital.es/es',
-      img: 'assets/actium.png',
-      level: 1
-    },
-    {
-      web: 'https://origen.studio/',
-      img: 'assets/origenstudio.png',
-      level: 1
-    },
-    {
-      web: 'https://www.dominospizza.es',
-      img: 'assets/dominos_pizza.png',
-      level: 2
-    },
-    {
       web: 'https://www.intech3d.es/',
       img: 'assets/intech3d.png',
       level: 2
@@ -64,16 +49,6 @@ export class SponsorsComponent implements OnInit {
       level: 2
     },
     {
-      web: 'http://www.cosantex.com/',
-      img: 'assets/cosantex.png',
-      level: 2
-    },
-    {
-      web: 'https://www.jetbrains.com/',
-      img: 'assets/jetbrains.svg',
-      level: 3
-    },
-    {
       web: 'http://www.consell-eps.udl.cat/',
       img: 'assets/consell.jpg',
       level: 3
@@ -82,21 +57,6 @@ export class SponsorsComponent implements OnInit {
       web: 'https://linktr.ee/labicicleta.ads',
       img: 'assets/bicicleta.png',
       level: 3
-	},
-	{
-	  web: 'http://www.delsamscafes.com/',
-	  img: 'assets/delsams.png',
-	  level: 3
-	},
-	{
-	  web: 'http://arfonfruits.com/',
-	  img: 'assets/arfon.png',
-	  level: 3
-	},
-	{
-	  web: 'https://es-es.facebook.com/pages/category/Event-Planner/Planeta-Gastro-Eventos-216982095712423/',
-	  img: 'assets/planetagastro.jpeg',
-	  level: 3
 	}
   ];
 
