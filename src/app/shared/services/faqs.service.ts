@@ -12,7 +12,7 @@ export class FaqsService {
   private faqsCollection: AngularFirestoreCollection<FAQ>;
 
   constructor(private afs: AngularFirestore) {
-    this.faqsCollection = afs.collection('faqs');
+    this.faqsCollection = afs.collection('faqs-pandemia');
   }
 
   public all(): Observable<FAQ[]> {
