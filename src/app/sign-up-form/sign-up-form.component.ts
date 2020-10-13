@@ -32,7 +32,7 @@ export class SignUpFormComponent implements OnInit {
                                              UrlValidator.url])],
       linkedinUrl:  ['', UrlValidator.url],
       terms: ['', Validators.requiredTrue],
-      shirtSize: ['S'],
+      // shirtSize: ['S'],
       food: [''],
       gdpr: ['']
     });

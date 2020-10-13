@@ -131,8 +131,7 @@ export class AuthenticationService {
     if (await this.isRegistered(user)) {
       this.router.navigateByUrl('/user');
     } else {
-
-      this.router.navigateByUrl('/');
+      this.router.navigateByUrl('/user/signup');
     }
   }
 
