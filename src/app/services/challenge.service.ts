@@ -27,7 +27,7 @@ export class ChallengeService {
   checkChallenges(date: CalendarDate): Subject<firebase.firestore.DocumentData> {
     var result: Subject<Challenge> = new Subject<Challenge>();
 
-    this.afs.collection('challenges').ref.get()
+    this.afs.collection('challenges-2020').ref.get()
       .then(snapshot => this.findChallenge(snapshot, date, result))
       .catch(_ => {
         console.error('Error retrieving the events data, no events published')
@@ -45,7 +45,7 @@ export class ChallengeService {
   getChallenges(): BehaviorSubject<Challenge[]> {
     var result: BehaviorSubject<Challenge[]> = new BehaviorSubject<Challenge[]>([]);
 
-    this.afs.collection('challenges').ref.get()
+    this.afs.collection('challenges-2020').ref.get()
     .then(snapshot => this.insertChallenges(snapshot, result))
     .catch(_ => {
       console.error('Error retrieving the events data, no events published')

@@ -14,7 +14,7 @@ const sendAdmissionMail = (user, isAccepted) => {
   const mailOptions = {
     from: 'LleidaHack <lleidahack@gmail.com>',
     to: user.email,
-    subject: 'Admisión HackEPS 2019',
+    subject: 'Admisión HackEPS 2020',
   };
 
   if (isAccepted) {
@@ -24,7 +24,7 @@ const sendAdmissionMail = (user, isAccepted) => {
     Hemos recibido tu solicitud para participar en esta nueva edición de la HackEPS.
     </p>
     <p>
-    Nos emociona informarte que has sido admitido oficialmente para participar en la HackEPS2019 y por tanto te esperamos con los brazos abiertos y el Wifi preparado el próximo 23 de Noviembre en la Escuela Politécnica Superior de la Universidad de Lleida (Campus de Cappont. Calle Jaume II, 69. 25001 Lleida) entre las 8:30 y 10:30 para realizar el Check-In.
+    Nos emociona informarte que has sido admitido oficialmente para participar en la HackEPS2020 y por tanto te esperamos con los brazos abiertos y el Wifi preparado el próximo 28 de Noviembre en la Escuela Politécnica Superior de la Universidad de Lleida (Campus de Cappont. Calle Jaume II, 69. 25001 Lleida) entre las 8:30 y 10:30 para realizar el Check-In.
     </p>
     <p>
     <b>Recuerda, si aún no lo has hecho, registrar tu equipo en la página para agilizar el proceso de llegada. Si no tienes equipo no te preocupes: podemos ayudarte a encontrar uno.</b>
@@ -60,7 +60,7 @@ const sendAdmissionMail = (user, isAccepted) => {
 }
 
 exports.updateAdmission = functions.firestore
-  .document('hackeps-2019/prod/users/{userId}')
+  .document('hackeps-2020/prod/users/{userId}')
   .onUpdate((change, context) => {
     const newUser = change.after.data();
     const oldUser = change.before.data();

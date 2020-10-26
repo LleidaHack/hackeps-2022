@@ -18,14 +18,24 @@ export class SponsorsComponent implements OnInit {
       img: 'assets/logo_udl.jpg',
       level: 0
     },
-    // {
-    //   web: 'https://www.bonarea.com/',
-    //   img: 'assets/bon-area.png',
-    //   level: 1
-    // },
+    {
+      web: 'https://www.bonarea.com/',
+      img: 'assets/bon-area.png',
+      level: 1
+    },
     {
       web: 'https://www.invelon.com/',
       img: 'assets/invelon.png',
+      level: 1
+    },
+    {
+      web: 'https://origen.studio/',
+      img: 'assets/origenstudio.png',
+      level: 1
+    },
+    {
+      web: 'https://marquesme.com/',
+      img: 'assets/marques.png',
       level: 1
     },
     // {
