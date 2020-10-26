@@ -22,7 +22,7 @@ export class SignUpFormComponent implements OnInit {
       // TODO: UrlValidator specific for github and linkedin
     this.signUpForm = this.fb.group({
       fullName:     ['', Validators.compose([Validators.required,
-                                             Validators.minLength(10)])],
+                                             Validators.minLength(5)])],
       nickname:     ['', Validators.compose([Validators.required,
                                              Validators.minLength(2)])],
       email:        ['', Validators.compose([Validators.required,
