@@ -15,12 +15,12 @@
             <div>
               <label for="full-name">Nombre completo *</label>
               <input formControlName="fullName" type="text" id="full-name" id="full-name" class="form-control mb-4" placeholder="Jhon Doe">
-              <span class="error" *ngIf="shouldShowError('fullName')">El nombre es obligatorio</span>
+              <span class="error" *ngIf="shouldShowError('fullName')">El nombre es obligatorio (10 carateres mínimo)</span>
             </div>
             <div>
               <label>Nickname *</label>
               <input formControlName="nickname" type="text" id="nickname" name="nickname" class="form-control mb-4" placeholder="JhonDoe6969">
-              <span class="error" *ngIf="shouldShowError('nickname')">El apodo es obligatorio</span>
+              <span class="error" *ngIf="shouldShowError('nickname')">El apodo es obligatorio (2 caracteres mínimo)</span>
             </div>
             <div>
               <label>Correo electrónico *</label>
