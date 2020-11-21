@@ -4,9 +4,25 @@
 <app-calendar id="calendar"></app-calendar>
 <app-sponsors id="sponsors"></app-sponsors>
 
-<div class="footer text-center text-white p-4">
+<div class="footer text-center text-white p-3">
   <p>Made with <i class="fas fa-heart"></i> by <a href="https://lleidahack.github.io/">LleidaHack</a></p>
-  <p><a [routerLink]="['/terms-and-conditions']">Términos y condiciones</a></p>
+  <div class="row">
+    <div class="col center-text">
+      <a href="https://twitter.com/LleidaHack" target="_blank" class="waves-effect waves-light pr-2">
+          <i class="fab fa-twitter fa-2x font-white icon-spacing"></i>
+      </a>
+      <a href="https://www.instagram.com/lleidahack/" target="_blank" class="waves-effect waves-light pr-2">
+          <i class="fab fa-instagram fa-2x font-white icon-spacing"></i>
+      </a>
+      <a href="https://www.linkedin.com/company/lleidahack/" target="_blank" class="waves-effect waves-light pr-2">
+          <i class="fab fa-linkedin fa-2x font-white icon-spacing"></i>
+      </a>
+      <a href="mailto:lleidahack@gmail.com" class="waves-effect waves-light">
+          <i class="fa fa-envelope fa-2x font-white"></i>
+      </a>
+  </div>
+</div>
+  <p class="pb-0 mb-0"><a [routerLink]="['/terms-and-conditions']">Términos y condiciones</a></p>
 </div>
 
 <app-loading-overlay [show]="loading"></app-loading-overlay>
