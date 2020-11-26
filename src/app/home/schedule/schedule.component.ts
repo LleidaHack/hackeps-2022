@@ -15,17 +15,22 @@ export class ScheduleComponent implements OnInit {
     {
       icon: 'fas fa-play',
       date: '10:00 - 28 NOV',
-      name: 'Finaliza check-in y empieza la ceremonia'
+      name: 'Empieza la ceremonia'
     },
     {
       icon: 'fas fa-laptop-code',
-      date: 'Si quieres, tampoco te vamos a obligar... 🙆',
-      name: 'Start hacking'
+      date: '11:30 - 28 NOV',
+      name: 'Start hacking, si quieres vamos... 🙆'
     },
     {
       icon: 'fas fa-utensils',
       date: 'Tú verás cuando coméis en tu casa🤷',
       name: 'Comida',
+    },
+    {
+      icon: 'fas fa-times-circle',
+      date: '15:00 - 28 NOV',
+      name: 'Finaliza el check-in y cierre de registros'
     },
     {
       icon: 'fas fa-pizza-slice',
@@ -51,12 +56,7 @@ export class ScheduleComponent implements OnInit {
       icon: 'fas fa-trophy',
       date: '13:00 - 29 NOV',
       name: 'Ceremonia de clausura y entrega de premios',
-    },
-    {
-      icon: 'fas fa-drumstick-bite',
-      date: 'Que no sé cuando coméis en tu casa... 😒',
-      name: 'Comida y despedida',
-    },
+    }
   ];
 
   constructor() { }
