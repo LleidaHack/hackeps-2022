@@ -53,7 +53,7 @@ export class BannerComponent implements OnInit {
           }
         },
         color: {
-          value: '#5B9DD7'
+          value: '#fe7f9c'
         },
         shape: {
           type: 'circle',

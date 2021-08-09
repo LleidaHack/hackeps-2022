@@ -34,19 +34,9 @@ export class SponsorsComponent implements OnInit {
       level: 1
     },
     {
-      web: 'https://marquesme.com/',
-      img: 'assets/marques.png',
-      level: 1
-    },
-    {
       web: 'https://eurecat.org/es/',
       img: 'assets/eurecat.png',
       level: 1
-    },
-    {
-      web: 'http://www.cosantex.com/es/',
-      img: 'assets/cosantex.png',
-      level: 2
     }
   ];
 
