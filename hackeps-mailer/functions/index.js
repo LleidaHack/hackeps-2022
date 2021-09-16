@@ -14,7 +14,7 @@ const sendAdmissionMail = (user, isAccepted) => {
   const mailOptions = {
     from: 'LleidaHack <lleidahack@gmail.com>',
     to: user.email,
-    subject: 'Admisión HackEPS 2020',
+    subject: 'Admisión HackEPS 2021',
   };
 
   if (isAccepted) {
@@ -60,7 +60,7 @@ const sendAdmissionMail = (user, isAccepted) => {
 }
 
 exports.updateAdmission = functions.firestore
-  .document('hackeps-2020/prod/users/{userId}')
+  .document('hackeps-2021/prod/users/{userId}')
   .onUpdate((change, context) => {
     const newUser = change.after.data();
     const oldUser = change.before.data();
