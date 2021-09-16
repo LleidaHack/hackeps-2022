@@ -2,9 +2,9 @@
 <rect width="20" height="20" fill="url(#paint0_radial)"/>
 <defs>
 <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(10 10) rotate(90) scale(10)">
-<stop stop-color="#F3A183"/>
-<stop offset="0.65625" stop-color="#F3B283" stop-opacity="0.95"/>
-<stop offset="0.739583" stop-color="#F3AB83" stop-opacity="0"/>
+<stop stop-color="#ff96af"/>
+<stop offset="0.65625" stop-color="#ff96af" stop-opacity="0.95"/>
+<stop offset="0.739583" stop-color="#ff96af" stop-opacity="0"/>
 </radialGradient>
 </defs>
 </svg>
