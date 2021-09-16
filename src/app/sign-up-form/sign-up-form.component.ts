@@ -27,6 +27,7 @@ export class SignUpFormComponent implements OnInit {
                                              Validators.minLength(2)])],
       email:        ['', Validators.compose([Validators.required,
                                              Validators.email])],
+      street:        ['', Validators.required],
       birthDate:    ['', Validators.required],
       githubUrl:    ['', Validators.compose([Validators.required,
                                              UrlValidator.url])],
@@ -58,6 +59,7 @@ export class SignUpFormComponent implements OnInit {
     formData.uid = this.user.uid;
     formData.photoURL = this.user.photoURL;
     formData.displayName = this.user.displayName;
+    formData.displayName = this.user.street;
     formData.accepted = 'PENDENT';
 
     this.auth.updateUserData(formData as UserModel)

@@ -1,7 +1,8 @@
 .schedule {
-  background: #A8D2FF; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #A8D2FF, #239ECF); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #A8D2FF, #239ECF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #fe7f9c;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #fe7f9c, #ffa7bb, #ffc9d6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fe7f9c, #ffa7bb, #ffc9d6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   padding: 3em;
 }
 
@@ -65,7 +66,7 @@
 }
 
 .timeline .timeline-item .timeline-badge {
-  background-color: #239ECF;
+  background-color: #fe7f9c;
 }
 
 .timeline .timeline-item .timeline-panel {
@@ -83,7 +84,7 @@
 }
 
 .timeline .timeline-item .timeline-panel {
-  border-top: 6px solid #239ECF;
+  border-top: 6px solid #fe7f9c;
 }
 
 

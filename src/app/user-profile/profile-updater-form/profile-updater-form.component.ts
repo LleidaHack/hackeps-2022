@@ -25,6 +25,7 @@ export class ProfileUpdaterFormComponent implements OnInit, OnChanges {
       nickname:     ['', Validators.compose([Validators.required,
                                              Validators.minLength(2)])],
       birthDate:    ['', Validators.required],
+      street:        ['', Validators.required],
       githubUrl:    ['', Validators.compose([Validators.required,
                                              UrlValidator.url])],
       linkedinUrl:  ['', Validators.compose([UrlValidator.url])],
@@ -52,6 +53,8 @@ export class ProfileUpdaterFormComponent implements OnInit, OnChanges {
       .setValue(this.user.food);
     this.profileUpdaterForm.get('gdpr')
       .setValue(this.user.gdpr);
+    this.profileUpdaterForm.get('street')
+      .setValue(this.user.street);
   }
 
   public onSubmit() {
