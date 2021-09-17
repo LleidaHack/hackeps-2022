@@ -28,7 +28,7 @@
               <span class="error" *ngIf="shouldShowError('email')">El correo electrónico es obligatorio</span>
             </div>
             <div>
-              <label>Dirección</label>
+              <label>Dirección*</label>
               <input formControlName="street" type="text" id="street" name="street" class="form-control mb-4" placeholder="JhonDoe Street #69 6 Floor 9 Door, JhonDoe City, cp 6969">
               <span class="error" *ngIf="shouldShowError('street')">La dirección es obligatoria</span>
             </div>
@@ -90,7 +90,7 @@
             <i class="text-muted mt-2">* Campos obligatorios</i>
 
             <div class="w-100 text-right">
-              <button mdbBtn [disabled]="!signUpForm.valid" type="submit" rounded="true" mdbWavesEffect class="button-gradient">Únete ahora</button>
+              <button mdbBtn [disabled]="signUpForm.invalid" type="submit" rounded="true" class="button-gradient waves-light" mdbWavesEffect style="pointer-events:none; color:black">Únete ahora</button>
             </div>
 
           </form>
