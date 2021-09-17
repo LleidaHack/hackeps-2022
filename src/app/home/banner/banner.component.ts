@@ -172,7 +172,7 @@ export class BannerComponent implements OnInit {
   }
 
   enableSignUp() {
-    this.signIn = false;
+    this.signIn = true;
   }
 
   getSignIn() {

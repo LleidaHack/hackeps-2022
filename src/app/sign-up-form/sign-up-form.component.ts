@@ -56,10 +56,10 @@ export class SignUpFormComponent implements OnInit {
   public onSubmit() {
     this.loading = true;
     const formData = this.signUpForm.value;
+    console.log(this.signUpForm.value)
     formData.uid = this.user.uid;
     formData.photoURL = this.user.photoURL;
     formData.displayName = this.user.displayName;
-    formData.displayName = this.user.street;
     formData.accepted = 'PENDENT';
 
     this.auth.updateUserData(formData as UserModel)
