@@ -37,6 +37,11 @@ export class SponsorsComponent implements OnInit {
       web: 'https://eurecat.org/es/',
       img: 'assets/eurecat.png',
       level: 1
+    },
+    {
+      web: 'https://www.vunkers.com/',
+      img: 'assets/vunkers_logo.png',
+      level: 1
     }
   ];
 
