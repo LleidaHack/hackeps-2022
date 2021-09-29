@@ -11,6 +11,7 @@ export interface UserModel {
   linkedinUrl?: string;
   accepted?: string;
   gdpr?: boolean;
+  covid?: boolean;
   food?: string;
   shirtSize?: string;
 }

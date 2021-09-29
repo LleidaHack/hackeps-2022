@@ -33,6 +33,7 @@ export class SignUpFormComponent implements OnInit {
                                              UrlValidator.url])],
       linkedinUrl:  ['', UrlValidator.url],
       terms: ['', Validators.requiredTrue],
+      covid: ['', Validators.requiredTrue],
       // shirtSize: ['S'],
       food: [''],
       gdpr: ['']
@@ -56,7 +57,6 @@ export class SignUpFormComponent implements OnInit {
   public onSubmit() {
     this.loading = true;
     const formData = this.signUpForm.value;
-    console.log(this.signUpForm.value)
     formData.uid = this.user.uid;
     formData.photoURL = this.user.photoURL;
     formData.displayName = this.user.displayName;

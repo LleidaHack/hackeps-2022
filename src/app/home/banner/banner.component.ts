@@ -1,20 +1,22 @@
 import { AuthenticationService } from '../../shared/services/authentication.service';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, AfterViewInit, ElementRef, ViewChild} from '@angular/core';
 import { UserModel } from 'src/app/shared/models/user.model';
-import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormBuilder} from '@angular/forms';
 import { faEnvelope, faLock, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faGooglePlusG } from '@fortawesome/free-brands-svg-icons';
 import { MustMatch } from 'src/app/shared/validators/sign.validator';
 import { AlertService } from 'src/app/external/_alert';
+import { Renderer2 } from '@angular/core';
+import { ModalDirective } from 'angular-bootstrap-md'
 
 declare var particlesJS: any;
-
 @Component({
   selector: 'app-banner',
   templateUrl: './banner.component.html',
   styleUrls: ['./banner.component.scss']
 })
 export class BannerComponent implements OnInit {
+  @ViewChild('popupmodal', {static: false}) popup: ModalDirective;
   // FontAwesome
   faEnvelope = faEnvelope;
   faLock = faLock;
@@ -27,14 +29,23 @@ export class BannerComponent implements OnInit {
   private signIn: boolean;
   private modalTitle: string;
   public errorMessage: string;
+  private popupSeen: boolean = false;
   @Output() public afterLogin = new EventEmitter();
 
   constructor(
     private auth: AuthenticationService, 
     private formBuilder: FormBuilder,
-    private alertService: AlertService
+    private alertService: AlertService,
+    
     ) { }
   ngOnInit() {
+    if (localStorage.getItem('popUpThrownTime') != null) {
+      var timestamp: number = new Date().getTime();
+      var storedTimestamp : number = +localStorage.getItem('popUpThrownTime');
+      if (timestamp >=  (storedTimestamp+600)) {
+        localStorage.clear();
+      }
+    }
     this.validatingForm = this.formBuilder.group({
       loginFormModalEmail: new FormControl('', Validators.compose([Validators.email, Validators.required])),
       loginFormModalPassword: new FormControl('', Validators.compose([Validators.required, Validators.minLength(8)])),
@@ -141,6 +152,15 @@ export class BannerComponent implements OnInit {
       },
       retina_detect: true
     });
+  }
+
+  ngAfterViewInit() {
+      if (localStorage.getItem('showPopUp') == null) {
+        this.popup.show();
+        this.popupSeen = true;
+        localStorage.setItem('showPopUp', '1');
+        localStorage.setItem('popUpThrownTime', new Date().getTime().toString());
+      }
   }
 
   get loginFormModalEmail() {

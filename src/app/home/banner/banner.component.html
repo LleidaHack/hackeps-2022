@@ -8,6 +8,23 @@
   (click)="disableConfirmPassword(); enableSignIn(); frame.show()" mdbWavesEffect>Entra ahora</button>
 </div>
 
+<div mdbModal #popupmodal="mdbModal" class="modal fade left" id="popupmodal" tabindex="-1" role="dialog"
+  aria-labelledby="popupmodal" aria-hidden="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content modal-pos">
+    <div class="modal-header text-center">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="popupmodal.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <h4 class="modal-title w-100 font-weight-bold">IMPORTANTE</h4>
+    </div>
+    <div class="modal-body mx-3">
+      <p>Este año por motivos pandémicos nos vemos en la obligación de pedir <a [routerLink]="['/normativa-covid']">passaporte COVID</a> a la entrada del recinto, se le negará el acceso al evento a cualquier persona que no cumpla con este requisito.</p>
+    </div>
+  </div>
+  </div>
+</div>
+
 <div mdbModal #frame="mdbModal" class="modal fade left" id="signModal" tabindex="-1" role="dialog"
      aria-labelledby="signModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
