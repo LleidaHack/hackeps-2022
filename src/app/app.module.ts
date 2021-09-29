@@ -51,6 +51,8 @@ import { TermsAndConditionsTextComponent } from './terms-and-conditions/terms-an
 import { CalendarUploaderComponent } from './user-profile/calendar-uploader/calendar-uploader.component';
 import { ScheduleComponent } from './home/schedule/schedule.component';
 import { CountdownComponent } from './countdown/countdown.component';
+import { NormativaCovidComponent } from './normativa-covid/normativa-covid.component';
+import { NormativaCovidTextComponent } from './normativa-covid/normativa-covid-text/normativa-covid-text.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +76,8 @@ import { CountdownComponent } from './countdown/countdown.component';
     TitleCasePipe,
     ScheduleComponent,
     CountdownComponent,
+    NormativaCovidComponent,
+    NormativaCovidTextComponent,
   ],
   imports: [
     BrowserModule,

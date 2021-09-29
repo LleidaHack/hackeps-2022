@@ -7,10 +7,12 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
+import { NormativaCovidComponent } from './normativa-covid/normativa-covid.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'terms-and-conditions', component: TermsAndConditionsComponent },
+  { path: 'normativa-covid', component: NormativaCovidComponent },
   { path: 'user', component: UserProfileComponent, canActivate: [AuthGuard] },
   { path: 'user/signup', component: SignUpFormComponent },
   { path: 'calendar', component: CalendarComponent },

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ɵgetComponentViewDefinitionFactory } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -38,7 +38,7 @@ export class AuthenticationService {
           uid: u.uid,
           email: u.email,
           displayName: u.displayName,
-          photoURL: u.photoURL
+          photoURL: u.photoURL,
         } as UserModel;
       })
     );
