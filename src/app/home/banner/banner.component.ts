@@ -42,7 +42,7 @@ export class BannerComponent implements OnInit {
     if (localStorage.getItem('popUpThrownTime') != null) {
       var timestamp: number = new Date().getTime();
       var storedTimestamp : number = +localStorage.getItem('popUpThrownTime');
-      if (timestamp >=  (storedTimestamp+600)) {
+      if (timestamp >=  (storedTimestamp+600000)) {
         localStorage.clear();
       }
     }
