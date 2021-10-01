@@ -15,7 +15,7 @@ export class CountdownComponent implements OnInit {
   constructor() {
     this.config = {
       leftTime: 24 * 3600,
-      stopTime: 1574593200000
+      stopTime: 1638003600000
     };
   }
 
