@@ -25,6 +25,11 @@ export class SponsorsComponent implements OnInit {
     },
     {
       web: 'https://www.invelon.com/',
+      img: 'assets/intech3d.png',
+      level: 1
+    },
+    {
+      web: 'https://intech3d.es/',
       img: 'assets/invelon.png',
       level: 1
     },
@@ -42,6 +47,21 @@ export class SponsorsComponent implements OnInit {
       web: 'https://www.vunkers.com/',
       img: 'assets/vunkers_logo.png',
       level: 1
+    },
+    {
+      web: 'https://cosantex.com/',
+      img: 'assets/cosantex.png',
+      level: 2
+    },
+    {
+      web: 'https://0xword.com/',
+      img: 'assets/oxword.jpeg',
+      level: 2
+    },
+    {
+      web: 'https://mypublicinbox.com/',
+      img: 'assets/mypublicinbox.jpeg',
+      level: 2
     }
   ];
 
