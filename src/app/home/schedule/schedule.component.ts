@@ -24,7 +24,7 @@ export class ScheduleComponent implements OnInit {
     },
     {
       icon: 'fas fa-utensils',
-      date: 'Tú verás cuando coméis en tu casa🤷',
+      date: '14:00 - 27 NOV',
       name: 'Comida',
     },
     {
@@ -34,7 +34,7 @@ export class ScheduleComponent implements OnInit {
     },
     {
       icon: 'fas fa-pizza-slice',
-      date: 'Pues lo mismo que en la comida chacho💁',
+      date: '22:00 - 27 NOV',
       name: 'Cena',
     },
     {
