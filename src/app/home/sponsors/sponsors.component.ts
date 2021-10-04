@@ -59,16 +59,19 @@ export class SponsorsComponent implements OnInit {
     {
       web: 'https://cosantex.com/',
       img: 'assets/cosantex.png',
+      alt: 'Cosantex',
       level: 2
     },
     {
       web: 'https://0xword.com/',
       img: 'assets/oxword.jpeg',
+      alt: '0xWORD',
       level: 2
     },
     {
       web: 'https://mypublicinbox.com/',
       img: 'assets/mypublicinbox.jpeg',
+      alt: 'My Public Inbox',
       level: 2
     }
   ];
