@@ -11,11 +11,13 @@ export class SponsorsComponent implements OnInit {
     {
       web: 'http://www.eps.udl.cat/',
       img: 'assets/eps.png',
+      alt: 'Escuela Politécnica Superior de la Universidad de Lleida',
       level: 0
     },
     {
       web: 'http://www.udl.es/ca/',
       img: 'assets/logo_udl.jpg',
+      alt: 'Universidad de Lleida',
       level: 0
     },
     {
