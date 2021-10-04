@@ -23,31 +23,37 @@ export class SponsorsComponent implements OnInit {
     {
       web: 'https://www.bonarea.com/',
       img: 'assets/bon-area.png',
+      alt: 'Bon Àrea',
       level: 1
     },
     {
       web: 'https://www.invelon.com/',
       img: 'assets/intech3d.png',
+      alt: 'Intech3d',
       level: 1
     },
     {
       web: 'https://intech3d.es/',
       img: 'assets/invelon.png',
+      alt: 'Invelon',
       level: 1
     },
     {
       web: 'https://origen.studio/',
       img: 'assets/origenstudio.png',
+      alt: 'Origen Studio',
       level: 1
     },
     {
       web: 'https://eurecat.org/es/',
       img: 'assets/eurecat.png',
+      alt: 'Eurecat',
       level: 1
     },
     {
       web: 'https://www.vunkers.com/',
       img: 'assets/vunkers_logo.png',
+      alt: 'Vunkers',
       level: 1
     },
     {
