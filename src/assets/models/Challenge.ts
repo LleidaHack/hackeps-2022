@@ -31,7 +31,7 @@ export var dummyChallenge: Challenge = new Challenge(
   new FirebaseDate(0,0),
   '',
   '',
-  '',
+  '#',
   ''
 );
 
