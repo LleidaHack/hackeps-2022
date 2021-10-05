@@ -3,19 +3,19 @@
 
   <div class="row justify-content-center align-items-center">
     <div class="col-10 col-md-6 col-lg-6 p-4" *ngFor="let s of getSponsorsByLevel(0)">
-      <a href="{{ s.web }}"><img src="{{ s.img }}" width="100%"></a>
+      <a href="{{ s.web }}"><img alt="{{ s.alt }}" src="{{ s.img }}"  width="100%"></a>
     </div>
   </div>
 
   <div class="row justify-content-center align-items-center mb-4">
     <div class="col-5 col-md-4 col-lg-4 p-4" *ngFor="let s of getSponsorsByLevel(1)">
-      <a href="{{ s.web }}"><img src="{{ s.img }}" width="100%"></a>
+      <a href="{{ s.web }}"><img alt="{{ s.alt }}" src="{{ s.img }}" width="100%"></a>
     </div>
   </div>
 
   <div class="row justify-content-center align-items-center mb-4">
     <div class="col-6 col-lg-3 col-md-3 p-4" *ngFor="let s of getSponsorsByLevel(2)">
-      <a href="{{ s.web }}"><img src="{{ s.img }}" width="100%"></a>
+      <a href="{{ s.web }}"><img alt="{{ s.alt }}" src="{{ s.img }}" width="100%"></a>
     </div>
   </div>
 

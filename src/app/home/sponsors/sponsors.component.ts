@@ -11,56 +11,67 @@ export class SponsorsComponent implements OnInit {
     {
       web: 'http://www.eps.udl.cat/',
       img: 'assets/eps.png',
+      alt: 'Escuela Politécnica Superior de la Universidad de Lleida',
       level: 0
     },
     {
       web: 'http://www.udl.es/ca/',
       img: 'assets/logo_udl.jpg',
+      alt: 'Universidad de Lleida',
       level: 0
     },
     {
       web: 'https://www.bonarea.com/',
       img: 'assets/bon-area.png',
+      alt: 'Bon Àrea',
       level: 1
     },
     {
       web: 'https://www.invelon.com/',
       img: 'assets/intech3d.png',
+      alt: 'Intech3d',
       level: 1
     },
     {
       web: 'https://intech3d.es/',
       img: 'assets/invelon.png',
+      alt: 'Invelon',
       level: 1
     },
     {
       web: 'https://origen.studio/',
       img: 'assets/origenstudio.png',
+      alt: 'Origen Studio',
       level: 1
     },
     {
       web: 'https://eurecat.org/es/',
       img: 'assets/eurecat.png',
+      alt: 'Eurecat',
       level: 1
     },
     {
       web: 'https://www.vunkers.com/',
       img: 'assets/vunkers_logo.png',
+      alt: 'Vunkers',
       level: 1
     },
     {
       web: 'https://cosantex.com/',
       img: 'assets/cosantex.png',
+      alt: 'Cosantex',
       level: 2
     },
     {
       web: 'https://0xword.com/',
       img: 'assets/oxword.jpeg',
+      alt: '0xWORD',
       level: 2
     },
     {
       web: 'https://mypublicinbox.com/',
       img: 'assets/mypublicinbox.jpeg',
+      alt: 'My Public Inbox',
       level: 2
     }
   ];
