@@ -57,9 +57,27 @@ export class SponsorsComponent implements OnInit {
       level: 1
     },
     {
+      web: 'https://enginyeriainformatica.cat/',
+      img: 'assets/coinf.png',
+      alt: 'COEINF',
+      level: 2
+    },
+    /*{
+      web: 'https://alumni.udl.cat/',
+      img: 'assets/alumni.jpg',
+      alt: 'Alumni UdL',
+      level: 2
+    },*/
+    {
       web: 'https://cosantex.com/',
       img: 'assets/cosantex.png',
       alt: 'Cosantex',
+      level: 2
+    },
+    {
+      web: 'https://www.dominospizza.es/',
+      img: 'https://www.dominospizza.es/Content/img/dominos-logo.svg',
+      alt: 'Domino\'s Pizza',
       level: 2
     },
     {
