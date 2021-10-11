@@ -20,15 +20,13 @@ export class ProfileUpdaterFormComponent implements OnInit, OnChanges {
     private fb: FormBuilder) {
     // TODO: UrlValidator specific for github and linkedin
     this.profileUpdaterForm = this.fb.group({
-      fullName:     ['', Validators.compose([Validators.required,
-                                             Validators.minLength(10)])],
-      nickname:     ['', Validators.compose([Validators.required,
-                                             Validators.minLength(2)])],
-      birthDate:    ['', Validators.required],
-      street:        ['', Validators.required],
-      githubUrl:    ['', Validators.compose([Validators.required,
-                                             UrlValidator.url])],
-      linkedinUrl:  ['', Validators.compose([UrlValidator.url])],
+      fullName:     ['', Validators.compose([Validators.minLength(10)])],
+      nickname:     ['', Validators.compose([Validators.minLength(2)])],
+      birthDate:    [''],
+      street:        [''],
+      githubUrl:    ['', Validators.compose([UrlValidator.url])],
+      linkedinUrl:  [''],
+      shirtSize: ['S'],
       food: [''],
       gdpr: ['']
     });
@@ -38,7 +36,6 @@ export class ProfileUpdaterFormComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-
     this.profileUpdaterForm.get('nickname')
       .setValue(this.user.nickname);
     this.profileUpdaterForm.get('fullName')
@@ -53,6 +50,8 @@ export class ProfileUpdaterFormComponent implements OnInit, OnChanges {
       .setValue(this.user.food);
     this.profileUpdaterForm.get('gdpr')
       .setValue(this.user.gdpr);
+    this.profileUpdaterForm.get('shirtSize')
+      .setValue(this.user.shirtSize);
     this.profileUpdaterForm.get('street')
       .setValue(this.user.street);
   }

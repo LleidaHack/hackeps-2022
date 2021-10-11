@@ -39,13 +39,13 @@ export class BannerComponent implements OnInit {
     
     ) { }
   ngOnInit() {
-    if (localStorage.getItem('popUpThrownTime') != null) {
+    /*if (localStorage.getItem('popUpThrownTime') != null) {
       var timestamp: number = new Date().getTime();
       var storedTimestamp : number = +localStorage.getItem('popUpThrownTime');
       if (timestamp >=  (storedTimestamp+600000)) {
         localStorage.clear();
       }
-    }
+    }*/
     this.validatingForm = this.formBuilder.group({
       loginFormModalEmail: new FormControl('', Validators.compose([Validators.email, Validators.required])),
       loginFormModalPassword: new FormControl('', Validators.compose([Validators.required, Validators.minLength(8)])),

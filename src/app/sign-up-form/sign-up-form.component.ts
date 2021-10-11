@@ -32,9 +32,9 @@ export class SignUpFormComponent implements OnInit {
       githubUrl:    ['', Validators.compose([Validators.required,
                                              UrlValidator.url])],
       linkedinUrl:  ['', UrlValidator.url],
-      terms: ['', Validators.requiredTrue],
-      covid: ['', Validators.requiredTrue],
-      // shirtSize: ['S'],
+      terms: ['', ],
+      //covid: ['', Validators.requiredTrue],
+      shirtSize: ['S'],
       food: [''],
       gdpr: ['']
     });
