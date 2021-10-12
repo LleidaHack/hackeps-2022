@@ -15,8 +15,6 @@ export class NavbarComponent implements OnInit {
   public url: string;
   public currentUrl: string;
   public code: string;
-  public profileUpdaterForm: FormGroup;
-  @Output() public loading = new EventEmitter<boolean>();
 
   @ViewChild('navbar', {
     static: true
