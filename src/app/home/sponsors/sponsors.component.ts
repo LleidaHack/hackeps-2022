@@ -28,14 +28,8 @@ export class SponsorsComponent implements OnInit {
     },
     {
       web: 'https://www.invelon.com/',
-      img: 'assets/intech3d.png',
-      alt: 'Intech3d',
-      level: 1
-    },
-    {
-      web: 'https://intech3d.es/',
-      img: 'assets/invelon.png',
-      alt: 'Invelon',
+      img: 'assets/invetech.png',
+      alt: 'Invelon e Intech3d',
       level: 1
     },
     {
