@@ -29,6 +29,7 @@
     "angular-cli-ghpages": "^0.6.2",
     "angularx-qrcode": "^1.6.4",
     "chart.js": "^2.9.4",
+    "grpc": "1.23.3",
     "firebase": "^6.6.2",
     "firebase-admin": "^9.4.1",
     "firebase-functions": "^3.11.0",
