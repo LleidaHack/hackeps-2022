@@ -85,6 +85,12 @@ export class SponsorsComponent implements OnInit {
       img: 'assets/mypublicinbox.jpeg',
       alt: 'My Public Inbox',
       level: 2
+    },
+    {
+      web: 'https://www.fruilar.com/es/',
+      img: 'assets/fruilar.jpeg',
+      alt: 'Fruilar',
+      level: 2
     }
   ];
 
