@@ -1,7 +1,9 @@
-import { Component, OnInit, ViewChild, DebugElement } from '@angular/core';
-import { UserModel } from '../shared/models/user.model';
-import { AuthenticationService } from '../shared/services/authentication.service';
-import { Router, NavigationEnd } from '@angular/router';
+import {Component, OnInit, ViewChild, DebugElement, Output, EventEmitter} from '@angular/core';
+import {UserModel} from '../shared/models/user.model';
+import {AuthenticationService} from '../shared/services/authentication.service';
+import {Router, NavigationEnd, ActivatedRoute} from '@angular/router';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UrlValidator} from '../shared/validators/url.validator';
 
 @Component({
   selector: 'app-navbar',
@@ -12,6 +14,7 @@ export class NavbarComponent implements OnInit {
   public user: UserModel;
   public url: string;
   public currentUrl: string;
+  public code: string;
 
   @ViewChild('navbar', {
     static: true
@@ -19,8 +22,9 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     public auth: AuthenticationService,
-    public route: Router) {
-
+    public route: Router,
+    public actroute: ActivatedRoute,
+  ) {
     route.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.currentUrl = event.url;
@@ -38,6 +42,15 @@ export class NavbarComponent implements OnInit {
       }
       this.auth.fetchUserData(user.uid)
         .subscribe(u => {
+          this.actroute.queryParams
+            .subscribe(params => {
+                this.code = params.code;
+                if (this.code) {
+                  user.discordCode = this.code;
+                  this.auth.updateUserData(user);
+                }
+              }
+            );
           this.user = u;
         });
     });
@@ -48,7 +61,7 @@ export class NavbarComponent implements OnInit {
   }
 
   /*Not logged url validator using regex*/
-  public urlRegexValidator(){
+  public urlRegexValidator() {
     //Validate if the url is like --> '/#' + '<qualsevol paraula>'
     return new RegExp('[//#]\w*').test(this.currentUrl) || this.currentUrl === '/';
   }

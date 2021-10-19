@@ -50,18 +50,18 @@ export class SponsorsComponent implements OnInit {
       alt: 'Vunkers',
       level: 1
     },
+    // {
+    //   web: 'https://enginyeriainformatica.cat/',
+    //   img: 'assets/coinf.png',
+    //   alt: 'COEINF',
+    //   level: 2
+    // },
     {
-      web: 'https://enginyeriainformatica.cat/',
-      img: 'assets/coinf.png',
-      alt: 'COEINF',
-      level: 2
-    },
-    /*{
       web: 'https://alumni.udl.cat/',
       img: 'assets/alumni.jpg',
       alt: 'Alumni UdL',
       level: 2
-    },*/
+    },
     {
       web: 'https://cosantex.com/',
       img: 'assets/cosantex.png',
@@ -76,7 +76,7 @@ export class SponsorsComponent implements OnInit {
     },
     {
       web: 'https://0xword.com/',
-      img: 'assets/oxword.jpeg',
+      img: 'assets/oxword.png',
       alt: '0xWORD',
       level: 2
     },

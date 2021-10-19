@@ -14,4 +14,5 @@ export interface UserModel {
   //covid?: boolean;
   food?: string;
   shirtSize?: string;
+  discordCode?: string;
 }
