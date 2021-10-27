@@ -87,6 +87,12 @@ export class SponsorsComponent implements OnInit {
       level: 2
     },
     {
+      web: 'https://singularity-hackers.com/',
+      img: 'assets/singularityHackers.png',
+      alt: 'Singularity Hackers',
+      level: 2
+    },
+    {
       web: 'https://www.fruilar.com/es/',
       img: 'assets/fruilar.jpeg',
       alt: 'Fruilar',
