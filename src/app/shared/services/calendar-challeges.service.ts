@@ -11,7 +11,7 @@ import { UserModel } from '../models/user.model';
 })
 export class CalendarChallengesService {
   public static CHALLENGES_UIDS = {
-    cost: 'wwfOp0FIvFhWuYAxRMS2',     // Collatz challenge
+    cost: 'w3b6eXvKt4vnkn5dLv6F',     // Collatz challenge
     pokemon: 'o9JlpEuyII7mgbkeBJep',  // BiblioCAT challenge,
     ml: 'Dq6yCBBRktnd8V78uz0W',        // Musica challenge
   };
@@ -24,7 +24,7 @@ export class CalendarChallengesService {
 
   public getUserSubmissions(userUid: string) {
     const challengesUids = Object.values(CalendarChallengesService.CHALLENGES_UIDS);
-    const docs$ = challengesUids.map(id => this.afs.doc(`challenges-2020/${id}/submissions/${userUid}`).get());
+    const docs$ = challengesUids.map(id => this.afs.doc(`challenges-2021/${id}/submissions/${userUid}`).get());
     return forkJoin(docs$).pipe(map(res => res.map(r => r.data())));
   }
 
@@ -35,7 +35,7 @@ export class CalendarChallengesService {
   }
 
   private submissionCollection(challengeUid: string): AngularFirestoreCollection<any> {
-    return this.afs.collection(`challenges-2020/${challengeUid}/submissions`);
+    return this.afs.collection(`challenges-2021/${challengeUid}/submissions`);
   }
 
   public uploadSubmission(challengeUid: string,
