@@ -34,6 +34,11 @@
 }
 
 @media (min-width: 1350px) {
+  .clossed-button {
+    top: 60%;
+    left: 50%;
+  }
+  
   .signUp-button {
     top: 60%;
     left: 45%;
@@ -46,6 +51,11 @@
 }
 
 @media screen and (max-width: 1349px) and (min-width: 1000px) {
+  .clossed-button {
+    top: 60%;
+    left: 50%;
+  }
+
   .signUp-button {
     top: 60%;
     left: 42%;
@@ -58,6 +68,11 @@
 }
 
 @media screen and (max-width: 999px) and (min-width: 500px) {
+  .clossed-button {
+    top: 60%;
+    left: 50%;
+  }
+
   .signUp-button {
     top: 60%;
     left: 37%;
@@ -73,6 +88,12 @@
   .logo {
     margin-top: 20%!important;
   }
+
+  .clossed-button {
+    top: 55%;
+    left: 50%;
+  }
+
   .signUp-button {
     top: 55%;
     left: 50%;
@@ -85,6 +106,11 @@
 }
 
 @media screen and (max-width: 350px) {
+  .clossed-button {
+    top: 50%;
+    left: 50%;
+  }
+
   .signUp-button {
     top: 50%;
     left: 50%;
