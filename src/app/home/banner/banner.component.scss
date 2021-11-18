@@ -35,6 +35,11 @@
 
 @media (min-width: 1350px) {
   .clossed-button {
+    top: 52%;
+    left: 50%;
+  }
+
+  .clossed-signIn-button {
     top: 60%;
     left: 50%;
   }
@@ -52,7 +57,12 @@
 
 @media screen and (max-width: 1349px) and (min-width: 1000px) {
   .clossed-button {
-    top: 60%;
+    top: 54%;
+    left: 50%;
+  }
+
+  .clossed-signIn-button {
+    top: 64%;
     left: 50%;
   }
 
@@ -69,7 +79,12 @@
 
 @media screen and (max-width: 999px) and (min-width: 500px) {
   .clossed-button {
-    top: 60%;
+    top: 63%;
+    left: 50%;
+  }
+
+  .clossed-signIn-button {
+    top: 73%;
     left: 50%;
   }
 
@@ -90,7 +105,12 @@
   }
 
   .clossed-button {
-    top: 55%;
+    top: 46%;
+    left: 50%;
+  }
+
+  .clossed-signIn-button {
+    top: 62%;
     left: 50%;
   }
 
