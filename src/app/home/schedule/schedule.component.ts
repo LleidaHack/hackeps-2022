@@ -34,7 +34,7 @@ export class ScheduleComponent implements OnInit {
     },
     {
       icon: 'fas fa-pizza-slice',
-      date: '22:00 - 27 NOV',
+      date: '21:00 - 27 NOV',
       name: 'Cena',
     },
     {

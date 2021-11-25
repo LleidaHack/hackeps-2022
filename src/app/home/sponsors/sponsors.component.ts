@@ -97,6 +97,12 @@ export class SponsorsComponent implements OnInit {
       img: 'assets/fruilar.jpeg',
       alt: 'Fruilar',
       level: 2
+    },
+    {
+      web: 'https://www.plusfresc.cat/',
+      img: 'assets/plusfresc.svg',
+      alt: 'Plusfresc',
+      level: 2
     }
   ];
 
