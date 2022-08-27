@@ -1,7 +1,7 @@
 .schedule {
-  background: #fe7f9c;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #fe7f9c, #ffa7bb, #ffc9d6);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #fe7f9c, #ffa7bb, #ffc9d6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #202225;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #202225, #202225, #202225);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #202225, #202225, #202225); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   padding: 3em;
 }
@@ -66,7 +66,7 @@
 }
 
 .timeline .timeline-item .timeline-badge {
-  background-color: #fe7f9c;
+  background-color: #A40925;
 }
 
 .timeline .timeline-item .timeline-panel {
@@ -84,7 +84,7 @@
 }
 
 .timeline .timeline-item .timeline-panel {
-  border-top: 6px solid #fe7f9c;
+  border-top: 6px solid #A40925;
 }
 
 
@@ -120,13 +120,18 @@
 
 p {
   font-size: 2em;
+  color: #F7F7F2 !important;
 }
 
-
 h4 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: monospace;
 }
 
 .hackeps-title {
-  color: rgb(241, 241, 241);
+  color: #F7F7F2;
+}
+
+.hackeps-title::after {
+  background: #A40925;
+  width: 3em;
 }

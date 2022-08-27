@@ -1,14 +1,14 @@
 <app-loading-overlay [show]="loading"></app-loading-overlay>
 
-<div class="wrapper">
+<div class="wrapper black-background">
   <div class="top-grad d-none d-sm-block">
     <img class="skyline" src="assets/skyline.svg">
   </div>
   <div class="container p-4">
-    <mdb-card>
+    <mdb-card class="black-background">
       <mdb-card-body class="p-4">
         <mdb-card-title class="mb-4">
-          <h4 class="montserrat">Formulario de registro</h4>
+          <h4>Formulario de registro</h4>
         </mdb-card-title>
         <mdb-card-text>
           <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
@@ -28,9 +28,9 @@
               <span class="error" *ngIf="shouldShowError('email')">El correo electrónico es obligatorio</span>
             </div>
             <div>
-              <label>Dirección*</label>
-              <input formControlName="street" type="text" id="street" name="street" class="form-control mb-4" placeholder="JhonDoe Street #69 6 Floor 9 Door, JhonDoe City, cp 6969">
-              <span class="error" *ngIf="shouldShowError('street')">La dirección es obligatoria</span>
+              <label>Ciudad*</label>
+              <input formControlName="street" type="text" id="street" name="street" class="form-control mb-4" placeholder="El valle de la silicona">
+              <span class="error" *ngIf="shouldShowError('street')">La ciudad es obligatoria</span>
             </div>
             <div>
               <label for="birth-date">Fecha de nacimiento *</label>
@@ -83,15 +83,15 @@
             <label>Alérgenos </label>
             <textarea formControlName="food" type="text" id="food" name="food" class="form-control mb-4" placeholder="Pescado, lechuga..."></textarea>
 
-            <mdb-checkbox formControlName="gdpr" [default]="true">Acepto que las empresas colaboradoras puedan conocer mi datos</mdb-checkbox>
+            <mdb-checkbox formControlName="gdpr" class="cream-color" [default]="true">Acepto que las empresas colaboradoras puedan conocer mi datos</mdb-checkbox>
 
-            <mdb-checkbox formControlName="terms" [default]="true">He leído y acepto los <a [routerLink]="['/terms-and-conditions']">terminos y condiciones</a> *</mdb-checkbox>
+            <mdb-checkbox formControlName="terms" class="cream-color" [default]="true">He leído y acepto los <a class="link" [routerLink]="['/terms-and-conditions']">terminos y condiciones</a> *</mdb-checkbox>
             <!--<mdb-checkbox formControlName="covid" [default]="true"><mark><b>IMPORTANTE:</b>Acepto que para poder acceder al evento debo presentar <a [routerLink]="['/normativa-covid']">passaporte COVID</a> al inicio de este, de lo contrario no se permitirá ni entrada ni participación*</mark></mdb-checkbox>-->
 
-            <i class="text-muted mt-2">* Campos obligatorios</i>
+            <i class=" mt-2 cream-color">* Campos obligatorios</i>
 
             <div class="w-100 text-right">
-              <button mdbBtn [disabled]="signUpForm.invalid" type="submit" rounded="true" class="button-gradient waves-light" mdbWavesEffect style="color:black">Únete ahora</button>
+              <button mdbBtn [disabled]="signUpForm.invalid" type="submit" rounded="true" class="button-gradient waves-light cream-color" mdbWavesEffect >Únete ahora</button>
             </div>
 
           </form>

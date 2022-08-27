@@ -1,7 +1,7 @@
 .top-grad {
-  background: #fe7f9c;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #fe7f9c, #ffa7bb, #ffc9d6);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #fe7f9c, #ffa7bb, #ffc9d6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #A40925;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #A40925, #A40925, #A40925);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #A40925, #A40925, #A40925); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   height: 35vh;
   width: 100%;
@@ -9,13 +9,13 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: 0;
 }
 
 .button-gradient {
-  background: #fe7f9c;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #fe7f9c, #ffa7bb, #ffc9d6);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #fe7f9c, #ffa7bb, #ffc9d6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #A40925;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #A40925, #A40925, #A40925);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #A40925, #A40925, #A40925); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .skyline {
@@ -26,8 +26,26 @@
   z-index: 0;
 }
 
+
+
 .container {
   margin-top: 10em;
+}
+
+.cream-color {
+  color: #F7F7F2;
+}
+
+.link {
+  color: #10c9c9
+}
+
+label, a , h4{
+  color: #F7F7F2;
+}
+
+.black-background {
+  background-color: #202225;
 }
 
 @media (max-width: 576px) {
@@ -44,4 +62,8 @@ input {
   padding-left: .3em;
   margin-bottom: 1em;
   color: rgb(235, 88, 88);
+}
+
+a {
+  color: #F7F7F2
 }

@@ -1,5 +1,9 @@
 @import '../../styles.scss';
 
+.bg-color {
+  background-color: #202225;
+}
+
 .previous-month {
   width: 70px !important;
 }
@@ -56,9 +60,9 @@
   }
 
   .calendar-navs {
-    background: #fe7f9c;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #fe7f9c, #ffa7bb, #ffc9d6);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #fe7f9c, #ffa7bb, #ffc9d6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #A40925;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #A40925, #A40925, #A40925);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #A40925, #A40925, #A40925); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   
     border-radius: 10px;
   }
@@ -188,9 +192,13 @@
 }
 
 .month-title {
-  font-size: 30px;
+  font-size: 2rem;
+  
 }
-
+.paddings {
+  padding-bottom: 0 !important;
+  padding-top: 30px !important;
+} 
 // Challenge styles
 
 .calendar-info {
@@ -246,4 +254,14 @@
 
 .hackeps-title {
   margin-bottom: 1em !important;
+  color: #F7F7F2;
+}
+
+.hackeps-title::after {
+  background: #A40925;
+  width: 3em;
+}
+
+p, li {
+ color: #F7F7F2;
 }

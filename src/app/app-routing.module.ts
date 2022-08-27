@@ -8,6 +8,7 @@ import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 import { NormativaCovidComponent } from './normativa-covid/normativa-covid.component';
+import { FaqsComponent } from './faqs/faqs.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'user', component: UserProfileComponent, canActivate: [AuthGuard] },
   { path: 'user/signup', component: SignUpFormComponent },
   { path: 'calendar', component: CalendarComponent },
+  { path: 'faqs', component: FaqsComponent },
   { path: 'countdown', component: CountdownComponent }
 ];
 

@@ -1,8 +1,8 @@
-<mdb-navbar #navbar style="z-index: 9999" SideClass="navbar navbar-expand-lg navbar-dark sandia lighten-1"
+<mdb-navbar #navbar style="z-index: 9999" SideClass="navbar navbar-expand-lg navbar-dark" class="bg-color"
   [containerInside]="false" mdbStickyHeader>
   <mdb-navbar-brand>
     <a class="navbar-brand" [routerLink]="['/']">
-      <img width="40" src="assets/logo-hackeps-reduced.png" alt="navbar-logo" />
+      <img width="40" src="assets/logo-hackeps-nav.svg" alt="navbar-logo" />
     </a>
   </mdb-navbar-brand>
   <links>
@@ -10,9 +10,9 @@
       <li class="nav-item">
         <a class="nav-link waves-light" [routerLink]="['/']" mdbWavesEffect>Home</a>
       </li>
-      <li class="nav-item" *ngIf="urlRegexValidator()?true:false">
+      <!--<li class="nav-item" *ngIf="urlRegexValidator()?true:false">
         <a class="nav-link waves-light" href="#faqs" mdbWavesEffect>FAQ</a>
-      </li>
+      </li>-->
       <li class="nav-item" *ngIf="urlRegexValidator()?true:false">
         <a class="nav-link waves-light" href="#schedule" mdbWavesEffect>Horario</a>
       </li>
@@ -23,8 +23,11 @@
         <a class="nav-link waves-light" href="#sponsors" mdbWavesEffect>Sponsors</a>
       </li>
       <li class="nav-item">
-        <a [routerLink]="['/countdown']" class="nav-link waves-light">Countdown</a>
+        <a [routerLink]="['/faqs']" class="nav-link waves-light">FAQs</a>
       </li>
+      <!--<li class="nav-item">
+        <a [routerLink]="['/countdown']" class="nav-link waves-light">Countdown</a>
+      </li>-->
     </ul>
 
     <ul class="navbar-nav ml-auto nav-flex-icons">

@@ -1,0 +1,42 @@
+.faqs {
+  background: #202225;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #202225, #202225, #202225);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #202225, #202225, #202225); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  padding: 3em;
+}
+
+h4 {
+  color: #A40925;
+}
+
+.row > div[class*='col-'] {
+  display: flex;
+  flex: 1 0 auto;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.horizontal-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  .card {
+    width: 20em;
+  }
+
+  .hackeps-card {
+    height: 100%;
+  }
+}
+
+.hackeps-title::after {
+  background-color: #A40925;
+}

@@ -1,62 +1,42 @@
 <div class="parallax banner">
   <div id="particles-js"></div>
-  <img class="logo" alt="Logo Hackeps 2021" src="assets/logo-hackeps-reduced.png">
+  <img class="logo" alt="Logo Hackeps 2021" src="assets/logo-hackeps.svg">
   <img class="skyline" alt="Lleida skyline" src="assets/skyline.svg">
-  <button class="clossed-button banner-button button-gradient" type="button" mdbBtn rounded="true"
-  mdbWavesEffect>¡Inscripciones Cerradas!</button>
-  <button class="clossed-signIn-button banner-button button-gradient" type="button" mdbBtn rounded="true" data-toggle="modal" data-target="#basicExample"
-  (click)="disableConfirmPassword(); enableSignIn(); frame.show()" mdbWavesEffect>Entra ahora</button>
-  <!--<button class="signUp-button banner-button button-gradient" type="button" mdbBtn rounded="true" data-toggle="modal" data-target="#basicExample"
+  <!--<button class="clossed-button banner-button button-gradient" type="button" mdbBtn rounded="true"
+  mdbWavesEffect>¡Inscripciones Cerradas!</button>-->
+  <button class="signUp-button banner-button button-gradient" type="button" mdbBtn rounded="true" data-toggle="modal" data-target="#basicExample"
   (click)="enableConfirmPassword(); enableSignUp(); frame.show()" mdbWavesEffect>Únete ahora</button>
   <button class="signIn-button banner-button button-gradient" type="button" mdbBtn rounded="true" data-toggle="modal" data-target="#basicExample"
-  (click)="disableConfirmPassword(); enableSignIn(); frame.show()" mdbWavesEffect>Entra ahora</button>-->
+  (click)="disableConfirmPassword(); enableSignIn(); frame.show()" mdbWavesEffect>Entra ahora</button>
 </div>
-<!--
-<div mdbModal #popupmodal="mdbModal" class="modal fade left" id="popupmodal" tabindex="-1" role="dialog"
-  aria-labelledby="popupmodal" aria-hidden="false">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content modal-pos">
-    <div class="modal-header text-center">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="popupmodal.hide()">
-        <span aria-hidden="true">&times;</span>
-      </button>
-      <h4 class="modal-title w-100 font-weight-bold">IMPORTANTE</h4>
-    </div>
-    <div class="modal-body mx-3">
-      <p>Este año por motivos pandémicos nos vemos en la obligación de pedir <a [routerLink]="['/normativa-covid']">passaporte COVID</a> a la entrada del recinto, se le negará el acceso al evento a cualquier persona que no cumpla con este requisito.</p>
-    </div>
-  </div>
-  </div>
-</div>
--->
 <div mdbModal #frame="mdbModal" class="modal fade left" id="signModal" tabindex="-1" role="dialog"
      aria-labelledby="signModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     
-    <div class="modal-content modal-pos">
+    <div class="modal-content modal-pos black-background">
       <alert></alert>
-      <div class="modal-header text-center">
+      <div class="modal-header text-center cream-color">
         <h4 class="modal-title w-100 font-weight-bold">{{this.getModalTitle()}}</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body mx-3">
+      <div class="modal-body mx-3 ">
         <div class="md-form mb-4">
-          <fa-icon [icon]="faEnvelope" class="prefix grey-text"></fa-icon>
-          <input type="email" id="defaultForm-email" [formControl]="loginFormModalEmail" class="form-control"
+          <fa-icon [icon]="faEnvelope" class="prefix cream-color"></fa-icon>
+          <input type="email" id="defaultForm-email" [formControl]="loginFormModalEmail" class="form-control cream-color"
                  mdbInput mdbValidate>
-          <label for="defaultForm-email">Tu correo</label>
+          <label for="defaultForm-email" class="cream-color">Tu correo</label>
           <mdb-error
             *ngIf="loginFormModalEmail.invalid && (loginFormModalEmail.dirty || loginFormModalEmail.touched)">
             Correo inválido
           </mdb-error>
         </div>
         <div class="md-form mb-4">
-          <fa-icon [icon]="faLock" class="prefix grey-text"></fa-icon>
-          <input type="password" id="defaultForm-pass" [formControl]="loginFormModalPassword" class="form-control"
+          <fa-icon [icon]="faLock" class="prefix cream-color"></fa-icon>
+          <input type="password" id="defaultForm-pass" [formControl]="loginFormModalPassword" class="form-control cream-color"
                  mdbInput mdbValidate>
-          <label for="defaultForm-pass">Contraseña</label>
+          <label for="defaultForm-pass" class="cream-color">Contraseña</label>
           <mdb-error
             *ngIf="loginFormModalPassword.invalid && (loginFormModalPassword.dirty || loginFormModalPassword.touched)">
             Contraseña inválida
@@ -64,10 +44,10 @@
         </div>
         <div *ngIf="this.getShowConfirmPassword()">
           <div class="md-form mb-4">
-            <fa-icon [icon]="faLock" class="prefix grey-text"></fa-icon>
+            <fa-icon [icon]="faLock" class="prefix cream-color"></fa-icon>
             <input type="password" id="defaultForm-ConfirmPass" [formControl]="loginFormModalConfirmPassword" class="form-control"
                   mdbInput mdbValidate>
-            <label for="defaultForm-ConfirmPass">Confirma tu contraseña</label>
+            <label for="defaultForm-ConfirmPass" class="cream-color">Confirma tu contraseña</label>
             <mdb-error
               *ngIf="loginFormModalConfirmPassword.invalid &&
                       (loginFormModalConfirmPassword.dirty || loginFormModalConfirmPassword.touched)">

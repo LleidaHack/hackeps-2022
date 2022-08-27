@@ -54,7 +54,7 @@ export class BannerComponent implements OnInit {
     {
       validator: MustMatch('loginFormModalPassword', 'loginFormModalConfirmPassword')
     });
-    particlesJS('particles-js', {
+    /*particlesJS('particles-js', {
       particles: {
         number: {
           value: 80,
@@ -152,8 +152,8 @@ export class BannerComponent implements OnInit {
       },
       retina_detect: true
     });
+    */
   }
-
   ngAfterViewInit() {
       if (localStorage.getItem('showPopUp') == null) {
         this.popup.show();

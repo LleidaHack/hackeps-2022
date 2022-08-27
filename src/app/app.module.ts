@@ -30,7 +30,7 @@ import { MultiAlertsComponent } from './external/multi-alerts';
 import { BannerComponent } from './home/banner/banner.component';
 import { HomeComponent } from './home/home.component';
 
-import { FaqsComponent } from './home/faqs/faqs.component';
+import { FaqsComponent } from './faqs/faqs.component';
 import { SponsorsComponent } from './home/sponsors/sponsors.component';
 import { LoadingOverlayComponent } from './shared/loading-overlay/loading-overlay.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -51,6 +51,7 @@ import { TermsAndConditionsTextComponent } from './terms-and-conditions/terms-an
 import { CalendarUploaderComponent } from './user-profile/calendar-uploader/calendar-uploader.component';
 import { ScheduleComponent } from './home/schedule/schedule.component';
 import { CountdownComponent } from './countdown/countdown.component';
+import { FrontCountdownComponent } from './home/front-countdown/front-countdown.component';
 import { NormativaCovidComponent } from './normativa-covid/normativa-covid.component';
 import { NormativaCovidTextComponent } from './normativa-covid/normativa-covid-text/normativa-covid-text.component';
 
@@ -76,6 +77,7 @@ import { NormativaCovidTextComponent } from './normativa-covid/normativa-covid-t
     TitleCasePipe,
     ScheduleComponent,
     CountdownComponent,
+    FrontCountdownComponent,
     NormativaCovidComponent,
     NormativaCovidTextComponent,
   ],

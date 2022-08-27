@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
-.montserrat {
-  font-family: 'Montserrat', sans-serif;
+* {
+  font-family: monospace;
 }
 
+
 .hackeps-title {
-  font-family: 'Montserrat', sans-serif;
   font-size: 3em;
   position: relative;
   width: 100%;
   text-align: center;
   position: relative;
+  color: #fff;
 }
 
 .hackeps-title:after {
@@ -19,17 +20,19 @@
   left: 50%;
   width: 2em;
   height: 5px;
-  background: #fe7f9c;
+  background: #202225;
   bottom: -.2em;
   transform: translate(-50%, 50%);
 }
 
 .hackeps-card {
   background: #fff;
+  color: #202225;
   border-radius: .3em;
   position: relative;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
+
 
 html, body {
   overflow-x: hidden;
@@ -42,7 +45,7 @@ html, body {
 }
 
 a {
-  color: #fe7f9c;
+  color: #A40925;
 }
 
 // Calendar Variables

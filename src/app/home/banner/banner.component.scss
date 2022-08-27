@@ -1,7 +1,7 @@
 .banner {
-  background: #fe7f9c;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #fe7f9c, #ffa7bb, #ffc9d6);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #fe7f9c, #ffa7bb, #ffc9d6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #A40925;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #A40925, #A40925, #A40925);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #A40925, #A40925, #A40925); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   height: 100vh;
 
@@ -10,13 +10,33 @@
 }
 
 .button-gradient {
-  background: #fe7f9c;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #fe7f9c, #ffa7bb, #ffc9d6);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #fe7f9c, #ffa7bb, #ffc9d6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #F7F7F2;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #F7F7F2, #F7F7F2, #F7F7F2);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #F7F7F2, #F7F7F2, #F7F7F2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
+.cream-color {
+  color: #F7F7F2;
+}
+
+.black-background {
+  background-color: #202225;
+}
+
+.close {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #F7F7F2;
+  text-shadow: 0 1px 0 #fff;
+}
+
+
 .logo {
+  max-width: 30%;
+  max-height: 30%;
   width: 50vh;
   margin: auto;
   margin-top: 10%;
@@ -34,6 +54,15 @@
 }
 
 @media (min-width: 1350px) {
+  .logo {
+    max-width: 30%;
+    max-height: 30%;
+    width: 50vh;
+    margin: auto;
+    margin-top: 10%;
+    z-index: 2;
+  }
+
   .clossed-button {
     top: 52%;
     left: 50%;
@@ -56,13 +85,22 @@
 }
 
 @media screen and (max-width: 1349px) and (min-width: 1000px) {
+  .logo {
+    max-width: 25%;
+    max-height: 25%;
+    width: 50vh;
+    margin: auto;
+    margin-top: 10%;
+    z-index: 2;
+  }
+
   .clossed-button {
     top: 54%;
     left: 50%;
   }
 
   .clossed-signIn-button {
-    top: 64%;
+    top: 66%;
     left: 50%;
   }
 
@@ -78,6 +116,15 @@
 }
 
 @media screen and (max-width: 999px) and (min-width: 500px) {
+  .logo {
+    max-width: 30%;
+    max-height: 30%;
+    width: 50vh;
+    margin: auto;
+    margin-top: 10%;
+    z-index: 2;
+  }
+
   .clossed-button {
     top: 63%;
     left: 50%;
@@ -89,7 +136,7 @@
   }
 
   .signUp-button {
-    top: 60%;
+    top: 64%;
     left: 37%;
   }
   
@@ -100,6 +147,15 @@
 }
 
 @media screen and (max-width: 499px) and (min-width: 351px) {
+  .logo {
+    max-width: 30%;
+    max-height: 30%;
+    width: 50vh;
+    margin: auto;
+    margin-top: 10%;
+    z-index: 2;
+  }
+
   .logo {
     margin-top: 20%!important;
   }
@@ -126,6 +182,15 @@
 }
 
 @media screen and (max-width: 350px) {
+  .logo {
+    max-width: 30%;
+    max-height: 30%;
+    width: 50vh;
+    margin: auto;
+    margin-top: 10%;
+    z-index: 2;
+  }
+
   .clossed-button {
     top: 50%;
     left: 50%;
@@ -167,6 +232,6 @@
 
 @media (max-height: 450px ){
   .logo {
-    margin-top: 15%!important;
+    margin-top: 10%;
   }
 }

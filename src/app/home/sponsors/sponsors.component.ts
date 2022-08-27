@@ -21,21 +21,9 @@ export class SponsorsComponent implements OnInit {
       level: 0
     },
     {
-      web: 'https://www.bonarea.com/',
-      img: 'assets/bon-area.png',
-      alt: 'Bon Àrea',
-      level: 1
-    },
-    {
       web: 'https://www.invelon.com/',
       img: 'assets/invetech.png',
       alt: 'Invelon e Intech3d',
-      level: 1
-    },
-    {
-      web: 'https://origen.studio/',
-      img: 'assets/origenstudio.png',
-      alt: 'Origen Studio',
       level: 1
     },
     {
@@ -44,18 +32,6 @@ export class SponsorsComponent implements OnInit {
       alt: 'Eurecat',
       level: 1
     },
-    {
-      web: 'https://www.vunkers.com/',
-      img: 'assets/vunkers_logo.png',
-      alt: 'Vunkers',
-      level: 1
-    },
-    // {
-    //   web: 'https://enginyeriainformatica.cat/',
-    //   img: 'assets/coinf.png',
-    //   alt: 'COEINF',
-    //   level: 2
-    // },
     {
       web: 'https://alumni.udl.cat/',
       img: 'assets/alumni.jpg',
@@ -72,24 +48,6 @@ export class SponsorsComponent implements OnInit {
       web: 'https://www.dominospizza.es/',
       img: 'https://www.dominospizza.es/Content/img/dominos-logo.svg',
       alt: 'Domino\'s Pizza',
-      level: 2
-    },
-    {
-      web: 'https://0xword.com/',
-      img: 'assets/oxword.png',
-      alt: '0xWORD',
-      level: 2
-    },
-    {
-      web: 'https://mypublicinbox.com/',
-      img: 'assets/mypublicinbox.jpeg',
-      alt: 'My Public Inbox',
-      level: 2
-    },
-    {
-      web: 'https://singularity-hackers.com/',
-      img: 'assets/singularityHackers.png',
-      alt: 'Singularity Hackers',
       level: 2
     },
     {
