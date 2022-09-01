@@ -1,9 +1,7 @@
 .top-grad {
-  background: #fe7f9c;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #fe7f9c, #ffa7bb, #ffc9d6);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #fe7f9c, #ffa7bb, #ffc9d6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
+  background: #A40925;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #A40925, #A40925, #A40925);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #A40925, #A40925, #A40925); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   height: 35vh;
   width: 100%;
@@ -11,7 +9,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: 0;
 }
 
 .controls {
@@ -67,4 +65,12 @@
   .top-grad {
     height: 25vh;
   }
+}
+
+h5, h6, a, span, label{
+  color: #F7F7F2 !important;
+}
+
+.black-background {
+  background-color: #202225;
 }

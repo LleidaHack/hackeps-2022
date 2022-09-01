@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseCollection: 'hackeps-2021/dev',
+  baseCollection: 'hackeps-2022/dev',
   firebase: {
     apiKey: 'AIzaSyA0n4ujEDzIuJz1_w5Wg-QAVZ6Ket54oy4',
     authDomain: 'hackeps-2019.firebaseapp.com',

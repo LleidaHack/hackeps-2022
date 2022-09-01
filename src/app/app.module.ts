@@ -52,8 +52,6 @@ import { CalendarUploaderComponent } from './user-profile/calendar-uploader/cale
 import { ScheduleComponent } from './home/schedule/schedule.component';
 import { CountdownComponent } from './countdown/countdown.component';
 import { FrontCountdownComponent } from './home/front-countdown/front-countdown.component';
-import { NormativaCovidComponent } from './normativa-covid/normativa-covid.component';
-import { NormativaCovidTextComponent } from './normativa-covid/normativa-covid-text/normativa-covid-text.component';
 
 @NgModule({
   declarations: [
@@ -78,8 +76,6 @@ import { NormativaCovidTextComponent } from './normativa-covid/normativa-covid-t
     ScheduleComponent,
     CountdownComponent,
     FrontCountdownComponent,
-    NormativaCovidComponent,
-    NormativaCovidTextComponent,
   ],
   imports: [
     BrowserModule,

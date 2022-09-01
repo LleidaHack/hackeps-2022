@@ -23,7 +23,7 @@ export class ProfileUpdaterFormComponent implements OnInit, OnChanges {
       fullName:     ['', Validators.compose([Validators.minLength(10)])],
       nickname:     ['', Validators.compose([Validators.minLength(2)])],
       birthDate:    [''],
-      street:        [''],
+      city:        [''],
       githubUrl:    ['', Validators.compose([UrlValidator.url])],
       linkedinUrl:  [''],
       shirtSize: ['S'],
@@ -52,8 +52,8 @@ export class ProfileUpdaterFormComponent implements OnInit, OnChanges {
       .setValue(this.user.gdpr);
     this.profileUpdaterForm.get('shirtSize')
       .setValue(this.user.shirtSize);
-    this.profileUpdaterForm.get('street')
-      .setValue(this.user.street);
+    this.profileUpdaterForm.get('city')
+      .setValue(this.user.city);
   }
 
   public onSubmit() {

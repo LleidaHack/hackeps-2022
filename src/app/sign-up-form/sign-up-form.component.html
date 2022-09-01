@@ -29,8 +29,8 @@
             </div>
             <div>
               <label>Ciudad*</label>
-              <input formControlName="street" type="text" id="street" name="street" class="form-control mb-4" placeholder="El valle de la silicona">
-              <span class="error" *ngIf="shouldShowError('street')">La ciudad es obligatoria</span>
+              <input formControlName="city" type="text" id="city" name="city" class="form-control mb-4" placeholder="El valle de la silicona">
+              <span class="error" *ngIf="shouldShowError('city')">La ciudad es obligatoria</span>
             </div>
             <div>
               <label for="birth-date">Fecha de nacimiento *</label>
@@ -83,8 +83,8 @@
             <label>Alérgenos </label>
             <textarea formControlName="food" type="text" id="food" name="food" class="form-control mb-4" placeholder="Pescado, lechuga..."></textarea>
 
+            
             <mdb-checkbox formControlName="gdpr" class="cream-color" [default]="true">Acepto que las empresas colaboradoras puedan conocer mi datos</mdb-checkbox>
-
             <mdb-checkbox formControlName="terms" class="cream-color" [default]="true">He leído y acepto los <a class="link" [routerLink]="['/terms-and-conditions']">terminos y condiciones</a> *</mdb-checkbox>
             <!--<mdb-checkbox formControlName="covid" [default]="true"><mark><b>IMPORTANTE:</b>Acepto que para poder acceder al evento debo presentar <a [routerLink]="['/normativa-covid']">passaporte COVID</a> al inicio de este, de lo contrario no se permitirá ni entrada ni participación*</mark></mdb-checkbox>-->
 
