@@ -68,7 +68,6 @@
   }
 
   .month-nav {
-    padding: $base;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -108,17 +107,19 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      color: #F7F7F2;
     }
 
     .week-date {
       height: $dayBase;
       position: relative;
-      border: solid .05px #dddddd;
+      border: solid .05px #F7F7F2;
       border-radius: 7px;
 
       .date-text {
         z-index: 10;
         font-size: 18px;
+        color: #F7F7F2;
       }
 
       &::after {
@@ -143,7 +144,7 @@
         }
       }
       &.selected {
-        color: whitesmoke;
+        color: #202225;
         &:after {
           background-color: transparent;
           background-image: url("../../assets/media/Selected-bg.svg");
@@ -193,7 +194,7 @@
 
 .month-title {
   font-size: 2rem;
-  
+  color: #F7F7F2
 }
 .paddings {
   padding-bottom: 0 !important;

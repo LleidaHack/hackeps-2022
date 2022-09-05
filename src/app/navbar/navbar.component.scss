@@ -2,3 +2,11 @@
     background-color: #A40925 !important;
     background: #A40925 !important;
 }
+
+.center-links{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+}

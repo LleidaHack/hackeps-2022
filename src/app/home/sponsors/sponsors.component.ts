@@ -20,7 +20,7 @@ export class SponsorsComponent implements OnInit {
       alt: 'Universidad de Lleida',
       level: 0
     },
-    {
+    /*{
       web: 'https://www.invelon.com/',
       img: 'assets/invetech.png',
       alt: 'Invelon e Intech3d',
@@ -61,7 +61,7 @@ export class SponsorsComponent implements OnInit {
       img: 'assets/plusfresc.svg',
       alt: 'Plusfresc',
       level: 2
-    }
+    }*/
   ];
 
   constructor() { }
