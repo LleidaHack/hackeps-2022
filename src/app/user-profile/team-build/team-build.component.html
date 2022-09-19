@@ -60,9 +60,9 @@
         <small class="red-text">{{ error }}</small>
       </div>
       <div class="modal-footer">
-        <button type="button" mdbBtn class="waves-light button-background" aria-label="Close"
+        <button type="button" mdbBtn class="waves-light button-background cream-color" aria-label="Close"
           (click)="teamBuildModal.hide()" size="sm" mdbWavesEffect>Cancelar</button>
-        <button type="button" size="sm" mdbBtn class="relative waves-light button-background"
+        <button type="button" size="sm" mdbBtn class="relative waves-light button-background cream-color"
           [disabled]="!this.teamName" (click)="createTeam(teamBuildModal)" mdbWavesEffect>Crear equipo</button>
       </div>
     </div>
@@ -89,9 +89,9 @@
         <small class="red-text">{{ error }}</small>
       </div>
       <div class="modal-footer">
-        <button type="button" mdbBtn class="waves-light button-background" aria-label="Close" (click)="joinTeamMoal.hide()"
+        <button type="button" mdbBtn class="waves-light button-background cream-color" aria-label="Close" (click)="joinTeamMoal.hide()"
           size="sm" mdbWavesEffect>Cancelar</button>
-        <button type="button" size="sm" mdbBtn class="relative waves-light button-background"
+        <button type="button" size="sm" mdbBtn class="relative waves-light button-background cream-color"
           [disabled]="!this.teamCode" (click)="joinTeam(joinTeamMoal)" mdbWavesEffect>Unirse al equipo</button>
       </div>
     </div>
@@ -100,7 +100,7 @@
 
 <div mdbModal #leaveTeamModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="leaveTeamModal"aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
+      <div class="modal-content black-background">
         <div class="modal-header">
           <button type="button" class="close pull-right" aria-label="Close" (click)="joinTeamMoal.hide()">
             <span aria-hidden="true">×</span>
@@ -109,15 +109,15 @@
             Abandonar el equipo</h4>
         </div>
         <div class="modal-body">
-          <p class="text-muted">
+          <p>
             ¿Estás seguro que deseas abandonar tu equipo?
           </p>
           <small class="red-text">{{ error }}</small>
         </div>
         <div class="modal-footer">
-          <button type="button" mdbBtn color="danger" class="waves-light" aria-label="Close" (click)="leaveTeamModal.hide()"
+          <button type="button" mdbBtn color="danger" class="waves-light button-background cream-color" aria-label="Close" (click)="leaveTeamModal.hide()"
             size="sm" mdbWavesEffect>Cancelar</button>
-          <button type="button" size="sm" mdbBtn color="secondary" class="relative waves-light"
+          <button type="button" size="sm" mdbBtn class="relative waves-light button-background cream-color"
             (click)="leaveTeam(leaveTeamModal)" mdbWavesEffect>Abandonar equipo</button>
         </div>
       </div>
