@@ -20,16 +20,46 @@ export class SponsorsComponent implements OnInit {
       alt: 'Universidad de Lleida',
       level: 0
     },
-    /*{
-      web: 'https://www.invelon.com/',
-      img: 'assets/invetech.png',
-      alt: 'Invelon e Intech3d',
-      level: 1
-    },
     {
       web: 'https://eurecat.org/es/',
       img: 'assets/eurecat.png',
       alt: 'Eurecat',
+      level: 1
+    },
+    {
+      web: 'https://www.invelon.com/',
+      img: 'assets/invelon.png',
+      alt: 'Invelon logo',
+      level: 1
+    },
+    {
+      web: 'https://intech3d.es/',
+      img: 'assets/intech3d.png',
+      alt: 'Intech3d logo',
+      level: 1
+    },
+    {
+      web: 'https://origen.studio/',
+      img: 'assets/origenstudio.png',
+      alt: 'Intech3d logo',
+      level: 1
+    },
+    {
+      web: 'https://www.lleida.net/es',
+      img: 'assets/lleidanet.png',
+      alt: 'Lleidanet logo',
+      level: 1
+    },
+    {
+      web: 'https://groupsalto.com/',
+      img: 'assets/salto.jpg',
+      alt: 'Saltó logo',
+      level: 1
+    },
+    {
+      web: 'https://www.semic.es/es',
+      img: 'assets/semic.png',
+      alt: 'Semic logo',
       level: 1
     },
     {
@@ -61,7 +91,7 @@ export class SponsorsComponent implements OnInit {
       img: 'assets/plusfresc.svg',
       alt: 'Plusfresc',
       level: 2
-    }*/
+    }
   ];
 
   constructor() { }
