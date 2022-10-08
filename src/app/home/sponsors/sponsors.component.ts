@@ -63,6 +63,12 @@ export class SponsorsComponent implements OnInit {
       level: 1
     },
     {
+      web: 'https://www.vallcompanys.es/',
+      img: 'assets/vallcompanys.png',
+      alt: 'Vall Companys logo',
+      level: 1
+    },
+    {
       web: 'https://alumni.udl.cat/',
       img: 'assets/alumni.jpg',
       alt: 'Alumni UdL',
