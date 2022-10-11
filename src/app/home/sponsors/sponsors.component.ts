@@ -69,6 +69,12 @@ export class SponsorsComponent implements OnInit {
       level: 1
     },
     {
+      web: 'https://www.gft.com/es/es',
+      img: 'assets/gft.png',
+      alt: 'GFT Logo',
+      level: 2
+    },
+    {
       web: 'https://alumni.udl.cat/',
       img: 'assets/alumni.jpg',
       alt: 'Alumni UdL',
