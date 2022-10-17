@@ -21,14 +21,13 @@ export class CalendarUploaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    /*
     this.calendarService.getUserSubmissions(this.user.uid)
       .subscribe(res => {
         this.costChallenge.nativeElement.value = (res[0] && res[0].solution) || '';
         this.pokemonChallenge.nativeElement.value = (res[1] && res[1].solution) || '';
         this.mlChallenge.nativeElement.value = (res[2] && res[2].solution) || '';
       });
-    */
+
   }
 
   private postProcessRequest(res: boolean, that: any) {

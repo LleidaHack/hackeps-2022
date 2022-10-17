@@ -3,17 +3,16 @@
     <mdb-card-title>
       <h5><i class="fas fa-calendar-alt"></i> CALENDARIO</h5>
       <!--<h6 class="text-muted mb-4">Comparte tus soluciones con el equipo de HackEPS</h6>-->
-      <h6 class="text-muted mb-4">¡Aquí podrás entregar tus soluciones a los dailyhacks cuando los abramos!</h6>
+      <h6 class="text-muted mb-4">¡Aquí puedes entregar tus soluciones a los dailyhacks!</h6>
     </mdb-card-title>
     <mdb-card-text>
       <p class="text-center mb-w">
       <small [class]="msg.startsWith('Error') ? 'error' : 'success'">{{ msg }}</small>
       </p>
 
-      <!-- CALENDAR UPLOADS
       <div class="row pl-3 align-items-center">
         <div class="col-10">
-          <label><i class="fas fa-microchip mr-1"></i>Generative Art <i>Code Art</i></label>
+          <label><i class="fas fa-microchip mr-1"></i>Conway's Game of Life</label>
           <input type="text" id="challenge1" name="challenge1" class="form-control mb-4"
             #challenge1 placeholder="URL de tu repositorio de GitHub">
         </div>
@@ -24,6 +23,7 @@
                   (click)="submitCostChallenge(challenge1)"
                   mdbWavesEffect>Subir</button>
         </div>
+        <!-- CALENDAR UPLOADS
         <div class="col-10">
           <label><i class="fas fa-book mr-1"></i>Computing in ancient Rome<i>Algoritmia</i></label>
           <input type="text" id="challenge2" name="challenge2" class="form-control mb-4"
@@ -46,8 +46,8 @@
                   class="button-gradient" rounded="true"
                   (click)="submitMLChallenge(challenge3)"
                   size="sm" mdbWavesEffect>Subir</button>
-        </div>
-      </div>-->
+        </div>-->
+      </div>
     </mdb-card-text>
   </mdb-card-body>
 </mdb-card>

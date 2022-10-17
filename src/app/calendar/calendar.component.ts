@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, SystemJsNgModuleLoader } from '@angular/core';
 import { Subject, BehaviorSubject } from 'rxjs';
 
 import { ChallengeService } from './../services/challenge.service';
@@ -190,13 +190,7 @@ export class CalendarComponent implements OnInit, OnChanges {
             });
   }
   
-  isChallengeDay(day: CalendarDate) {
-    // return this.challengeDates.forEach(date => {
-    //   var temp_date = new Date(date*1000);
-    //   if (day.mDate.toDate().getTime() == temp_date.getTime()) return true;
-    //   return false;
-    // });
-
+  isChallengeDay(day: CalendarDate) {    
     return this.challengeDates.indexOf(day.mDate.toDate().getTime()) > -1;
   }
 }
