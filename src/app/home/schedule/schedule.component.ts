@@ -54,7 +54,7 @@ export class ScheduleComponent implements OnInit {
     },
     {
       icon: 'fas fa-trophy',
-      date: '13:00 - 27 NOV',
+      date: '15:00 - 27 NOV',
       name: 'Ceremonia de clausura y entrega de premios',
     }
   ];

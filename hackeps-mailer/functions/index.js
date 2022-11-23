@@ -14,37 +14,982 @@ const sendAdmissionMail = (user, isAccepted) => {
   const mailOptions = {
     from: 'LleidaHack <lleidahack@gmail.com>',
     to: user.email,
-    subject: 'Admisión HackEPS 2021',
+    subject: 'HackEPS 2022',
   };
 
   if (isAccepted) {
     mailOptions['html'] = `
-    ¡Saludos, <b>${user.nickname}</b>!
-    <p>
-    Hemos recibido tu solicitud para participar en esta nueva edición de la HackEPS.
-    </p>
-    <p>
-    Nos emociona informarte de que has sido admitido oficialmente para participar en la HackEPS2021 y por tanto te esperamos con los brazos abiertos el próximo 27 de Noviembre en C/ Jaume II #69 a partir de las 8:30 para realizar el Check-In.
-    </p>
-    <p>
-    <b>Recuerda, si aún no lo has hecho, registrar tu equipo en la página para agilizar el proceso de llegada. Si no tienes equipo no te preocupes: podemos ayudarte a encontrar uno.</b>
-    </p>
-    <p>
-    También queremos pedirte que ante cualquier imprevisto o cambio de planes contactes con nosotros a través del correo lleidahack@gmail.com con la mayor brevedad para poder gestionarlo cuanto antes.
-    </p>
-    <p>
-    Si tienes cualquier pregunta, no dudes en contactar con nosotros mediante un correo a lleidahack@gmail.com, Twitter o Instagram.
-    </p>
-    <p>
-    ¡Nos vemos en la HackEPS!
-    </p>
-    <img src="https://drive.google.com/uc?export=view&id=1SqRZqcu-EHqKSzUF9-4t7ZY2JeHnN_tA"/>
+    <!doctype html>
+    <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+        <head>
+            <!-- NAME: ANNOUNCE -->
+            <!--[if gte mso 15]>
+            <xml>
+                <o:OfficeDocumentSettings>
+                <o:AllowPNG/>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+                </o:OfficeDocumentSettings>
+            </xml>
+            <![endif]-->
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>*|MC:SUBJECT|*</title>
+            
+        <style type="text/css">
+        p{
+          margin:10px 0;
+          padding:0;
+        }
+        table{
+          border-collapse:collapse;
+        }
+        h1,h2,h3,h4,h5,h6{
+          display:block;
+          margin:0;
+          padding:0;
+        }
+        img,a img{
+          border:0;
+          height:auto;
+          outline:none;
+          text-decoration:none;
+        }
+        body,#bodyTable,#bodyCell{
+          height:100%;
+          margin:0;
+          padding:0;
+          width:100%;
+        }
+        .mcnPreviewText{
+          display:none !important;
+        }
+        #outlook a{
+          padding:0;
+        }
+        img{
+          -ms-interpolation-mode:bicubic;
+        }
+        table{
+          mso-table-lspace:0pt;
+          mso-table-rspace:0pt;
+        }
+        .ReadMsgBody{
+          width:100%;
+        }
+        .ExternalClass{
+          width:100%;
+        }
+        p,a,li,td,blockquote{
+          mso-line-height-rule:exactly;
+        }
+        a[href^=tel],a[href^=sms]{
+          color:inherit;
+          cursor:default;
+          text-decoration:none;
+        }
+        p,a,li,td,body,table,blockquote{
+          -ms-text-size-adjust:100%;
+          -webkit-text-size-adjust:100%;
+        }
+        .ExternalClass,.ExternalClass p,.ExternalClass td,.ExternalClass div,.ExternalClass span,.ExternalClass font{
+          line-height:100%;
+        }
+        a[x-apple-data-detectors]{
+          color:inherit !important;
+          text-decoration:none !important;
+          font-size:inherit !important;
+          font-family:inherit !important;
+          font-weight:inherit !important;
+          line-height:inherit !important;
+        }
+        .templateContainer{
+          max-width:600px !important;
+        }
+        a.mcnButton{
+          display:block;
+        }
+        .mcnImage,.mcnRetinaImage{
+          vertical-align:bottom;
+        }
+        .mcnTextContent{
+          word-break:break-word;
+        }
+        .mcnTextContent img{
+          height:auto !important;
+        }
+        .mcnDividerBlock{
+          table-layout:fixed !important;
+        }
+      /*
+      @tab Page
+      @section Heading 1
+      @style heading 1
+      */
+        h1{
+          /*@editable*/color:#222222;
+          /*@editable*/font-family:Helvetica;
+          /*@editable*/font-size:40px;
+          /*@editable*/font-style:normal;
+          /*@editable*/font-weight:bold;
+          /*@editable*/line-height:150%;
+          /*@editable*/letter-spacing:normal;
+          /*@editable*/text-align:center;
+        }
+      /*
+      @tab Page
+      @section Heading 2
+      @style heading 2
+      */
+        h2{
+          /*@editable*/color:#222222;
+          /*@editable*/font-family:Helvetica;
+          /*@editable*/font-size:34px;
+          /*@editable*/font-style:normal;
+          /*@editable*/font-weight:bold;
+          /*@editable*/line-height:150%;
+          /*@editable*/letter-spacing:normal;
+          /*@editable*/text-align:left;
+        }
+      /*
+      @tab Page
+      @section Heading 3
+      @style heading 3
+      */
+        h3{
+          /*@editable*/color:#f7f7f2;
+          /*@editable*/font-family:'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+          /*@editable*/font-size:24px;
+          /*@editable*/font-style:normal;
+          /*@editable*/font-weight:bold;
+          /*@editable*/line-height:150%;
+          /*@editable*/letter-spacing:normal;
+          /*@editable*/text-align:left;
+        }
+      /*
+      @tab Page
+      @section Heading 4
+      @style heading 4
+      */
+        h4{
+          /*@editable*/color:#f7f7f2;
+          /*@editable*/font-family:Georgia;
+          /*@editable*/font-size:20px;
+          /*@editable*/font-style:italic;
+          /*@editable*/font-weight:normal;
+          /*@editable*/line-height:125%;
+          /*@editable*/letter-spacing:normal;
+          /*@editable*/text-align:center;
+        }
+      /*
+      @tab Header
+      @section Header Container Style
+      */
+        #templateHeader{
+          /*@editable*/background-color:#a40925;
+          /*@editable*/background-image:none;
+          /*@editable*/background-repeat:no-repeat;
+          /*@editable*/background-position:center;
+          /*@editable*/background-size:cover;
+          /*@editable*/border-top:0;
+          /*@editable*/border-bottom:0;
+          /*@editable*/padding-top:54px;
+          /*@editable*/padding-bottom:54px;
+        }
+      /*
+      @tab Header
+      @section Header Interior Style
+      */
+        .headerContainer{
+          /*@editable*/background-color:#a40925;
+          /*@editable*/background-image:none;
+          /*@editable*/background-repeat:no-repeat;
+          /*@editable*/background-position:center;
+          /*@editable*/background-size:cover;
+          /*@editable*/border-top:0;
+          /*@editable*/border-bottom:0;
+          /*@editable*/padding-top:0;
+          /*@editable*/padding-bottom:0;
+        }
+      /*
+      @tab Header
+      @section Header Text
+      */
+        .headerContainer .mcnTextContent,.headerContainer .mcnTextContent p{
+          /*@editable*/color:#f7f7f2;
+          /*@editable*/font-family:Helvetica;
+          /*@editable*/font-size:16px;
+          /*@editable*/line-height:150%;
+          /*@editable*/text-align:left;
+        }
+      /*
+      @tab Header
+      @section Header Link
+      */
+        .headerContainer .mcnTextContent a,.headerContainer .mcnTextContent p a{
+          /*@editable*/color:#007C89;
+          /*@editable*/font-weight:normal;
+          /*@editable*/text-decoration:underline;
+        }
+      /*
+      @tab Body
+      @section Body Container Style
+      */
+        #templateBody{
+          /*@editable*/background-color:#212529;
+          /*@editable*/background-image:none;
+          /*@editable*/background-repeat:no-repeat;
+          /*@editable*/background-position:center;
+          /*@editable*/background-size:cover;
+          /*@editable*/border-top:0;
+          /*@editable*/border-bottom:0;
+          /*@editable*/padding-top:36px;
+          /*@editable*/padding-bottom:54px;
+        }
+      /*
+      @tab Body
+      @section Body Interior Style
+      */
+        .bodyContainer{
+          /*@editable*/background-color:#transparent;
+          /*@editable*/background-image:none;
+          /*@editable*/background-repeat:no-repeat;
+          /*@editable*/background-position:center;
+          /*@editable*/background-size:cover;
+          /*@editable*/border-top:0;
+          /*@editable*/border-bottom:0;
+          /*@editable*/padding-top:0;
+          /*@editable*/padding-bottom:0;
+        }
+      /*
+      @tab Body
+      @section Body Text
+      */
+        .bodyContainer .mcnTextContent,.bodyContainer .mcnTextContent p{
+          /*@editable*/color:#f7f7f2;
+          /*@editable*/font-family:'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+          /*@editable*/font-size:16px;
+          /*@editable*/line-height:150%;
+          /*@editable*/text-align:left;
+        }
+      /*
+      @tab Body
+      @section Body Link
+      */
+        .bodyContainer .mcnTextContent a,.bodyContainer .mcnTextContent p a{
+          /*@editable*/color:#007C89;
+          /*@editable*/font-weight:normal;
+          /*@editable*/text-decoration:underline;
+        }
+      /*
+      @tab Footer
+      @section Footer Style
+      */
+        #templateFooter{
+          /*@editable*/background-color:#a40925;
+          /*@editable*/background-image:none;
+          /*@editable*/background-repeat:no-repeat;
+          /*@editable*/background-position:center;
+          /*@editable*/background-size:cover;
+          /*@editable*/border-top:0;
+          /*@editable*/border-bottom:0;
+          /*@editable*/padding-top:45px;
+          /*@editable*/padding-bottom:63px;
+        }
+      /*
+      @tab Footer
+      @section Footer Interior Style
+      */
+        .footerContainer{
+          /*@editable*/background-color:#transparent;
+          /*@editable*/background-image:none;
+          /*@editable*/background-repeat:no-repeat;
+          /*@editable*/background-position:center;
+          /*@editable*/background-size:cover;
+          /*@editable*/border-top:0;
+          /*@editable*/border-bottom:0;
+          /*@editable*/padding-top:0;
+          /*@editable*/padding-bottom:0;
+        }
+      /*
+      @tab Footer
+      @section Footer Text
+      */
+        .footerContainer .mcnTextContent,.footerContainer .mcnTextContent p{
+          /*@editable*/color:#FFFFFF;
+          /*@editable*/font-family:Helvetica;
+          /*@editable*/font-size:12px;
+          /*@editable*/line-height:150%;
+          /*@editable*/text-align:center;
+        }
+      /*
+      @tab Footer
+      @section Footer Link
+      */
+        .footerContainer .mcnTextContent a,.footerContainer .mcnTextContent p a{
+          /*@editable*/color:#FFFFFF;
+          /*@editable*/font-weight:normal;
+          /*@editable*/text-decoration:underline;
+        }
+      @media only screen and (min-width:768px){
+        .templateContainer{
+          width:600px !important;
+        }
+    
+    }	@media only screen and (max-width: 480px){
+        body,table,td,p,a,li,blockquote{
+          -webkit-text-size-adjust:none !important;
+        }
+    
+    }	@media only screen and (max-width: 480px){
+        body{
+          width:100% !important;
+          min-width:100% !important;
+        }
+    
+    }	@media only screen and (max-width: 480px){
+        .mcnRetinaImage{
+          max-width:100% !important;
+        }
+    
+    }	@media only screen and (max-width: 480px){
+        .mcnImage{
+          width:100% !important;
+        }
+    
+    }	@media only screen and (max-width: 480px){
+        .mcnCartContainer,.mcnCaptionTopContent,.mcnRecContentContainer,.mcnCaptionBottomContent,.mcnTextContentContainer,.mcnBoxedTextContentContainer,.mcnImageGroupContentContainer,.mcnCaptionLeftTextContentContainer,.mcnCaptionRightTextContentContainer,.mcnCaptionLeftImageContentContainer,.mcnCaptionRightImageContentContainer,.mcnImageCardLeftTextContentContainer,.mcnImageCardRightTextContentContainer,.mcnImageCardLeftImageContentContainer,.mcnImageCardRightImageContentContainer{
+          max-width:100% !important;
+          width:100% !important;
+        }
+    
+    }	@media only screen and (max-width: 480px){
+        .mcnBoxedTextContentContainer{
+          min-width:100% !important;
+        }
+    
+    }	@media only screen and (max-width: 480px){
+        .mcnImageGroupContent{
+          padding:9px !important;
+        }
+    
+    }	@media only screen and (max-width: 480px){
+        .mcnCaptionLeftContentOuter .mcnTextContent,.mcnCaptionRightContentOuter .mcnTextContent{
+          padding-top:9px !important;
+        }
+    
+    }	@media only screen and (max-width: 480px){
+        .mcnImageCardTopImageContent,.mcnCaptionBottomContent:last-child .mcnCaptionBottomImageContent,.mcnCaptionBlockInner .mcnCaptionTopContent:last-child .mcnTextContent{
+          padding-top:18px !important;
+        }
+    
+    }	@media only screen and (max-width: 480px){
+        .mcnImageCardBottomImageContent{
+          padding-bottom:9px !important;
+        }
+    
+    }	@media only screen and (max-width: 480px){
+        .mcnImageGroupBlockInner{
+          padding-top:0 !important;
+          padding-bottom:0 !important;
+        }
+    
+    }	@media only screen and (max-width: 480px){
+        .mcnImageGroupBlockOuter{
+          padding-top:9px !important;
+          padding-bottom:9px !important;
+        }
+    
+    }	@media only screen and (max-width: 480px){
+        .mcnTextContent,.mcnBoxedTextContentColumn{
+          padding-right:18px !important;
+          padding-left:18px !important;
+        }
+    
+    }	@media only screen and (max-width: 480px){
+        .mcnImageCardLeftImageContent,.mcnImageCardRightImageContent{
+          padding-right:18px !important;
+          padding-bottom:0 !important;
+          padding-left:18px !important;
+        }
+    
+    }	@media only screen and (max-width: 480px){
+        .mcpreview-image-uploader{
+          display:none !important;
+          width:100% !important;
+        }
+    
+    }	@media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Heading 1
+      @tip Make the first-level headings larger in size for better readability on small screens.
+      */
+        h1{
+          /*@editable*/font-size:30px !important;
+          /*@editable*/line-height:125% !important;
+        }
+    
+    }	@media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Heading 2
+      @tip Make the second-level headings larger in size for better readability on small screens.
+      */
+        h2{
+          /*@editable*/font-size:26px !important;
+          /*@editable*/line-height:125% !important;
+        }
+    
+    }	@media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Heading 3
+      @tip Make the third-level headings larger in size for better readability on small screens.
+      */
+        h3{
+          /*@editable*/font-size:20px !important;
+          /*@editable*/line-height:150% !important;
+        }
+    
+    }	@media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Heading 4
+      @tip Make the fourth-level headings larger in size for better readability on small screens.
+      */
+        h4{
+          /*@editable*/font-size:18px !important;
+          /*@editable*/line-height:150% !important;
+        }
+    
+    }	@media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Boxed Text
+      @tip Make the boxed text larger in size for better readability on small screens. We recommend a font size of at least 16px.
+      */
+        .mcnBoxedTextContentContainer .mcnTextContent,.mcnBoxedTextContentContainer .mcnTextContent p{
+          /*@editable*/font-size:14px !important;
+          /*@editable*/line-height:150% !important;
+        }
+    
+    }	@media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Header Text
+      @tip Make the header text larger in size for better readability on small screens.
+      */
+        .headerContainer .mcnTextContent,.headerContainer .mcnTextContent p{
+          /*@editable*/font-size:16px !important;
+          /*@editable*/line-height:150% !important;
+        }
+    
+    }	@media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Body Text
+      @tip Make the body text larger in size for better readability on small screens. We recommend a font size of at least 16px.
+      */
+        .bodyContainer .mcnTextContent,.bodyContainer .mcnTextContent p{
+          /*@editable*/font-size:16px !important;
+          /*@editable*/line-height:150% !important;
+        }
+    
+    }	@media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Footer Text
+      @tip Make the footer content text larger in size for better readability on small screens.
+      */
+        .footerContainer .mcnTextContent,.footerContainer .mcnTextContent p{
+          /*@editable*/font-size:14px !important;
+          /*@editable*/line-height:150% !important;
+        }
+    
+    }</style></head>
+        <body>
+            <!--*|IF:MC_PREVIEW_TEXT|*-->
+            <!--[if !gte mso 9]><!----><span class="mcnPreviewText" style="display:none; font-size:0px; line-height:0px; max-height:0px; max-width:0px; opacity:0; overflow:hidden; visibility:hidden; mso-hide:all;">*|MC_PREVIEW_TEXT|*</span><!--<![endif]-->
+            <!--*|END:IF|*-->
+            <center>
+                <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+                    <tr>
+                        <td align="center" valign="top" id="bodyCell">
+                            <!-- BEGIN TEMPLATE // -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td align="center" valign="top" id="templateHeader" data-template-container>
+                                        <!--[if (gte mso 9)|(IE)]>
+                                        <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+                                        <tr>
+                                        <td align="center" valign="top" width="600" style="width:600px;">
+                                        <![endif]-->
+                                        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer">
+                                            <tr>
+                                                <td valign="top" class="headerContainer"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnImageBlock" style="min-width:100%;">
+        <tbody class="mcnImageBlockOuter">
+                <tr>
+                    <td valign="top" style="padding:9px" class="mcnImageBlockInner">
+                        <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width:100%;">
+                            <tbody><tr>
+                                <td class="mcnImageContent" valign="top" style="padding-right: 9px; padding-left: 9px; padding-top: 0; padding-bottom: 0; text-align:center;">
+                                    
+                                        
+                                            <img align="center" alt="" src="https://mcusercontent.com/cfed2756f4bb02c99e62d0bb2/images/93b8e917-b432-2b8e-ee65-00ad4fe1f4ca.png" width="486" style="max-width:486px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
+                                        
+                                    
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+        </tbody>
+    </table></td>
+                                            </tr>
+                                        </table>
+                                        <!--[if (gte mso 9)|(IE)]>
+                                        </td>
+                                        </tr>
+                                        </table>
+                                        <![endif]-->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" valign="top" id="templateBody" data-template-container>
+                                        <!--[if (gte mso 9)|(IE)]>
+                                        <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+                                        <tr>
+                                        <td align="center" valign="top" width="600" style="width:600px;">
+                                        <![endif]-->
+                                        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer">
+                                            <tr>
+                                                <td valign="top" class="bodyContainer"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
+        <tbody class="mcnTextBlockOuter">
+            <tr>
+                <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+                    <!--[if mso]>
+            <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+            <tr>
+            <![endif]-->
+              
+            <!--[if mso]>
+            <td valign="top" width="600" style="width:600px;">
+            <![endif]-->
+                    <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
+                        <tbody><tr>
+                            
+                            <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
+                            
+                                <h4>Has estat acceptat a la HackEPS 2022!</h4>
+    
+                            </td>
+                        </tr>
+                    </tbody></table>
+            <!--[if mso]>
+            </td>
+            <![endif]-->
+                    
+            <!--[if mso]>
+            </tr>
+            </table>
+            <![endif]-->
+                </td>
+            </tr>
+        </tbody>
+    </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
+        <tbody class="mcnTextBlockOuter">
+            <tr>
+                <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+                    <!--[if mso]>
+            <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+            <tr>
+            <![endif]-->
+              
+            <!--[if mso]>
+            <td valign="top" width="600" style="width:600px;">
+            <![endif]-->
+                    <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
+                        <tbody><tr>
+                            
+                            <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
+                            
+                                <p>Felicitats ${user.nickname}!<br>
+    <br>
+    Hem rebut la teva sol·licitud per participar en la 6ª edició de la HackEPS i ens emociona informar-te que has estat admès oficialment per a participar en la HackEPS 2022.<br>
+    <br>
+    T'esperem el dia 26 de novembre de 2022 a C/Jaume ll, 69, Lleida a partir de les 9:00 h per a realitzar el Check-In. Recomanem venir abans de l'inici de la cerimònia d'obertura per a agilitzar l'arribada de tots els participants.<br>
+    <br>
+    En breu rebràs una invitació al nostre canal de Slack perquè no et perdis cap novetat! Serà el medi de comunicació que utilitzarem durant tota la HackEPS així que et recomanem que hi entris quan rebis el correu.<br>
+    <br>
+    Pots contactar amb nosaltres mitjançant el correu electrònic lleidahack@gmail.com o per les nostres xarxes socials per qualsevol dubte o imprevist. Agrairíem que si finalment no pots assistir-hi, ens avisessis amb l'antelació més gran possible.<br>
+    <br>
+    Ens veiem a la HackEPS 2022!</p>
+    
+                            </td>
+                        </tr>
+                    </tbody></table>
+            <!--[if mso]>
+            </td>
+            <![endif]-->
+                    
+            <!--[if mso]>
+            </tr>
+            </table>
+            <![endif]-->
+                </td>
+            </tr>
+        </tbody>
+    </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
+        <tbody class="mcnTextBlockOuter">
+            <tr>
+                <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+                    <!--[if mso]>
+            <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+            <tr>
+            <![endif]-->
+              
+            <!--[if mso]>
+            <td valign="top" width="600" style="width:600px;">
+            <![endif]-->
+                    <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
+                        <tbody><tr>
+                            
+                            <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #F7F7F2;">
+                            
+                                <h4>¡Has sido aceptado en la HackEPS 2022!</h4>
+    
+                            </td>
+                        </tr>
+                    </tbody></table>
+            <!--[if mso]>
+            </td>
+            <![endif]-->
+                    
+            <!--[if mso]>
+            </tr>
+            </table>
+            <![endif]-->
+                </td>
+            </tr>
+        </tbody>
+    </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
+        <tbody class="mcnTextBlockOuter">
+            <tr>
+                <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+                    <!--[if mso]>
+            <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+            <tr>
+            <![endif]-->
+              
+            <!--[if mso]>
+            <td valign="top" width="600" style="width:600px;">
+            <![endif]-->
+                    <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
+                        <tbody><tr>
+                            
+                            <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
+                            
+                                <p>Felicidades ${user.nickname}!<br>
+    <br>
+    Hemos recibido tu solicitud para participar en la 6ª edición de la HackEPS y nos emociona informarte que has sido admitido oficialmente para participar en la HackEPS 2022.<br>
+    <br>
+    Te esperamos el día 26 de noviembre de 2022 en C/Jaume ll, 69, Lleida a partir de las 9:00 h para realizar el Check-In. Recomendamos venir antes del inicio de la ceremonia de apertura para agilizar la llegada de todos los participantes.<br>
+    <br>
+    En breve recibirás una invitación de nuestro canal de Slack ¡para que no te pierdas ninguna novedad! Será el medio de comunicación que utilizaremos durante toda la HackEPS así que te recomendamos que entres en cuando recibas el correo.<br>
+    <br>
+    Puedes contactar con nosotros mediante el correo electrónico lleidahack@gmail.com o por nuestras redes sociales ante cualquier duda o imprevisto. Agradeceríamos que si finalmente no puedes asistir, nos avisaras con la antelación más grande posible.<br>
+    <br>
+    ¡Nos vemos a la HackEPS 2022!</p>
+    
+                            </td>
+                        </tr>
+                    </tbody></table>
+            <!--[if mso]>
+            </td>
+            <![endif]-->
+                    
+            <!--[if mso]>
+            </tr>
+            </table>
+            <![endif]-->
+                </td>
+            </tr>
+        </tbody>
+    </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width:100%;">
+        <tbody class="mcnDividerBlockOuter">
+            <tr>
+                <td class="mcnDividerBlockInner" style="min-width: 100%; padding: 9px 18px;">
+                    <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top: 1px solid #E0E0E0;">
+                        <tbody><tr>
+                            <td>
+                                <span></span>
+                            </td>
+                        </tr>
+                    </tbody></table>
+    <!--            
+                    <td class="mcnDividerBlockInner" style="padding: 18px;">
+                    <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
+    -->
+                </td>
+            </tr>
+        </tbody>
+    </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width:100%;">
+        <tbody class="mcnDividerBlockOuter">
+            <tr>
+                <td class="mcnDividerBlockInner" style="min-width: 100%; padding: 18px 18px 0px;">
+                    <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;">
+                        <tbody><tr>
+                            <td>
+                                <span></span>
+                            </td>
+                        </tr>
+                    </tbody></table>
+    <!--            
+                    <td class="mcnDividerBlockInner" style="padding: 18px;">
+                    <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
+    -->
+                </td>
+            </tr>
+        </tbody>
+    </table></td>
+                                            </tr>
+                                        </table>
+                                        <!--[if (gte mso 9)|(IE)]>
+                                        </td>
+                                        </tr>
+                                        </table>
+                                        <![endif]-->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" valign="top" id="templateFooter" data-template-container>
+                                        <!--[if (gte mso 9)|(IE)]>
+                                        <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+                                        <tr>
+                                        <td align="center" valign="top" width="600" style="width:600px;">
+                                        <![endif]-->
+                                        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer">
+                                            <tr>
+                                                <td valign="top" class="footerContainer"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowBlock" style="min-width:100%;">
+        <tbody class="mcnFollowBlockOuter">
+            <tr>
+                <td align="center" valign="top" style="padding:9px" class="mcnFollowBlockInner">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentContainer" style="min-width:100%;">
+        <tbody><tr>
+            <td align="center" style="padding-left:9px;padding-right:9px;">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;" class="mcnFollowContent">
+                    <tbody><tr>
+                        <td align="center" valign="top" style="padding-top:9px; padding-right:9px; padding-left:9px;">
+                            <table align="center" border="0" cellpadding="0" cellspacing="0">
+                                <tbody><tr>
+                                    <td align="center" valign="top">
+                                        <!--[if mso]>
+                                        <table align="center" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                        <![endif]-->
+                                        
+                                            <!--[if mso]>
+                                            <td align="center" valign="top">
+                                            <![endif]-->
+                                            
+                                            
+                                                <table align="left" border="0" cellpadding="0" cellspacing="0" style="display:inline;">
+                                                    <tbody><tr>
+                                                        <td valign="top" style="padding-right:10px; padding-bottom:9px;" class="mcnFollowContentItemContainer">
+                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentItem">
+                                                                <tbody><tr>
+                                                                    <td align="left" valign="middle" style="padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;">
+                                                                        <table align="left" border="0" cellpadding="0" cellspacing="0" width="">
+                                                                            <tbody><tr>
+                                                                                
+                                                                                    <td align="center" valign="middle" width="24" class="mcnFollowIconContent">
+                                                                                        <a href="https://twitter.com/hackeps" target="_blank"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/outline-gray-twitter-48.png" alt="HackEPS Twitter" style="display:block;" height="24" width="24" class=""></a>
+                                                                                    </td>
+                                                                                
+                                                                                
+                                                                            </tr>
+                                                                        </tbody></table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody></table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody></table>
+                                            
+                                            <!--[if mso]>
+                                            </td>
+                                            <![endif]-->
+                                        
+                                            <!--[if mso]>
+                                            <td align="center" valign="top">
+                                            <![endif]-->
+                                            
+                                            
+                                                <table align="left" border="0" cellpadding="0" cellspacing="0" style="display:inline;">
+                                                    <tbody><tr>
+                                                        <td valign="top" style="padding-right:10px; padding-bottom:9px;" class="mcnFollowContentItemContainer">
+                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentItem">
+                                                                <tbody><tr>
+                                                                    <td align="left" valign="middle" style="padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;">
+                                                                        <table align="left" border="0" cellpadding="0" cellspacing="0" width="">
+                                                                            <tbody><tr>
+                                                                                
+                                                                                    <td align="center" valign="middle" width="24" class="mcnFollowIconContent">
+                                                                                        <a href="https://www.instagram.com/hackeps_/" target="_blank"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/outline-gray-instagram-48.png" alt="HackEPS Instagram" style="display:block;" height="24" width="24" class=""></a>
+                                                                                    </td>
+                                                                                
+                                                                                
+                                                                            </tr>
+                                                                        </tbody></table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody></table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody></table>
+                                            
+                                            <!--[if mso]>
+                                            </td>
+                                            <![endif]-->
+                                        
+                                            <!--[if mso]>
+                                            <td align="center" valign="top">
+                                            <![endif]-->
+                                            
+                                            
+                                                <table align="left" border="0" cellpadding="0" cellspacing="0" style="display:inline;">
+                                                    <tbody><tr>
+                                                        <td valign="top" style="padding-right:10px; padding-bottom:9px;" class="mcnFollowContentItemContainer">
+                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentItem">
+                                                                <tbody><tr>
+                                                                    <td align="left" valign="middle" style="padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;">
+                                                                        <table align="left" border="0" cellpadding="0" cellspacing="0" width="">
+                                                                            <tbody><tr>
+                                                                                
+                                                                                    <td align="center" valign="middle" width="24" class="mcnFollowIconContent">
+                                                                                        <a href="https://lleidahack.dev/hackeps-2022" target="_blank"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/outline-gray-link-48.png" alt="HackEPS Website" style="display:block;" height="24" width="24" class=""></a>
+                                                                                    </td>
+                                                                                
+                                                                                
+                                                                            </tr>
+                                                                        </tbody></table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody></table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody></table>
+                                            
+                                            <!--[if mso]>
+                                            </td>
+                                            <![endif]-->
+                                        
+                                            <!--[if mso]>
+                                            <td align="center" valign="top">
+                                            <![endif]-->
+                                            
+                                            
+                                                <table align="left" border="0" cellpadding="0" cellspacing="0" style="display:inline;">
+                                                    <tbody><tr>
+                                                        <td valign="top" style="padding-right:0; padding-bottom:9px;" class="mcnFollowContentItemContainer">
+                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentItem">
+                                                                <tbody><tr>
+                                                                    <td align="left" valign="middle" style="padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;">
+                                                                        <table align="left" border="0" cellpadding="0" cellspacing="0" width="">
+                                                                            <tbody><tr>
+                                                                                
+                                                                                    <td align="center" valign="middle" width="24" class="mcnFollowIconContent">
+                                                                                        <a href="mailto:lleidahack@gmail.com" target="_blank"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/outline-gray-forwardtofriend-48.png" alt="LleidaHack Email" style="display:block;" height="24" width="24" class=""></a>
+                                                                                    </td>
+                                                                                
+                                                                                
+                                                                            </tr>
+                                                                        </tbody></table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody></table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody></table>
+                                            
+                                            <!--[if mso]>
+                                            </td>
+                                            <![endif]-->
+                                        
+                                        <!--[if mso]>
+                                        </tr>
+                                        </table>
+                                        <![endif]-->
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </td>
+        </tr>
+    </tbody></table>
+    
+                </td>
+            </tr>
+        </tbody>
+    </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
+        <tbody class="mcnTextBlockOuter">
+            <tr>
+                <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+                    <!--[if mso]>
+            <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+            <tr>
+            <![endif]-->
+              
+            <!--[if mso]>
+            <td valign="top" width="600" style="width:600px;">
+            <![endif]-->
+                    <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
+                        <tbody><tr>
+                            
+                            <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
+                            
+                                Made with &lt;3 by LleidaHack
+                            </td>
+                        </tr>
+                    </tbody></table>
+            <!--[if mso]>
+            </td>
+            <![endif]-->
+                    
+            <!--[if mso]>
+            </tr>
+            </table>
+            <![endif]-->
+                </td>
+            </tr>
+        </tbody>
+    </table></td>
+                                            </tr>
+                                        </table>
+                                        <!--[if (gte mso 9)|(IE)]>
+                                        </td>
+                                        </tr>
+                                        </table>
+                                        <![endif]-->
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- // END TEMPLATE -->
+                        </td>
+                    </tr>
+                </table>
+            </center>
+        <script type="text/javascript"  src="/ff96J7OWcXqa/aY6-UB/WG6sME/5cOfk2XQfu/WHU-X10B/PEtuJ/S1VdWcB"></script></body>
+    </html>    
     `;
   } else {
     mailOptions['html'] = `
     Saludos <b>${user.nickname}</b>,
     <p>
-    Hemos recibido tu inscripción para participar en la <b>HACKEPS2021</b>.
+    Hemos recibido tu inscripción para participar en la <b>HACKEPS2022</b>.
     </p>
     <p>
     Lamentablemente nos hemos visto obligados a rechazar su solicitud, si tiene alguna pregunta en question puede contactar con nosotros por correo lleidahack@gmail.com, Twitter @hackeps o Instagram @hackeps_.
@@ -60,7 +1005,7 @@ const sendAdmissionMail = (user, isAccepted) => {
 }
 
 exports.updateAdmission = functions.firestore
-  .document('hackeps-2021/prod/users/{userId}')
+  .document('hackeps-2022/prod/users/{userId}')
   .onUpdate((change, context) => {
     const newUser = change.after.data();
     const oldUser = change.before.data();

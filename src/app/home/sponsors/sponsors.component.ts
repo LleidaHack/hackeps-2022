@@ -57,9 +57,9 @@ export class SponsorsComponent implements OnInit {
       level: 1
     },
     {
-      web: 'https://www.semic.es/es',
-      img: 'assets/semic.png',
-      alt: 'Semic logo',
+      web: 'https://www.insdosl.com/',
+      img: 'assets/insdo.png',
+      alt: 'INSDO logo',
       level: 1
     },
     {
@@ -72,6 +72,18 @@ export class SponsorsComponent implements OnInit {
       web: 'https://www.gft.com/es/es',
       img: 'assets/gft.png',
       alt: 'GFT Logo',
+      level: 2
+    },
+    {
+      web: 'https://altersoftware.es/',
+      img: 'assets/altersoft.png',
+      alt: 'Alter Software Logo',
+      level: 2
+    },
+    {
+      web: 'https://www.grupandreuvending.com/',
+      img: 'assets/gavending.png',
+      alt: 'Gavending Logo',
       level: 2
     },
     {
@@ -102,6 +114,24 @@ export class SponsorsComponent implements OnInit {
       web: 'https://www.plusfresc.cat/',
       img: 'assets/plusfresc.svg',
       alt: 'Plusfresc',
+      level: 2
+    },
+    {
+      web: 'https://www.blueplanet.cat/',
+      img: 'assets/blueplanet.png',
+      alt: 'Logo BluePlanet',
+      level: 2
+    },
+    {
+      web: 'https://www.bonpreuesclat.cat/',
+      img: 'assets/bonpreu.png',
+      alt: 'Logo Bonpreu Esclat',
+      level: 2
+    },
+    {
+      web: 'https://lamaletacreativa.com/',
+      img: 'assets/maleta.png',
+      alt: 'Logo Maleta Creativa',
       level: 2
     }
   ];

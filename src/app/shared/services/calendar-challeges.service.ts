@@ -12,8 +12,8 @@ import { UserModel } from '../models/user.model';
 export class CalendarChallengesService {
   public static CHALLENGES_UIDS = {
     cost: 'w3b6eXvKt4vnkn5dLv6F',     // Conway's Game of Life challenge
-    pokemon: 'o9JlpEuyII7mgbkeBJep',  // BiblioCAT challenge,
-    ml: 'Dq6yCBBRktnd8V78uz0W',        // Musica challenge
+    pokemon: 'fpq63uqepoxAEB1GKBzF',  // HackersGotHacket challenge,
+    ml: 'CDaKdVeog0SbRW9VIxco',        // Logo Identifier Challenge
   };
 
   private challengesCollection: AngularFirestoreCollection<Challenge>;
