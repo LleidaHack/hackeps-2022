@@ -13,40 +13,40 @@
       <div class="row pl-3 align-items-center">
         <div class="col-10">
           <label><i class="fas fa-microchip mr-1"></i>Conway's Game of Life</label>
-          <input type="text" id="challenge1" name="challenge1" class="form-control mb-4"
+          <input [disabled]="true" type="text" id="challenge1" name="challenge1" class="form-control mb-4"
             #challenge1 placeholder="URL de tu repositorio de GitHub">
         </div>
         <div class="col-2">
           <button mdbBtn type="submit"
+                  [disabled]="true"
                   class="button-gradient" rounded="true"
                   size="sm"
-                  (click)="submitCostChallenge(challenge1)"
                   mdbWavesEffect>Subir</button>
         </div>
-        <!-- CALENDAR UPLOADS
         <div class="col-10">
-          <label><i class="fas fa-book mr-1"></i>Computing in ancient Rome<i>Algoritmia</i></label>
-          <input type="text" id="challenge2" name="challenge2" class="form-control mb-4"
+          <label><i class="fas fa-book mr-1"></i>HackersGotHacked</label>
+          <input [disabled]="true" type="text" id="challenge2" name="challenge2" class="form-control mb-4"
             #challenge2 placeholder="URL de tu repositorio de GitHub">
         </div>
         <div class="col-2">
           <button mdbBtn type="submit"
+                  [disabled]="true" 
                   class="button-gradient" rounded="true"
                   size="sm"
                   (click)="submitPokemonChallenge(challenge2)"
                   mdbWavesEffect>Subir</button>
         </div>
-        <div class="col-10" [style.visibility]="'hidden'">
-          <label><i class="fas fa-music mr-1"></i>Callenge 3</label>
+        <div class="col-10">
+          <label><i class="fas fa-file-image mr-1"></i>Logo Identifier</label>
           <input type="text" id="challenge3" name="challenge3" class="form-control mb-4"
             #challenge3 placeholder="URL de tu repositorio de GitHub">
         </div>
-        <div class="col-2" [style.visibility]="'hidden'">
+        <div class="col-2">
           <button mdbBtn type="submit"
                   class="button-gradient" rounded="true"
                   (click)="submitMLChallenge(challenge3)"
                   size="sm" mdbWavesEffect>Subir</button>
-        </div>-->
+        </div>
       </div>
     </mdb-card-text>
   </mdb-card-body>
